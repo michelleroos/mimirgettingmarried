@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { logIn, logOut, signUp } from "./actions/session_actions";
-import Root from "./frontend/components/root";
+import Root from "./components/root";
 import configureStore from "./store/store";
 // import { logIn, logOut, signUp } from "./util/session_api_util";
 
