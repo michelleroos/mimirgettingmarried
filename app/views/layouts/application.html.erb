@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mimirgettingmarried</title>
+    <title>#mimirgettingmarried</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,5 +11,13 @@
 
   <body>
     <%= yield %>
+      <% if current_user %>
+      <script type="text/javascript">
+        window.currentUser = {
+          id: "<%= current_user.id %>",
+          email: "<%= current_user.email %>"
+        };
+      </script>       
+    <% end %>
   </body>
 </html>
