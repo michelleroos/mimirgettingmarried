@@ -7,7 +7,8 @@ class Api::SessionsController < ApplicationController
     )
     if @user
       log_in!(@user)
-      render "api/users/show"
+      # render "api/users/show"
+      render json: ['Sign in successful'], status: 200
     else
       render json: ['ⓘ Unable to log in with provided credentials.'], status: 422
     end
@@ -17,8 +18,8 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
         log_out!
-        render "api/users/show"
-        # render {}
+        # render "api/users/show"
+        render json: ['Sign out successful'], status: 200
     else
         render json: ["No user is signed in"], status: 404
     end
