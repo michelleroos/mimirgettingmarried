@@ -7,10 +7,31 @@ import configureStore from "./store/store";
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
+    // if (window.currentUser) {
+    //     const preloadedState = { session: { currentUser: window.currentUser } };
+    //     store = configureStore(preloadedState);
+    //     delete window.currentUser;
+    // } else {
+    //     store = configureStore();
+    // }
+
     if (window.currentUser) {
-        const preloadedState = { session: { currentUser: window.currentUser } };
+        const { currentUser } = window;
+        const { id } = currentUser;
+        const preloadedState = {
+            entities: {
+                users: {
+                    [id]: currentUser
+                }
+            },
+        session: { id }
+        };
         store = configureStore(preloadedState);
+
+        // Clean up after ourselves so we don't accidentally use the
+        // global currentUser instead of the one in the store
         delete window.currentUser;
+
     } else {
         store = configureStore();
     }
