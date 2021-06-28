@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import LoginFormContainer from "./LoginFormContainer";
 import SignupFormContainer from "./SignupFormContainer";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
     <div>
@@ -16,8 +17,8 @@ const App = () => (
             <h1>mimir getting married</h1>
             <GreetingContainer />
         </header>
-        <Route path="/login" component={LoginFormContainer} />
-        <Route path="/signup" component={SignupFormContainer} />
+        <AuthRoute path="/login" component={LoginFormContainer} />
+        <AuthRoute path="/signup" component={SignupFormContainer} />
     </div>
 );
 
