@@ -11,6 +11,7 @@ import LoginFormContainer from "./LoginFormContainer";
 import SignupFormContainer from "./SignupFormContainer";
 import Splash from "./splash";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import RSVPContainer from "./rsvp_container";
 
 const App = () => (
     <div id="app">
@@ -18,6 +19,7 @@ const App = () => (
             <GreetingContainer />
         </header>
         <Route exact path="/" component={Splash} />
+        <ProtectedRoute path="/rsvp" component={RSVPContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
     </div>
