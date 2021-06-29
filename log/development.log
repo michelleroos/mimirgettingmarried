@@ -3322,3 +3322,157 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 111ms (Views: 16.5ms | ActiveRecord: 85.2ms)
 
 
+Started PATCH "/api/users/7" for ::1 at 2021-06-29 11:45:48 -0400
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"friday"=>"", "saturday"=>"", "diet"=>"", "sunday"=>""}, "id"=>"7"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 5ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started PATCH "/api/users/7" for ::1 at 2021-06-29 11:46:27 -0400
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"friday"=>"true", "saturday"=>"true", "diet"=>"vegan", "sunday"=>"false"}, "id"=>"7"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started PATCH "/api/users/7" for ::1 at 2021-06-29 11:48:19 -0400
+
+ActionController::RoutingError - undefined method `skip_before_filter' for Api::UsersController:Class
+Did you mean?  skip_before_action:
+
+Started PATCH "/api/users/7" for ::1 at 2021-06-29 11:48:39 -0400
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"friday"=>"true", "saturday"=>"true", "diet"=>"vegan", "sunday"=>"false"}, "id"=>"7"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `update_attributes' for nil:NilClass:
+  app/controllers/api/users_controller.rb:27:in `update'
+
+Started PATCH "/api/users/7" for ::1 at 2021-06-29 11:54:26 -0400
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"friday"=>"true", "saturday"=>"true", "diet"=>"vegan", "sunday"=>"false"}, "id"=>"7"}
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `update_attributes' for nil:NilClass:
+  app/controllers/api/users_controller.rb:27:in `update'
+
+Started PATCH "/api/users/7" for ::1 at 2021-06-29 11:54:38 -0400
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"friday"=>"true", "saturday"=>"true", "diet"=>"vegan", "sunday"=>"false"}, "id"=>"7"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 10ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started PATCH "/api/users/7" for ::1 at 2021-06-29 11:55:45 -0400
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"friday"=>"true", "saturday"=>"true", "diet"=>"vegan", "sunday"=>"false"}, "id"=>"7"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started PATCH "/api/users/7" for ::1 at 2021-06-29 11:59:59 -0400
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"friday"=>"true", "saturday"=>"true", "diet"=>"vegan", "sunday"=>"false"}, "id"=>"7"}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `update_attributes' for nil:NilClass:
+  app/controllers/api/users_controller.rb:27:in `update'
+
+Started PATCH "/api/users/7" for ::1 at 2021-06-29 12:01:24 -0400
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"friday"=>"true", "saturday"=>"true", "diet"=>"vegan", "sunday"=>"false"}, "id"=>"7"}
+Can't verify CSRF token authenticity.
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `update_attribute' for nil:NilClass:
+  app/controllers/api/users_controller.rb:27:in `update'
+
+Started GET "/" for ::1 at 2021-06-29 12:03:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 107ms (Views: 92.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-29 12:03:17 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"ff", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (43.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ff"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:10
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (80.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "ff"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "9TOKejG6ohdGjI_dbjyxjQ"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (41.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "9TOKejG6ohdGjI_dbjyxjQ"], ["updated_at", "2021-06-29 16:03:17.868002"], ["id", 7]]
+  ↳ app/models/user.rb:31
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 701ms (Views: 20.3ms | ActiveRecord: 288.6ms)
+
+
+Started PATCH "/api/users/7" for ::1 at 2021-06-29 12:04:14 -0400
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"friday"=>"true", "saturday"=>"true", "diet"=>"vegan", "sunday"=>"false"}, "id"=>"7"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (65.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:28
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "ff"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:28
+  [1m[36mUser Exists (11.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "9TOKejG6ohdGjI_dbjyxjQ"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:28
+  [1m[36mUser Update (39.1ms)[0m  [1m[33mUPDATE "users" SET "friday" = $1, "saturday" = $2, "sunday" = $3, "diet" = $4, "updated_at" = $5 WHERE "users"."id" = $6[0m  [["friday", true], ["saturday", true], ["sunday", false], ["diet", "vegan"], ["updated_at", "2021-06-29 16:04:14.801462"], ["id", 7]]
+  ↳ app/controllers/api/users_controller.rb:28
+  [1m[35m (60.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:28
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (3.6ms)
+Completed 200 OK in 492ms (Views: 43.3ms | ActiveRecord: 344.9ms)
+
+
+Started PATCH "/api/users/7" for ::1 at 2021-06-29 12:04:48 -0400
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"friday"=>"true", "saturday"=>"true", "diet"=>"vegan", "sunday"=>"false"}, "id"=>"7"}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[35m (6.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:28
+  [1m[36mUser Exists (28.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "ff"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:28
+  [1m[36mUser Exists (8.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "9TOKejG6ohdGjI_dbjyxjQ"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:28
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:28
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (5.3ms)
+Completed 200 OK in 119ms (Views: 53.6ms | ActiveRecord: 48.3ms)
+
+

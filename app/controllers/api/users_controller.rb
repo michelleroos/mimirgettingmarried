@@ -1,5 +1,7 @@
 class Api::UsersController < ApplicationController
 
+    protect_from_forgery prepend: true
+
     def create
         @user = User.new(user_params)
         if @user.save
@@ -16,13 +18,13 @@ class Api::UsersController < ApplicationController
             # render json: ['Showing a user'], status: 200
             render :show
         else
-            console.log('Not successful')
             render json: ['User not found'], status: 404
         end
     end
 
     def update
-        @user = current_user
+        @user = User.find(params[:id])
+        # @user = current_user
         if @user.update_attributes(user_params)
             render :show
         else
