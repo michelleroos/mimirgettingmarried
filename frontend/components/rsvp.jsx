@@ -1,45 +1,21 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 
-const RSVPContainer = () => {
+export default function RSVPContainer() {
 
-    console.log(this);
-    const update = (field) => {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
+    const { register, handleSubmit } = useForm();
+
+    const onSubmit = (data) => {
+        console.log(data);
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const user = Object.assign({}, this.state);
-        this.props.processForm(user);
-    }
-
-    const answer = () => (
-        <div className="rsvp">
-            <h1>RSVP here</h1>
-            <form>
-                <label>Friday:
-                    <input type="text"
-                    />
-                </label>
-                <label>Saturday:
-                    <input type="text"
-                    />
-                </label>
-                <label>Diet:
-                    <input type="text"
-                    />
-                </label>
-                <label>Sunday:
-                    <input type="text"
-                    />
-                </label>
-                <button>Submit</button>
-            </form>
-        </div>
-    );
-    return answer();
+    return (
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <input type="text" placeholder="Friday" name="friday" {...register} />
+            {/* <input type="text" placeholder="Saturday" name="saturday" ref={register} /> */}
+            {/* <input type="text" placeholder="Diet" name="diet" ref={register} /> */}
+            {/* <input type="text" placeholder="Sunday" name="sunday" ref={register} /> */}
+            <input type="submit" />
+        </form>
+    )
 };
-
-export default RSVPContainer;
