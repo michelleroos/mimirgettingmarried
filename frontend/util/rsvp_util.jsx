@@ -1,6 +1,6 @@
 export const rsvp = (info) => {
     return $.ajax({
-        url: "/api/users",
+        url: `/api/users${info.id}`,
         method: "PATCH",
         data: {
             user: {

@@ -12,7 +12,7 @@ const receiveRSVP = (info) => {
 };
 
 // THUNK ACTION CREATORS
-export const RSVP = (info) => (dispatch) => {
+export const sendRSVP = (info) => (dispatch) => {
     return RSVPAPIUtil.rsvp(info)
         .then(
             (res) => dispatch(receiveRSVP(res)),

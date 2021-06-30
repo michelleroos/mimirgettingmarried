@@ -1,16 +1,17 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import RSVPContainer from './rsvp';
-import { RSVP } from '../actions/rsvp_actions';
+import { sendRSVP } from '../actions/rsvp_actions';
 
 const mapStateToProps = () => {
     return {
+        // currentUser: state.session.id
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        RSVP: (info) => dispatch(RSVP(info)),
+        sendRSVP: (info) => dispatch(sendRSVP(info)),
     };
 };
 
