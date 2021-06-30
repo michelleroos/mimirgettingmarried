@@ -4604,3 +4604,21 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 83ms (Views: 75.0ms | ActiveRecord: 2.8ms)
 
 
+Started GET "/" for ::1 at 2021-06-30 08:29:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "x2ngFuXYKMtdyq8Fu38EyA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 100ms (Views: 88.1ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-30 08:34:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "x2ngFuXYKMtdyq8Fu38EyA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 93ms (Views: 83.6ms | ActiveRecord: 0.8ms)
+
+
