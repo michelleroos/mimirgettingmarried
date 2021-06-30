@@ -14,6 +14,7 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import RSVPContainer from "./RSVP/RsvpContainer";
 import Account from "./Account/Account";
 import Faq from "./FAQ/Faq";
+import Guests from "./Guests/Guests";
 
 const App = () => (
     <div id="app">
@@ -23,6 +24,7 @@ const App = () => (
         <Route exact path="/" component={Splash} />
         <ProtectedRoute path="/account" component={Account} />
         <ProtectedRoute path="/faq" component={Faq} />
+        <ProtectedRoute path="/guests" component={Guests} />
         <ProtectedRoute path="/rsvp" component={RSVPContainer} />
         <ProtectedRoute path="/welcome" component={Splash} />
         <AuthRoute path="/login" component={LoginFormContainer} />
