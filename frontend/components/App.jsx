@@ -12,6 +12,7 @@ import SignupFormContainer from "./Session/SignupFormContainer";
 import Splash from "./Splash/Splash";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import RSVPContainer from "./RSVP/RsvpContainer";
+import Account from "./Account/Account";
 
 const App = () => (
     <div id="app">
@@ -19,7 +20,9 @@ const App = () => (
             <NavbarContainer />
         </header>
         <Route exact path="/" component={Splash} />
+        <ProtectedRoute path="/account" component={Account} />
         <ProtectedRoute path="/rsvp" component={RSVPContainer} />
+        <ProtectedRoute path="/welcome" component={Splash} />
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
     </div>

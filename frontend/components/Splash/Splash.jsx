@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Splash = () => {
+export default function Splash () {
+
+    useEffect(() => {
+        document.title = `Welcome | #mimirgettingmarried`;
+    });
+
     const welcome = () => (
         <div className="welcome">
             <h1>Amir & Michelle getting married</h1>
@@ -9,4 +14,3 @@ const Splash = () => {
     return welcome();
 };
 
-export default Splash;

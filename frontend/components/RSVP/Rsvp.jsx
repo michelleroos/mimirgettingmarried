@@ -6,7 +6,7 @@ export default function RSVPContainer(props) {
     const { register, handleSubmit } = useForm();
 
     useEffect(() => {
-        document.title = `RSVP`;
+        document.title = `RSVP | #mimirgettingmarried`;
     });
 
     const onSubmit = (data) => {
