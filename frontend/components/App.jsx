@@ -16,6 +16,7 @@ import Account from "./Account/Account";
 import Faq from "./FAQ/Faq";
 import Guests from "./Guests/Guests";
 import Location from "./Location/Location";
+import Schedule from "./Schedule/Schedule";
 
 const App = () => (
     <div id="app">
@@ -28,6 +29,7 @@ const App = () => (
         <ProtectedRoute path="/guests" component={Guests} />
         <ProtectedRoute path="/location" component={Location} />
         <ProtectedRoute path="/rsvp" component={RSVPContainer} />
+        <ProtectedRoute path="/schedule" component={Schedule} />
         <ProtectedRoute path="/welcome" component={Splash} />
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
