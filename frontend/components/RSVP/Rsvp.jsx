@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
 export default function RSVPContainer(props) {
     console.log(props);
     const { register, handleSubmit } = useForm();
+
+    useEffect(() => {
+        document.title = `RSVP`;
+    });
 
     const onSubmit = (data) => {
         // console.log(data);
