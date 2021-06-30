@@ -20,7 +20,7 @@ export default function Navbar ({ currentUser, logOut }) {
             <div className="menu-icon" onClick={() => setState(!state)}>
                 <i className={state ? 'fas fa-times' : 'fas fa-bars'}></i>
             </div>
-            <ul>
+            <ul className={state ? 'nav-menu active' : 'nav-menu'}>
                 {MenuItems.map((item, index) => {
                     return(
                         <li className={item.cName} key={index}>
