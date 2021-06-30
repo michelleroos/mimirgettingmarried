@@ -1,5 +1,6 @@
 import React, { useState }from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from './Button';
 import { MenuItems } from './MenuItems';
 
 export default function Navbar ({ currentUser, logOut }) {
@@ -28,7 +29,8 @@ export default function Navbar ({ currentUser, logOut }) {
                         </li>
                     )
                 })}
-                <button className="header-button" onClick={logOut}>Log Out</button>
+                {/* <button className="header-button" onClick={logOut}>Log Out</button> */}
+                <Button onClick={logOut}>Log out</Button>
             </ul>
         </nav>
     );
