@@ -5,33 +5,43 @@ import { MenuItems } from './MenuItems';
 
 export default function Navbar ({ currentUser, logOut }) {
 
-    const [state, setState] = useState(false);
+    const [clicked, setClicked] = useState(false);
+
+    const handleClick = () => {
+        setClicked(!clicked);
+    }
     
     const loggedOut = () => (
-        <nav className="navbar">
+        <nav className="navbarItems">
             <ul>
-                <li><Link to="/login">Log in</Link></li>
-                <li><Link to="/signup">Sign up</Link></li>
+                <li className="nav-links"><Link to="/login">Log in</Link></li>
+                <li className="nav-links"><Link to="/signup">Sign up</Link></li>
             </ul>
         </nav>
     );
 
     const loggedIn = () => (
-        <nav className="navbar">
-            <div className="menu-icon" onClick={() => setState(!state)}>
-                <i className={state ? 'fas fa-times' : 'fas fa-bars'}></i>
+        <nav className="navbarItems">
+            
+            <div className="menu-icon" onClick={handleClick}>
+            {/* <div className="menu-icon" onClick={() => setClicked(!clicked)}> */}
+                <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
             </div>
-            <ul className={state ? 'nav-menu active' : 'nav-menu'}>
+
+            <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
                 {MenuItems.map((item, index) => {
-                    return(
+                    return (
                         <li className={item.cName} key={index}>
                             <Link to={item.title.toLowerCase()}>{item.title}</Link>
                         </li>
                     )
                 })}
                 {/* <button className="header-button" onClick={logOut}>Log Out</button> */}
-                <Button onClick={logOut}>Log out</Button>
+                {/* <li className="nav-links-mobile"><Button onClick={logOut}>Log out</Button></li> */}
+                {/* <li className="nav-links-mobile"><Link to="/" onClick={logOut}>Log out</Link></li> */}
             </ul>
+            <Button onClick={logOut}>Log out</Button>
+
         </nav>
     );
 
