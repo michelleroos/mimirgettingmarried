@@ -1,6 +1,6 @@
 .navbarItems {
-    background-color: blue;
-    height: 180px;
+    background-color: #666Bf4;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,19 +81,19 @@
         border-radius: 0;
     }
 
-    .navbar-logo {
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(25%, 50%);
-    }
+    // .navbar-logo {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     transform: translate(25%, 50%);
+    // }
 
     .menu-icon {
         display: block;
         position: absolute;
         top: 0;
         right: 0;
-        transform: translate(25%, 50%);
+        transform: translate(-100%, 60%);
         font-size: 1.8rem;
         cursor: pointer;
     }

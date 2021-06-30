@@ -38,9 +38,9 @@ export default function Navbar ({ currentUser, logOut }) {
                 })}
                 {/* <button className="header-button" onClick={logOut}>Log Out</button> */}
                 {/* <li className="nav-links-mobile"><Button onClick={logOut}>Log out</Button></li> */}
-                {/* <li className="nav-links-mobile"><Link to="/" onClick={logOut}>Log out</Link></li> */}
+                <li className="nav-links-mobile"><Link to="/" onClick={logOut}>Log out</Link></li>
             </ul>
-            <Button onClick={logOut}>Log out</Button>
+            <Button className="nav-links-mobile" onClick={logOut}>Log out</Button>
 
         </nav>
     );
