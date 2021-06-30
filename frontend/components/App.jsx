@@ -1,5 +1,5 @@
 import React from "react";
-import GreetingContainer from "./greetingContainer";
+import NavbarContainer from "./Navbar/NavbarContainer";
 import {
     Route,
     Redirect,
@@ -7,16 +7,16 @@ import {
     Link,
     HashRouter
 } from 'react-router-dom';
-import LoginFormContainer from "./LoginFormContainer";
-import SignupFormContainer from "./SignupFormContainer";
-import Splash from "./splash";
+import LoginFormContainer from "./Session/LoginFormContainer";
+import SignupFormContainer from "./Session/SignupFormContainer";
+import Splash from "./Splash/Splash";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import RSVPContainer from "./rsvp_container";
+import RSVPContainer from "./RSVP/RsvpContainer";
 
 const App = () => (
     <div id="app">
         <header>
-            <GreetingContainer />
+            <NavbarContainer />
         </header>
         <Route exact path="/" component={Splash} />
         <ProtectedRoute path="/rsvp" component={RSVPContainer} />

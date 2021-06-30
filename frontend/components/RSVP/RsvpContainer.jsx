@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import RSVPContainer from './rsvp';
-import { sendRSVP } from '../actions/rsvp_actions';
+import RSVPContainer from './Rsvp';
+import { sendRSVP } from '../../actions/rsvp_actions';
 
 const mapStateToProps = () => {
     return {

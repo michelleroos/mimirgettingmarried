@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Greeting = ({ currentUser, logOut }) => {
-    const sessionLinks = () => (
-        <nav className="login-signup">
-            <Link to="/login">Log in</Link>
-            &nbsp;or&nbsp;
-            <Link to="/signup">sign up</Link>
+export default function Navbar ({ currentUser, logOut }) {
+    
+    const loggedOut = () => (
+        <nav className="navbar">
+            <ul>
+                <li><Link to="/login">Log in</Link></li>
+                <li><Link to="/signup">Sign up</Link></li>
+            </ul>
         </nav>
     );
-    const personalGreeting = () => (
-        <nav>
+
+    const loggedIn = () => (
+        <nav className="navbar">
             <ul className="navbar">
                 <li><Link to="/">Welcome</Link></li>
                 <li><Link to="/rsvp">RSVP</Link></li>
@@ -24,7 +27,6 @@ const Greeting = ({ currentUser, logOut }) => {
             </ul>
         </nav>
     );
-    return currentUser ? personalGreeting() : sessionLinks();
-};
 
-export default Greeting;
+    return currentUser ? loggedIn() : loggedOut();
+};
