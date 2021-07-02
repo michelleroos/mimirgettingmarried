@@ -22,6 +22,8 @@ export default function Navbar ({ currentUser, logOut }) {
 
     const loggedIn = () => (
         <nav className="navbarItems">
+
+            <div className="h2">A&M</div>
             
             <div className="menu-icon" onClick={handleClick}>
             {/* <div className="menu-icon" onClick={() => setClicked(!clicked)}> */}
