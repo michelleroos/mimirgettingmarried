@@ -43,7 +43,8 @@ export default function Navbar ({ currentUser, logOut }) {
 
     return (
         <nav className="navbarItems">
-            <div className="h2">A&M</div>
+            {/* <div className="h2">A&M</div> */}
+            <Link to="/welcome">A&M</Link>
             {currentUser ? loggedIn() : loggedOut()}
         </nav>
     )

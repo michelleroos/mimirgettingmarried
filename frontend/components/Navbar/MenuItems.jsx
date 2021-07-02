@@ -1,9 +1,5 @@
 export const MenuItems = [
     {
-        title: 'Welcome',
-        cName: 'nav-links'
-    },
-    {
         title: 'Rsvp',
         cName: 'nav-links'
     },
