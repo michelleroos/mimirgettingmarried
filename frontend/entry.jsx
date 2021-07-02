@@ -4,6 +4,8 @@ import { RSVP } from "./actions/rsvp_actions";
 import { logIn, logOut, signUp } from "./actions/session_actions";
 import Root from "./components/root";
 import configureStore from "./store/store";
+require("babel-core/register");
+require("babel-polyfill");
 // import { logIn, logOut, signUp } from "./util/session_api_util";
 
 document.addEventListener("DOMContentLoaded", () => {
