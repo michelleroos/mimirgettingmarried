@@ -1,9 +1,9 @@
 import React from 'react'
-import useFirestore from '../../hooks/useAccountFirestore'
+import useAccountFirestore from '../../hooks/useAccountFirestore'
 
 export default function ImageGrid({ setSelectedImg }) {
 
-    const { docs } = useFirestore('profile-photos');
+    const { docs } = useAccountFirestore('profile-photos');
     console.log(docs);
 
     return (

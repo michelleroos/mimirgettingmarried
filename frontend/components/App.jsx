@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 import LoginFormContainer from "./Session/LoginFormContainer";
 import SignupFormContainer from "./Session/SignupFormContainer";
-import Splash from "./Welcome/Welcome";
+import Welcome from "./Welcome/Welcome";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import RSVPContainer from "./RSVP/RsvpContainer";
 import Account from "./Account/Account";
@@ -30,7 +30,7 @@ export default function App() {
             <header>
                 <NavbarContainer />
             </header>
-            <Route exact path="/" component={Splash} />
+            <Route exact path="/" component={Welcome} />
             <ProtectedRoute path="/account" component={UploadForm} />
             <ProtectedRoute path="/faq" component={Faq} />
             <Route path="/guests">
@@ -43,7 +43,6 @@ export default function App() {
             <ProtectedRoute path="/location" component={Location} />
             <ProtectedRoute path="/rsvp" component={RSVPContainer} />
             <ProtectedRoute path="/schedule" component={Schedule} />
-            <ProtectedRoute path="/welcome" component={Splash} />
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />
         </div >

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { projectFirestore, projectStorage, timestamp } from "../firebase/config";
 
-export default function useAMStorage(file) {
+export default function useAccountStorage(file, collection) {
 
     const [progress, setProgress] = useState(0);
     const [error, setError] = useState(null);
@@ -10,7 +10,7 @@ export default function useAMStorage(file) {
     useEffect(() => {
         // references
         const storageRef = projectStorage.ref(file.name);
-        const collectionRef = projectFirestore.collection('am-photos');
+        const collectionRef = projectFirestore.collection(collection);
 
         storageRef.put(file).on('state_changed', (snap) => {
             let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;

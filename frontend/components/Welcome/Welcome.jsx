@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ProgressBar from '../Account/ProgressBar';
+import ProgressBar from '../Progressbar/ProgressBar';
 
 export default function Welcome () {
 
@@ -12,7 +12,8 @@ export default function Welcome () {
     });
 
     const changeHandler = (e) => {
-        let selected = e.target.files[0];
+        let selected = e.target.files;
+        console.log(selected);
         if (selected && types.includes(selected.type)) {
             setFile(selected);
             setError('');

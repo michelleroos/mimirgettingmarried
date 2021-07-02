@@ -1,10 +1,10 @@
-import useAccountStorage from '../../hooks/useAccountStorage';
+import useStorage from '../../hooks/useStorage';
 import React, { useEffect } from 'react'
 
 
-export default function ProgressBar({ file, setFile }) {
+export default function ProgressBar({ file, setFile, collection }) {
 
-    const { url, progress } = useAccountStorage(file);
+    const { url, progress } = useStorage(file, collection);
 
     useEffect(() => {
         if (url) {
