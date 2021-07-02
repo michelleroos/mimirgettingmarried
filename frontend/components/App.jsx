@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom';
 import LoginFormContainer from "./Session/LoginFormContainer";
 import SignupFormContainer from "./Session/SignupFormContainer";
-import Splash from "./Splash/Splash";
+import Splash from "./Welcome/Welcome";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import RSVPContainer from "./RSVP/RsvpContainer";
 import Account from "./Account/Account";
@@ -17,8 +17,8 @@ import Faq from "./FAQ/Faq";
 import Guests from "./Guests/Guests";
 import Location from "./Location/Location";
 import Schedule from "./Schedule/Schedule";
-import UploadForm from "./Account/UploadForm";
-import ImageGrid from "./Guests/ImageGrid";
+import UploadForm from "./Account/ProfileUploadForm";
+import ImageGrid from "./Guests/GuestImageGrid";
 import Modal from "./Guests/Modal";
 
 export default function App() {
