@@ -17,6 +17,7 @@ import Faq from "./FAQ/Faq";
 import Guests from "./Guests/Guests";
 import Location from "./Location/Location";
 import Schedule from "./Schedule/Schedule";
+import UploadForm from "./Account/UploadForm";
 
 const App = () => (
     <div id="app">
@@ -24,7 +25,8 @@ const App = () => (
             <NavbarContainer />
         </header>
         <Route exact path="/" component={Splash} />
-        <ProtectedRoute path="/account" component={Account} />
+        <ProtectedRoute path="/account" component={UploadForm} />
+        {/* <ProtectedRoute path="/account" component={Account} /> */}
         <ProtectedRoute path="/faq" component={Faq} />
         <ProtectedRoute path="/guests" component={Guests} />
         <ProtectedRoute path="/location" component={Location} />
