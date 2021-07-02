@@ -12,12 +12,12 @@ import SignupFormContainer from "./Session/SignupFormContainer";
 import Welcome from "./Welcome/Welcome";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import RSVPContainer from "./RSVP/RsvpContainer";
-import Account from "./Account/Account";
 import Faq from "./FAQ/Faq";
 import Guests from "./Guests/Guests";
 import Location from "./Location/Location";
 import Schedule from "./Schedule/Schedule";
-import UploadForm from "./Account/ProfileUploadForm";
+import Account from "./Account/Account";
+import UploadForm from "./UploadForm/UploadForm";
 import ImageGrid from "./Guests/GuestImageGrid";
 import Modal from "./Guests/Modal";
 
@@ -31,7 +31,7 @@ export default function App() {
                 <NavbarContainer />
             </header>
             <Route exact path="/" component={Welcome} />
-            <ProtectedRoute path="/account" component={UploadForm} />
+            <ProtectedRoute path="/account" component={Account} />
             <ProtectedRoute path="/faq" component={Faq} />
             <Route path="/guests">
                 <ImageGrid setSelectedImg={setSelectedImg}/>

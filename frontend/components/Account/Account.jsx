@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
+import UploadForm from '../UploadForm/UploadForm';
 
-export default function Account() {
+export default function Account(ownProps) {
+    const pathname = ownProps.location.pathname;
 
     useEffect(() => {
         document.title = `Account | #mimirgettingmarried`;
     });
 
-    const Account = () => (
+    return (
         <div className="account">
-            <h1>Your account</h1>
+            <UploadForm pathname={pathname} />
         </div>
-    );
-    return Account();
+    )
 };
-

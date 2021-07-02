@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { projectFirestore, projectStorage, timestamp } from "../firebase/config";
 
-export default function useAccountStorage(file, collection) {
+export default function useStorage(file, collection) {
 
     const [progress, setProgress] = useState(0);
     const [error, setError] = useState(null);
