@@ -1,9 +1,9 @@
 import React from 'react'
-import useAccountFirestore from '../../hooks/useAccountFirestore';
+import useFirestore from '../../hooks/useFirestore';
 
 export default function AMImageGrid({ setSelectedImg }) {
 
-    const { docs } = useAccountFirestore('am-photos');
+    const { docs } = useFirestore('am-photos');
 
     return (
         <div className="img-grid">
@@ -11,7 +11,7 @@ export default function AMImageGrid({ setSelectedImg }) {
                 <div className="img-wrap"
                     key={doc.id}
                     onClick={() => setSelectedImg(doc.url)}>
-                    <img src={doc.url} alt="uploaded pic" />
+                    <img src={doc.url} alt="uploaded pic" style={{ width: '100%'}}/>
                 </div>
             ))}
         </div>
