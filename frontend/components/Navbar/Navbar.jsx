@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from './Button';
 import { MenuItems } from './MenuItems';
 
-export default function Navbar ({ currentUser, logOut }) {
+export default function Navbar ({ currentUser, logOut, route }) {
 
     const [clicked, setClicked] = useState(false);
 
@@ -11,12 +11,16 @@ export default function Navbar ({ currentUser, logOut }) {
         setClicked(!clicked);
     }
 
-    const loggedOut = () => (
-            <ul>
-                <li className="nav-links"><Link to="/login">Log in</Link></li>
-                <li className="nav-links"><Link to="/signup">Sign up</Link></li>
-            </ul>
-    );
+    const loggedOut = () => {
+        if (!window.location.href.includes('login')) {
+            return (
+                <ul className="nav-menu-lo">
+                    <li className="nav-links"><Link to="/login">Log in</Link></li>
+                    <li className="nav-links"><Link to="/signup">Sign up</Link></li>
+                </ul>
+            )
+        }
+    };
 
     const loggedIn = () => (
         <>
@@ -42,8 +46,8 @@ export default function Navbar ({ currentUser, logOut }) {
         <nav className="navbarItems">
             <div className="nav-logo">
                 <Link to="/">
-                    <p className="text">A&M</p>
-                    <i class="fas fa-heart"></i>
+                    <p className="logo">A & M</p>
+                    <i className="fas fa-heart"></i>
                 </Link>
             </div>
             {currentUser ? loggedIn() : loggedOut()}

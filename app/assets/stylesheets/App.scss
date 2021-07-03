@@ -15,6 +15,17 @@ a, button {
     text-decoration: none;
 }
 
+a {
+    color: #008080;
+
+}
+
+a:hover {
+    // text-decoration: underline;
+    font-weight: bold;
+    color: pink;
+}
+
 li {
     list-style: none;
 }

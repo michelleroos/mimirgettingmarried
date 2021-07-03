@@ -19,9 +19,19 @@
     margin-right: 2rem;
 }
 
+.nav-menu-lo {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 10px;
+    text-align: center;
+    // width: 70vW;
+    // justify-content: end;
+    // margin-right: 2rem;
+}
+
 .nav-logo {
     // margin-left: 2rem;
-    width: 36px;
+    width: 46px;
     text-align: center;
 
     a {
@@ -37,7 +47,7 @@
     a {
         text-align: center;
 
-        .text {
+        .logo {
             display: none;
         }
     
@@ -52,16 +62,16 @@
     // text-decoration: none;
     padding: 0.5rem 1rem;
     
-    a {
-        color: pink;
-    }
+    // a {
+    //     color: pink;
+    // }
 }
 
 .nav-links:hover {
     // background-color: purple;
-    text-decoration: underline;
+    // text-decoration: underline;
     font-weight: bold;
-    color: pink;
+    // color: pink;
     // border-radius: 4px;
     transition: all 0.2s ease-out;
 }
