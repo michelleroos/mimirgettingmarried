@@ -21,7 +21,7 @@ import UploadForm from "./UploadForm/UploadForm";
 import ImageGrid from "./Guests/GuestImageGrid";
 import Modal from "./Guests/Modal";
 
-export default function App() {
+export default function App(ownProps) {
 
     const [selectedImg, setSelectedImg] = useState(null);
 
