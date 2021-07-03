@@ -21,7 +21,6 @@ export default function Navbar ({ currentUser, logOut }) {
     const loggedIn = () => (
         <>
             <div className="menu-icon" onClick={handleClick}>
-            {/* <div className="menu-icon" onClick={() => setClicked(!clicked)}> */}
                 <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
             </div>
 
@@ -33,18 +32,20 @@ export default function Navbar ({ currentUser, logOut }) {
                         </li>
                     )
                 })}
-                {/* <button className="header-button" onClick={logOut}>Log Out</button> */}
-                {/* <li className="nav-links-mobile"><Button onClick={logOut}>Log out</Button></li> */}
-                <li className="nav-links-mobile"><Link to="/" onClick={logOut}>Log out</Link></li>
+                <li className="nav-links"><Link to="/" onClick={logOut}>Log out</Link></li>
             </ul>
-            <Button className="nav-links-mobile" onClick={logOut}>Log out</Button>
+            {/* <Button className="nav-links-mobile" onClick={logOut}>Log out</Button> */}
         </>
     );
 
     return (
         <nav className="navbarItems">
-            {/* <div className="h2">A&M</div> */}
-            <Link to="/">A&M</Link>
+            <div className="nav-logo">
+                <Link to="/">
+                    <p className="text">A&M</p>
+                    <i class="fas fa-heart"></i>
+                </Link>
+            </div>
             {currentUser ? loggedIn() : loggedOut()}
         </nav>
     )

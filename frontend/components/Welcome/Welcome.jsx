@@ -11,7 +11,6 @@ export default function Welcome(ownProps) {
 
     return (
         <div className="welcome">
-            <h1>Gallery</h1>
             <AMImageGrid />
             <UploadForm pathname={pathname}/>
         </div>

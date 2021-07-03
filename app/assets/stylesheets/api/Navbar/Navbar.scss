@@ -1,10 +1,12 @@
 .navbarItems {
-    background-color: #666Bf4;
+    background-color: white;
+    border-bottom: whitesmoke;
     height: 80px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: .9rem;
 }
 
 .nav-menu {
@@ -12,9 +14,38 @@
     grid-template-columns: repeat(7, auto);
     grid-gap: 10px;
     text-align: center;
-    width: 70vW;
-    justify-content: end;
+    // width: 70vW;
+    // justify-content: end;
     margin-right: 2rem;
+}
+
+.nav-logo {
+    // margin-left: 2rem;
+    width: 36px;
+    text-align: center;
+
+    a {
+        color: pink;
+
+        i.fas.fa-heart {
+            display: none;
+        }
+    }
+}
+
+.nav-logo:hover {
+    a {
+        text-align: center;
+
+        .text {
+            display: none;
+        }
+    
+        i.fas.fa-heart {
+            display: inline;
+        }
+    }
+    
 }
 
 .nav-links {
@@ -22,18 +53,21 @@
     padding: 0.5rem 1rem;
     
     a {
-        color: white;
+        color: pink;
     }
 }
 
 .nav-links:hover {
-    background-color: purple;
-    border-radius: 4px;
+    // background-color: purple;
+    text-decoration: underline;
+    font-weight: bold;
+    color: pink;
+    // border-radius: 4px;
     transition: all 0.2s ease-out;
 }
 
 .fa-bars {
-    color: white;
+    color: pink;
 }
 
 .nav-links-mobile {
@@ -62,22 +96,24 @@
     }
 
     .nav-menu.active {
-        background: #666Bf4;
+        background: white;
+        // color: white;
         left: 0;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 1;
     }
-
+    
     .nav-links {
         text-align: center;
         padding: 2rem;
         width: 100%;
         display: table;
     }
-
+    
     .nav-links:hover {
-        background-color: #7577fa;
+        // background-color: pink;
+        // color: white;
         border-radius: 0;
     }
 
@@ -99,31 +135,31 @@
     }
 
     .fa-times {
-        color: white;
+        color: pink;
         font-size: 2rem;
     }
 
-    .nav-links-mobile {
-        display: block;
-        text-align: center;
-        padding: 1.5rem;
-        margin: 2rem auto;
-        border-radius: 4px;
-        width: 80%;
-        background: #4ad9e4;
-        text-decoration: none;
-        color: white;
-        font-size: 1rem;
-    }
+    // .nav-links-mobile {
+    //     display: block;
+    //     text-align: center;
+    //     padding: 1.5rem;
+    //     margin: 2rem auto;
+    //     border-radius: 4px;
+    //     width: 80%;
+    //     background: #4ad9e4;
+    //     text-decoration: none;
+    //     color: white;
+    //     font-size: 1rem;
+    // }
 
-    .nav-links-mobile:hover {
-        background: white;
-        color: #6568F4;
-        transition: 250ms;
-    }
+    // .nav-links-mobile:hover {
+    //     background: white;
+    //     color: #6568F4;
+    //     transition: 250ms;
+    // }
 
-    Button {
-        display: none;
-    }
+    // Button {
+    //     display: none;
+    // }
     
 }
