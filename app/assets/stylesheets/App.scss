@@ -5,6 +5,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
 a, button {
     cursor: pointer;
     text-decoration: none;
