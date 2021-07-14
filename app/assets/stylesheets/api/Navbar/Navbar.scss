@@ -3,8 +3,8 @@
     border-bottom: whitesmoke;
     height: 80px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     font-size: .9rem;
 }
@@ -16,7 +16,7 @@
     text-align: center;
     // width: 70vW;
     // justify-content: end;
-    margin-right: 2rem;
+    // margin-right: 2rem;
 }
 
 .nav-menu-lo {

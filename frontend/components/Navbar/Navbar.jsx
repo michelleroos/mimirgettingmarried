@@ -22,25 +22,29 @@ export default function Navbar ({ currentUser, logOut, route }) {
         }
     };
 
-    const loggedIn = () => (
-        <>
-            <div className="menu-icon" onClick={handleClick}>
-                <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
-            </div>
+    const loggedIn = () => {
+        return (
+            <>
+                <div className="menu-icon" onClick={handleClick}>
+                    <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+                </div>
 
-            <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
-                {MenuItems.map((item, index) => {
-                    return (
-                        <li className={item.cName} key={index}>
-                            <Link to={item.title.toLowerCase()}>{item.title}</Link>
-                        </li>
-                    )
-                })}
-                <li className="nav-links"><Link to="/" onClick={logOut}>Log out</Link></li>
-            </ul>
-            {/* <Button className="nav-links-mobile" onClick={logOut}>Log out</Button> */}
-        </>
-    );
+                <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
+                    {MenuItems.map((item, index) => {
+                        return (
+                            <li className={item.cName} key={index}>
+                                <Link to={item.title.toLowerCase()}>{item.title}</Link>
+                            </li>
+                        )
+                    })}
+                </ul>
+                <ul>
+                    <li className="nav-links"><Link to="/" onClick={logOut}>Log out</Link></li>
+                </ul>
+                {/* <Button className="nav-links-mobile" onClick={logOut}>Log out</Button> */}
+            </>
+        )
+    };
 
     return (
         <nav className="navbarItems">

@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    color: #333;
 }
 
 body {
@@ -16,14 +17,26 @@ a, button {
 }
 
 a {
-    color: #008080;
-
-}
-
-a:hover {
-    // text-decoration: underline;
-    font-weight: bold;
     color: pink;
+    
+    p {
+        color: pink;
+
+        &:hover {
+            font-weight: bold;
+            color: rgb(251, 150, 167);
+        }
+    }
+    
+    i {
+        color: rgb(251, 150, 167);
+    }
+
+    &:hover {
+        // text-decoration: underline;
+        font-weight: bold;
+        color: rgb(251, 150, 167);
+    }
 }
 
 li {

@@ -40,40 +40,50 @@ class SessionForm extends React.Component {
                 <div className="arch">
                     <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/terracotta-abstract-29-modern-contemporary-art-abstract-organic-shapes-brown-arches-minimal-studio-grafiikka.jpg" />
                 </div>
-                <div className="session-form-box">
+                <div className="session-content">
                     <form onSubmit={this.handleSubmit}>
-                        <div className="session-form">
-                        Please {this.props.formType} or {this.props.navLink}
-                        {this.renderErrors()}
-                            <br />
+                        <h2 className="session-title">
+                            Please {this.props.formType} or {this.props.navLink}.
+                        </h2>
+                        <p className="session-errors">
+                            {this.renderErrors()}
+                        </p>
+                        <br />
 
-                            <div className="input-div email">
+                        <div className="session-input-div email">
+                            <div className="i">
                                 <i className="fas fa-user"></i>
-                                <label>Email:
+                            </div>
+                            <div className="session-header">
+                                <h5>
+                                    Email
+                                </h5>
                                     <input type="text"
                                         value={this.state.email}
                                         onChange={this.update('email')}
-                                        className="login-input"
+                                        className="session-input"
                                     />
-                                </label>
                             </div>
-
-                            <br />
-
-                            <div className="input-div password">
-                                <i className="fas fa-lock"></i>
-                                <label>Passcode:
-                                    <input type="password"
-                                        value={this.state.password}
-                                        onChange={this.update('password')}
-                                        className="login-input"
-                                    />
-                                </label>
-                            </div>
-
-                            <br />
-                            <input className="session-submit" type="submit" value={this.props.formType} />
                         </div>
+
+                        <div className="session-input-div password focus">
+                            <div className="i">
+                                <i className="fas fa-lock"></i>
+                            </div>
+                            <div className="session-header">
+                                <h5>
+                                    Password
+                                </h5>
+                                <input type="password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    className="session-input"
+                                />
+                            </div>
+                        </div>
+                        <a href="#" className="forgot">Forgot Password?</a>
+                        <br />
+                        <input className="session-submit" type="submit" value={this.props.formType} />
                     </form>
                 </div>
             </div>
