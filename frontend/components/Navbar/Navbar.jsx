@@ -23,6 +23,13 @@ export default function Navbar ({ currentUser, logOut, route }) {
     };
 
     const loggedIn = () => {
+
+        const logOutBtn = (
+            <ul>
+                <li className="nav-links-mobile"><Link to="/" onClick={logOut}>Log out</Link></li>
+            </ul>
+        )
+
         return (
             <>
                 <div className="menu-icon" onClick={handleClick}>
@@ -37,10 +44,11 @@ export default function Navbar ({ currentUser, logOut, route }) {
                             </li>
                         )
                     })}
+                    {clicked ? <li className="nav-links"><Link to="/" onClick={logOut}>Log out</Link></li> : <></>}
                 </ul>
-                <ul>
-                    <li className="nav-links"><Link to="/" onClick={logOut}>Log out</Link></li>
-                </ul>
+                
+                {clicked ? <></> : logOutBtn}
+
                 {/* <Button className="nav-links-mobile" onClick={logOut}>Log out</Button> */}
             </>
         )

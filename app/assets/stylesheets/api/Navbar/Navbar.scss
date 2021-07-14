@@ -80,10 +80,6 @@
     color: pink;
 }
 
-.nav-links-mobile {
-    display: none;
-}
-
 .menu-icon {
     display: none;
 }
@@ -105,20 +101,24 @@
         transition: all 0.5s east;
     }
 
+    .nav-links-mobile { 
+        display: none;
+    }
+
     .nav-menu.active {
         background: white;
         // color: white;
         left: 0;
-        opacity: 1;
+        // opacity: 1;
         transition: all 0.5s ease;
         z-index: 1;
     }
     
     .nav-links {
         text-align: center;
-        padding: 2rem;
-        width: 100%;
-        display: table;
+        // padding: 2rem;
+        // width: 100%;
+        // display: table;
     }
     
     .nav-links:hover {
