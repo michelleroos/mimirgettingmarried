@@ -45,9 +45,9 @@ class SessionForm extends React.Component {
                         <h2 className="session-title">
                             Please {this.props.formType} or {this.props.navLink}.
                         </h2>
-                        <p className="session-errors">
+                        <div className="session-errors">
                             {this.renderErrors()}
-                        </p>
+                        </div>
                         <br />
 
                         <div className="session-input-div email">

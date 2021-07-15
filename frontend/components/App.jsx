@@ -27,10 +27,11 @@ export default function App(ownProps) {
 
     return (
         <div id="app" >
-            <header>
-                <NavbarContainer />
-            </header>
+            
+            <NavbarContainer />
+
             <Route exact path="/" component={Welcome} />
+
             <ProtectedRoute path="/account" component={Account} />
             <ProtectedRoute path="/faq" component={Faq} />
             <Route path="/guests">
@@ -43,6 +44,7 @@ export default function App(ownProps) {
             <ProtectedRoute path="/location" component={Location} />
             <ProtectedRoute path="/rsvp" component={RSVPContainer} />
             <ProtectedRoute path="/schedule" component={Schedule} />
+            
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />
         </div >

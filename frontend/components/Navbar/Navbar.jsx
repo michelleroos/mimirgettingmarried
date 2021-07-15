@@ -6,20 +6,19 @@ import { MenuItems } from './MenuItems';
 export default function Navbar ({ currentUser, logOut, route }) {
 
     const [clicked, setClicked] = useState(false);
+    const [path] = useState(window.location.href.includes('login') || window.location.href.includes('signup') ? true : false);
 
     const handleClick = () => {
         setClicked(!clicked);
     }
 
     const loggedOut = () => {
-        if (!window.location.href.includes('login')) {
-            return (
-                <ul className="nav-menu-lo">
-                    <li className="nav-links"><Link to="/login">Log in</Link></li>
-                    <li className="nav-links"><Link to="/signup">Sign up</Link></li>
-                </ul>
-            )
-        }
+        return (
+            <ul className="nav-menu-lo">
+                <li className="nav-links"><Link to="/login">Log in</Link></li>
+                <li className="nav-links"><Link to="/signup">Sign up</Link></li>
+            </ul>
+        )
     };
 
     const loggedIn = () => {
@@ -54,15 +53,20 @@ export default function Navbar ({ currentUser, logOut, route }) {
         )
     };
 
-    return (
-        <nav className="navbarItems">
-            <div className="nav-logo">
-                <Link to="/">
-                    <p className="logo">A & M</p>
-                    <i className="fas fa-heart"></i>
-                </Link>
-            </div>
-            {currentUser ? loggedIn() : loggedOut()}
-        </nav>
-    )
+    if (!path) {
+        return (
+            <nav className="navbarItems">
+                <div className="nav-logo">
+                    <Link to="/">
+                        <p className="logo">A & M</p>
+                        <i className="fas fa-heart"></i>
+                    </Link>
+                </div>
+                {currentUser ? loggedIn() : loggedOut()}
+            </nav>
+        )
+    } else {
+        return null;
+    }
+
 };
