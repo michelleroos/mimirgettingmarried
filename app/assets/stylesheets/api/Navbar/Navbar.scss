@@ -1,11 +1,11 @@
 .navbarItems {
-    background-color: white;
-    border-bottom: whitesmoke;
-    height: 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+    // border-bottom: whitesmoke;
+    height: 80px;
     font-size: .9rem;
 }
 
