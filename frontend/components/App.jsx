@@ -15,6 +15,7 @@ import RSVPContainer from "./RSVP/RsvpContainer";
 import Faq from "./FAQ/Faq";
 import Guests from "./Guests/Guests";
 import Location from "./Location/Location";
+import Footer from "./Footer/Footer";
 import Schedule from "./Schedule/Schedule";
 import Account from "./Account/Account";
 import UploadForm from "./UploadForm/UploadForm";
@@ -26,7 +27,7 @@ export default function App(ownProps) {
     const [selectedImg, setSelectedImg] = useState(null);
 
     return (
-        <div id="app" >
+        <div className="app" >
             
             <NavbarContainer />
 
@@ -47,6 +48,8 @@ export default function App(ownProps) {
             
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />
+
+            <Footer />
         </div >
     )
 }

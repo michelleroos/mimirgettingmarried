@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Footer() {
     return (
-        <div>
-            Made by Michelle with love for Amir
-        </div>
+        <footer className="footer">
+            Made by Michelle with <i className="fas fa-heart"></i> for Amir
+        </footer>
     )
 }
