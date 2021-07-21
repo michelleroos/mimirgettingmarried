@@ -14,7 +14,7 @@ export default function Navbar ({ currentUser, logOut, route }) {
 
     const loggedOut = () => {
         return (
-            <ul className="nav-menu-lo">
+            <ul className="nav-session">
                 <li className="nav-links"><Link to="/login">Log in</Link></li>
                 <li className="nav-links"><Link to="/signup">Sign up</Link></li>
             </ul>
@@ -24,7 +24,7 @@ export default function Navbar ({ currentUser, logOut, route }) {
     const loggedIn = () => {
 
         const logOutBtn = (
-            <ul>
+            <ul className="nav-session">
                 <li className="nav-links-mobile"><Link to="/" onClick={logOut}>Log out</Link></li>
             </ul>
         )
