@@ -1,0 +1,15 @@
+.rsvp-form {
+    width: 60%;
+
+    .inputs {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 40%;
+    }
+
+    #diet {
+        width: 80%
+    }
+}
