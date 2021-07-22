@@ -1,4 +1,26 @@
 .welcome {
-    margin-top: 80px;
-    z-index: 1;
+    // margin-top: 80px;
+    // z-index: 1;
+
+    h1, h4, p {
+        text-align: center;
+        line-height: 2;
+    }
+    
+    h1 {
+        font-family: 'Dancing Script', cursive;
+    }
+
+    p {
+        font-size: .8rem;
+        width: 60%;
+        line-height: 1.5;
+    }
+
+    .p {
+        display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+        align-items: center;
+    }
 }

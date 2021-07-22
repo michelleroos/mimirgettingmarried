@@ -10,6 +10,7 @@ import {
 import LoginFormContainer from "./Session/LoginFormContainer";
 import SignupFormContainer from "./Session/SignupFormContainer";
 import Welcome from "./Welcome/Welcome";
+import WelcomeContainer from "./Welcome/WelcomeContainer";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import RSVPContainer from "./RSVP/RsvpContainer";
 import Faq from "./FAQ/Faq";
@@ -31,7 +32,7 @@ export default function App(ownProps) {
             
             <NavbarContainer />
 
-            <Route exact path="/" component={Welcome} />
+            <Route exact path="/" component={WelcomeContainer} />
 
             <ProtectedRoute path="/account" component={Account} />
             <ProtectedRoute path="/faq" component={Faq} />
