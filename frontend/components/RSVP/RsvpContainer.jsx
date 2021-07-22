@@ -3,9 +3,9 @@ import React from 'react';
 import RSVPContainer from './Rsvp';
 import { sendRSVP } from '../../actions/rsvp_actions';
 
-const mapStateToProps = () => {
+const mapStateToProps = ({ session, entities: { users } }) => {
     return {
-        // currentUser: state.session.id
+        currentUser: users[session.id]
     };
 };
 

@@ -1,13 +1,13 @@
 export const rsvp = (info) => {
     return $.ajax({
-        url: `/api/users${info.id}`,
+        url: `/api/users/${info.id}`,
         method: "PATCH",
         data: {
             user: {
-                friday: info.friday,
-                saturday: info.saturday,
-                sunday: info.sunday,
-                diet: info.diet
+                friday: info.user.friday,
+                saturday: info.user.saturday,
+                sunday: info.user.sunday,
+                diet: info.user.diet
             }
         }
     })

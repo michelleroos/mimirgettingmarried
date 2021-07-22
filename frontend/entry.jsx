@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { RSVP } from "./actions/rsvp_actions";
+import { sendRSVP } from "./actions/rsvp_actions";
 import { logIn, logOut, signUp } from "./actions/session_actions";
 import Root from "./components/root";
 import configureStore from "./store/store";
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // window.signUp = signUp;
     // window.logIn = logIn;
     // window.logOut = logOut;
-    window.rsvp = RSVP;
+    window.sendRSVP = sendRSVP;
     window.store = store;
     window.dispatch = store.dispatch;
     window.getState = store.getState;

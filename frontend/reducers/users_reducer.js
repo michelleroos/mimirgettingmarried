@@ -1,4 +1,5 @@
 // import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_RSVP, RECEIVE_RSVP_ERRORS } from '../actions/rsvp_actions';
 import {
     RECEIVE_CURRENT_USER,
     LOGOUT_CURRENT_USER,
