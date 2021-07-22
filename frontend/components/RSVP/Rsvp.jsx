@@ -23,22 +23,37 @@ export default function RSVPContainer({currentUser, sendRSVP}) {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-
-            {/* <label>Friday
-                <br />
-                <input type="radio" name="friday" value="yes" {...register('friday')} /> Yes
-                <input type="radio" name="friday" value="no" {...register('friday')} /> No
-                <input type="radio" name="friday" value="maybe" {...register('friday')} /> Maybe
-            </label> */}
+            <label>Are you joining us on Friday?</label>
+            <input {...register("friday", { required: true })} type="radio" value="Yes" /> Yes
+            <input {...register("friday", { required: true })} type="radio" value="No" /> No
+            <input {...register("friday", { required: true })} type="radio" value="Maybe" /> Maybe
             <br />
-            <input type="text" placeholder="Friday" name="friday" {...register('friday')} />
+
+            <label>Are you joining us on Saturday?</label>
+            <input {...register("saturday", { required: true })} type="radio" value="Yes" /> Yes
+            <input {...register("saturday", { required: true })} type="radio" value="No" /> No
+            <input {...register("saturday", { required: true })} type="radio" value="Maybe" /> Maybe
+            <br />
+
+            <label>Are you joining us on Sunday?</label>
+            <input {...register("sunday", { required: true })} type="radio" value="Yes" /> Yes
+            <input {...register("sunday", { required: true })} type="radio" value="No" /> No
+            <input {...register("sunday", { required: true })} type="radio" value="Maybe" /> Maybe
+
+            <label>Do you have any dietary restrictions?</label>
+            <input {...register("diet", { required: true })} type="radio" value="Vegetarian" /> Vegetarian
+            <input {...register("diet", { required: true })} type="radio" value="Vegan" /> Vegan
+            {/* <input type="text" placeholder="Other" name="diet" {...register('diet')} /> */}
+            <br />
+
+            {/* <input type="text" placeholder="Friday" name="friday" {...register('friday')} />
             <br />
             <input type="text" placeholder="Saturday" name="saturday" {...register('saturday')} />
             <br />
             <input type="text" placeholder="Sunday" name="sunday" {...register('sunday')} />
             <br />
             <input type="text" placeholder="Diet" name="diet" {...register('diet')} />
-            <br />
+            <br /> */}
             <input type="submit" />
         </form>
     )

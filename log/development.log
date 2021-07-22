@@ -11916,3 +11916,154 @@ Completed 200 OK in 286ms (Views: 11.6ms | ActiveRecord: 13.1ms)
 
 
   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2021-07-22 16:51:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "A3C8AH533ypnIeE0_qegXQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 1150ms (Views: 1140.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2021-07-22 16:52:02 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "A3C8AH533ypnIeE0_qegXQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 1029ms (Views: 1005.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-07-22 16:54:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "A3C8AH533ypnIeE0_qegXQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 979ms (Views: 972.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-07-22 16:55:12 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "A3C8AH533ypnIeE0_qegXQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 901ms (Views: 895.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-07-22 16:56:41 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "A3C8AH533ypnIeE0_qegXQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 1153ms (Views: 1141.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-07-22 16:56:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "A3C8AH533ypnIeE0_qegXQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 971ms (Views: 962.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2021-07-22 16:57:31 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "A3C8AH533ypnIeE0_qegXQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 75ms (Views: 66.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-07-22 16:57:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "A3C8AH533ypnIeE0_qegXQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 970ms (Views: 960.2ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/api/users/7" for ::1 at 2021-07-22 16:58:09 -0400
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"friday"=>"No", "saturday"=>"No", "sunday"=>"No", "diet"=>"Vegetarian"}, "id"=>"7"}
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:26
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:27
+  [1m[36mUser Exists (3.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "ff"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:27
+  [1m[36mUser Exists (2.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "A3C8AH533ypnIeE0_qegXQ"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:27
+  [1m[36mUser Update (43.9ms)[0m  [1m[33mUPDATE "users" SET "friday" = $1, "saturday" = $2, "diet" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["friday", true], ["saturday", true], ["diet", "Vegetarian"], ["updated_at", "2021-07-22 20:58:09.120347"], ["id", 7]]
+  ↳ app/controllers/api/users_controller.rb:27
+  [1m[35m (44.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:27
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (3.3ms)
+Completed 200 OK in 150ms (Views: 18.5ms | ActiveRecord: 102.1ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(894712271480584830)[0m
+  ↳ bin/rails:9
+  [1m[35m (162.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeBooleans (20210722211127)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (73.6ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "phone"[0m
+  ↳ db/migrate/20210722211127_change_booleans.rb:3
+  [1m[35m (28.8ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "friday"[0m
+  ↳ db/migrate/20210722211127_change_booleans.rb:4
+  [1m[35m (4.7ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "saturday"[0m
+  ↳ db/migrate/20210722211127_change_booleans.rb:5
+  [1m[35m (20.6ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "sunday"[0m
+  ↳ db/migrate/20210722211127_change_booleans.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210722211127"]]
+  ↳ bin/rails:9
+  [1m[35m (26.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (41.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(894712271480584830)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(894712271480584830)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddRsvp (20210722213845)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (45.8ms)[0m  [1m[35mALTER TABLE "users" ADD "friday" character varying[0m
+  ↳ db/migrate/20210722213845_add_rsvp.rb:3
+  [1m[35m (5.7ms)[0m  [1m[35mALTER TABLE "users" ADD "saturday" character varying[0m
+  ↳ db/migrate/20210722213845_add_rsvp.rb:4
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "users" ADD "sunday" character varying[0m
+  ↳ db/migrate/20210722213845_add_rsvp.rb:5
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "users" ADD "phone" character varying[0m
+  ↳ db/migrate/20210722213845_add_rsvp.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (11.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210722213845"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(894712271480584830)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
