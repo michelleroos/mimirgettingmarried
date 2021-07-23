@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from './Button';
 import { MenuItems } from './MenuItems';
 
-export default function Navbar ({ currentUser, logOut, route }) {
+export default function Navbar ({ currentUser, logOut }) {
 
     const [clicked, setClicked] = useState(false);
     const [path] = useState(window.location.href.includes('login') || window.location.href.includes('signup') ? true : false);

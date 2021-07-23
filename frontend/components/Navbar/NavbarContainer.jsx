@@ -2,10 +2,9 @@ import { connect } from 'react-redux';
 import { logOut } from '../../actions/session_actions';
 import Navbar from './Navbar';
 
-const mapStateToProps = ({ session, entities: { users } }, ownProps) => {
+const mapStateToProps = ({ session, entities: { users } }) => {
     return {
-        currentUser: users[session.id],
-        route: ownProps.location
+        currentUser: users[session.id]
     };
 };
 

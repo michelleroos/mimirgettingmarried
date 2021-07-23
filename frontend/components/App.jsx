@@ -23,26 +23,31 @@ import UploadForm from "./UploadForm/UploadForm";
 import ImageGrid from "./Guests/GuestImageGrid";
 import Modal from "./Guests/Modal";
 
-export default function App(ownProps) {
+export default function App() {
 
+    // const [path] = useState(window.location.href.includes('login') || window.location.href.includes('signup') ? true : false);
     const [selectedImg, setSelectedImg] = useState(null);
 
     return (
         <div className="app" >
             
+            {/* {!path && <NavbarContainer />} */}
             <NavbarContainer />
 
             <Route exact path="/" component={WelcomeContainer} />
 
             <ProtectedRoute path="/account" component={Account} />
             <ProtectedRoute path="/faq" component={Faq} />
+
             <Route path="/guests">
                 <ImageGrid setSelectedImg={setSelectedImg}/>
             </Route>
+
             <Route path="/guests">
                 { selectedImg && 
                 <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg}/>}
             </Route>
+
             <ProtectedRoute path="/location" component={Location} />
             <ProtectedRoute path="/rsvp" component={RSVPContainer} />
             <ProtectedRoute path="/schedule" component={Schedule} />
