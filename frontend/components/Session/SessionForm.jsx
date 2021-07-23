@@ -49,13 +49,13 @@ class SessionForm extends React.Component {
                             <h1 className="session-title">
                                 {this.props.formType}.
                             </h1>
-
+                            <br />
                             <div className="session-errors">
                                 {this.renderErrors()}
                             </div>
 
                             <label>
-                                <p></p>
+                                {/* <p></p> */}
                                 <input
                                     type="text"
                                     value={this.state.email}
@@ -64,21 +64,27 @@ class SessionForm extends React.Component {
                             </label>
                             
                             <label>
-                                <p></p>
+                                {/* <p></p> */}
                                 <input
                                     type="password"
                                     value={this.state.password}
                                     placeholder="Password"
                                     onChange={this.update('password')} />
                             </label>
-                            {this.props.navLink} or return <Link to="/">home</Link>.
+                            <br />
+                            <div className="session-actions">
+                                <p>{this.props.navLink} or return <Link to="/">home</Link>.</p>
+                                <button><i class="fas fa-arrow-right"></i></button>
+                            </div>
+                            <br />
                             <p>Forgot your email or password?</p>
-                            <button><i class="fas fa-arrow-right"></i></button>
+                            <p>Do you want to demo the site?</p>
+
                         </form>
                         <br />
-                        <form onSubmit={this.logInDemo}>
+                        {/* <form onSubmit={this.logInDemo}>
                             <button>Demo</button>
-                        </form>
+                        </form> */}
                     </div>
 
                 </div>
