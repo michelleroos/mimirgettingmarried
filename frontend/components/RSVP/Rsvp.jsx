@@ -26,14 +26,14 @@ export default function RSVPContainer({currentUser, sendRSVP}) {
             <div className="friday">
                 <label>Are you joining us on Friday?</label>
                 <div className="inputs">
-                    <div className="radio">
-                        <input {...register("friday", { required: true })} type="radio" value="Yes" /> Yes
+                    <div className="checkbox">
+                        <input {...register("friday", { required: true })} type="checkbox" value="Yes" /> Yes
                     </div>
-                    <div className="radio">
-                        <input {...register("friday", { required: true })} type="radio" value="No" /> No
+                    <div className="checkbox">
+                        <input {...register("friday", { required: true })} type="checkbox" value="No" /> No
                     </div>
-                    <div className="radio">
-                        <input {...register("friday", { required: true })} type="radio" value="Maybe" /> Maybe
+                    <div className="checkbox">
+                        <input {...register("friday", { required: true })} type="checkbox" value="Maybe" /> Maybe
                     </div>
                 </div>
             </div>
@@ -41,14 +41,14 @@ export default function RSVPContainer({currentUser, sendRSVP}) {
             <div className="saturday">
                 <label>Are you joining us on Saturday?</label>
                 <div className="inputs">
-                    <div className="radio">
-                        <input {...register("saturday", { required: true })} type="radio" value="Yes" /> Yes
+                    <div className="checkbox">
+                        <input {...register("saturday", { required: true })} type="checkbox" value="Yes" /> Yes
                     </div>
-                    <div className="radio">
-                        <input {...register("saturday", { required: true })} type="radio" value="No" /> No
+                    <div className="checkbox">
+                        <input {...register("saturday", { required: true })} type="checkbox" value="No" /> No
                     </div>
-                    <div className="radio">
-                        <input {...register("saturday", { required: true })} type="radio" value="Maybe" /> Maybe
+                    <div className="checkbox">
+                        <input {...register("saturday", { required: true })} type="checkbox" value="Maybe" /> Maybe
                     </div>
                 </div>
             </div>
@@ -56,14 +56,14 @@ export default function RSVPContainer({currentUser, sendRSVP}) {
             <div className="sunday">
                 <label>Are you joining us on Sunday?</label>
                 <div className="inputs">
-                    <div className="radio">
-                        <input {...register("sunday", { required: true })} type="radio" value="Yes" /> Yes
+                    <div className="checkbox">
+                        <input {...register("sunday", { required: true })} type="checkbox" value="Yes" /> Yes
                     </div>
-                    <div className="radio">
-                        <input {...register("sunday", { required: true })} type="radio" value="No" /> No
+                    <div className="checkbox">
+                        <input {...register("sunday", { required: true })} type="checkbox" value="No" /> No
                     </div>
-                    <div className="radio">
-                        <input {...register("sunday", { required: true })} type="radio" value="Maybe" /> Maybe
+                    <div className="checkbox">
+                        <input {...register("sunday", { required: true })} type="checkbox" value="Maybe" /> Maybe
                     </div>
                 </div>
             </div>
@@ -71,11 +71,11 @@ export default function RSVPContainer({currentUser, sendRSVP}) {
             <div className="diet">
                 <label>Do you have any dietary restrictions?</label>
                 <div id="diet">
-                    <div className="radio">
-                        <input {...register("diet")} type="radio" value="Vegetarian" /> Vegetarian
+                    <div className="checkbox">
+                        <input {...register("diet")} type="checkbox" value="Vegetarian" /> Vegetarian
                     </div>
-                    <div className="radio">
-                        <input {...register("diet")} type="radio" value="Vegan" /> Vegan
+                    <div className="checkbox">
+                        <input {...register("diet")} type="checkbox" value="Vegan" /> Vegan
                     </div>
                     <input type="text" placeholder="Other" name="diet" {...register('diet')} />
                 </div>
