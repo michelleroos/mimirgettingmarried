@@ -81,6 +81,20 @@ export default function RSVPContainer({currentUser, sendRSVP}) {
                 </div>
             </div>
 
+            <div className="phone">
+                <label>Please enter your phone number (incl country code)</label>
+                <div id="diet">
+                    <input type="text" placeholder="Phone number" name="diet" {...register('diet')} />
+                </div>
+            </div>
+
+            <div className="address">
+                <label>Please enter your full mailing address</label>
+                <div id="diet">
+                    <input type="text" placeholder="Address" name="diet" {...register('diet')} />
+                </div>
+            </div>
+
             {/* <input type="text" placeholder="Friday" name="friday" {...register('friday')} />
             <br />
             <input type="text" placeholder="Saturday" name="saturday" {...register('saturday')} />
