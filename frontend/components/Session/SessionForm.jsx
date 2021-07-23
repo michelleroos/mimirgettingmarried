@@ -41,6 +41,7 @@ class SessionForm extends React.Component {
                 <div className="image">
                     <img src="https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/A895F86A-7A7B-48DD-89BA-D3E5F9735CA3.jpeg?alt=media&token=91a3a606-171b-4dbf-a673-5b032651f4c8" />
                 </div>
+                
                 <div className="session-form-container">
                     <div className="form">
                         <form onSubmit={this.handleSubmit}>
