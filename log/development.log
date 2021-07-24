@@ -14223,3 +14223,39 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 440ms (Views: 319.9ms | ActiveRecord: 114.4ms)
 
 
+Started GET "/" for ::1 at 2021-07-24 10:52:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "pgavdLHuW2DCn97dXqkWHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 2039ms (Views: 2028.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2021-07-24 11:14:43 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (61.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "pgavdLHuW2DCn97dXqkWHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 327ms (Views: 259.7ms | ActiveRecord: 61.4ms)
+
+
+Started GET "/" for ::1 at 2021-07-24 11:16:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "pgavdLHuW2DCn97dXqkWHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 127ms (Views: 120.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2021-07-24 11:16:48 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "pgavdLHuW2DCn97dXqkWHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 297ms (Views: 287.2ms | ActiveRecord: 1.2ms)
+
+
