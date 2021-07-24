@@ -1,11 +1,54 @@
 .rsvp-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 110px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 110px);
+  position: relative;
+
+  .img {
     background-image: url("https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/IMG_3125.jpeg?alt=media&token=329df3f9-01f2-436e-9ccc-2b3a3acacbab");
-    background-size:     cover;     
-    background-repeat:   no-repeat;
-    background-position: center center;              
-    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+  }
+
+  button {
+    // font-size: 12px;
+    color: pink;
+    border: 1px solid pink;
+    // background-color: rgb(0, 180, 5);
+    border-radius: 30px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding: 0px 36px;
+    transition: all 0.1s ease 0s;
+    height: 40px;
+    min-width: 115px;
+    position: relative;
+
+    i {
+      color: pink;
+
+      // &:hover {
+      //   color: white;
+      // }
+    }
+
+    &:hover {
+      color: white;
+      background-color: pink;
+      font-weight: bold;
+
+      i {
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
 }
