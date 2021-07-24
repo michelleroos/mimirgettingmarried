@@ -4,10 +4,6 @@ import { useForm } from 'react-hook-form';
 export default function RSVPContainer({ currentUser, sendRSVP }) {
   const { register, handleSubmit } = useForm();
 
-  useEffect(() => {
-    document.title = `RSVP | #mimirgettingmarried`;
-  });
-
   const onSubmit = (data) => {
     const info = {
       user: {
@@ -22,12 +18,9 @@ export default function RSVPContainer({ currentUser, sendRSVP }) {
   }
 
   return (
-    <div className="rsvp-container">
-      {/* <div className="image">
-        <img src="https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/IMG_3125.jpeg?alt=media&token=329df3f9-01f2-436e-9ccc-2b3a3acacbab" alt="rsvp-img" />
-      </div> */}
-
+    <div className="rsvp-modal-background">
       <div className="rsvp-form-container">
+        <button><i class="fas fa-times"></i></button>
         <form className="rsvp-form" onSubmit={handleSubmit(onSubmit)}>
           <div className="rsvp-conent">
             <div className="rsvp-q">
