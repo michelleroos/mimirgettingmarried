@@ -23,7 +23,7 @@ export default function RSVPContainer({ currentUser, sendRSVP }) {
 
   return (
     <div className="rsvp-container">
-      <div className="img"></div>
+      {/* <div className="img"></div> */}
       <button type="submit"><i class="far fa-envelope"></i> RSVP</button>
     </div>
   )
