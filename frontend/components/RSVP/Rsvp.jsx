@@ -1,30 +1,18 @@
-import React, { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useEffect, useState } from 'react';
+import RSVPModal from './RsvpModal';
 
 export default function RSVPContainer({ currentUser, sendRSVP }) {
-  const { register, handleSubmit } = useForm();
+
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     document.title = `RSVP | #mimirgettingmarried`;
   });
 
-  const onSubmit = (data) => {
-    const info = {
-      user: {
-        friday: data.friday,
-        saturday: data.saturday,
-        sunday: data.sunday,
-        diet: data.diet,
-      },
-      id: currentUser.id
-    }
-    sendRSVP(info);
-  }
-
   return (
     <div className="rsvp-container">
-      {/* <div className="img"></div> */}
-      <button type="submit"><i class="far fa-envelope"></i> RSVP</button>
+      <button type="submit" onClick={() => {setOpenModal(true)}}><i class="far fa-envelope"></i> RSVP</button>
+      {openModal && <RSVPModal currentUser={currentUser} sendRSVP={sendRSVP} closeModal={setOpenModal}/>}
     </div>
   )
 };
