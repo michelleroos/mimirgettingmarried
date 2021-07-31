@@ -20,7 +20,9 @@ export default function RSVPModal({ currentUser, sendRSVP, closeModal }) {
   return (
     <div className="rsvp-modal-background">
       <div className="rsvp-form-container">
-        <button onClick={() => {closeModal(false)}}><i class="fas fa-times"></i></button>
+        <div className="close-btn">
+          <button onClick={() => {closeModal(false)}}><i class="fas fa-times"></i></button>
+        </div>
         <form className="rsvp-form" onSubmit={handleSubmit(onSubmit)}>
           <div className="rsvp-conent">
             <div className="rsvp-q">
@@ -109,7 +111,9 @@ export default function RSVPModal({ currentUser, sendRSVP, closeModal }) {
                               <br />
                               <input type="text" placeholder="Diet" name="diet" {...register('diet')} />
                               <br /> */}
-            <button type="submit"><i class="far fa-envelope"></i> Send RSVP</button>
+            <div className="rsvp-btn">
+              <button type="submit"><i className="rsvp-i" class="far fa-envelope"></i> Send RSVP</button>
+            </div>
           </div>
         </form>
       </div>

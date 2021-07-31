@@ -11,7 +11,9 @@ export default function RSVPContainer({ currentUser, sendRSVP }) {
 
   return (
     <div className="rsvp-container">
-      <button type="submit" onClick={() => {setOpenModal(true)}}><i class="far fa-envelope"></i> RSVP</button>
+      <button className="rsvp-btn" type="submit" onClick={() => {setOpenModal(true)}}>
+        <i class="far fa-envelope"></i> RSVP
+      </button>
       {openModal && <RSVPModal currentUser={currentUser} sendRSVP={sendRSVP} closeModal={setOpenModal}/>}
     </div>
   )

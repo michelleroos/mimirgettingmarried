@@ -21,32 +21,28 @@
     z-index: -1;
   }
 
-  button {
-    color: pink;
+  .rsvp-btn {
     background-color: transparent;
     border: 1px solid pink;
     border-radius: 30px;
     padding-top: 12px;
     padding-bottom: 12px;
     padding: 0px 36px;
-    transition: all 0.1s ease 0s;
     height: 40px;
-    min-width: 115px;
-    position: relative;
-
+    color: pink;
+    // min-width: 115px;
+    // position: relative;
+    
     i {
       color: pink;
-
-      // &:hover {
-      //   color: white;
-      // }
     }
-
+    
     &:hover {
+      transition: all 0.1s ease 0s;
       color: white;
       background-color: pink;
       font-weight: bold;
-
+  
       i {
         color: white;
         font-weight: bold;
