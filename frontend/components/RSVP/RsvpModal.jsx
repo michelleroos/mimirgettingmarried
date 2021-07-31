@@ -20,7 +20,9 @@ export default function RSVPModal({ currentUser, sendRSVP, closeModal }) {
   return (
     <div className="rsvp-modal-background">
       <div className="rsvp-form-container">
-        <button className="close-btn" onClick={() => {closeModal(false)}}><i class="fas fa-times"></i></button>
+        <div className="close-btn">
+          <button onClick={() => {closeModal(false)}}><i class="fas fa-times"></i></button>
+        </div>
         <form className="rsvp-form" onSubmit={handleSubmit(onSubmit)}>
           <div className="rsvp-content">
             <div className="rsvp-q">

@@ -24,9 +24,23 @@
     }
 
     .close-btn {
-      border: none;
-      background-color: transparent;
-      width: fit-content;
+      display: flex;
+      justify-content: flex-end;
+      
+      button {
+        border: none;
+        background-color: transparent;
+        width: fit-content;
+        font-size: 18px;
+
+        i {
+          color: #999;
+
+          &:hover {
+            color: #666;
+          }
+        }
+      }
     }
   }
 }
