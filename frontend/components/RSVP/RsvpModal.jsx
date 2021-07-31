@@ -20,17 +20,14 @@ export default function RSVPModal({ currentUser, sendRSVP, closeModal }) {
   return (
     <div className="rsvp-modal-background">
       <div className="rsvp-form-container">
-        <div className="close-btn">
-          <button onClick={() => {closeModal(false)}}><i class="fas fa-times"></i></button>
-        </div>
+        <button className="close-btn" onClick={() => {closeModal(false)}}><i class="fas fa-times"></i></button>
         <form className="rsvp-form" onSubmit={handleSubmit(onSubmit)}>
-          <div className="rsvp-conent">
+          <div className="rsvp-content">
             <div className="rsvp-q">
-              <label>Are you joining us on Friday?</label>
+              <label>Are you joining us on Friday, 22 of July?</label>
               <div className="inputs">
                 <div className="checkbox">
-                  <input {...register("friday", { required: true })} type="checkbox" value="Yes" />
-                  <p>Yes</p>
+                  <input {...register("friday", { required: true })} type="checkbox" value="Yes" /> Yes
                 </div>
                 <div className="checkbox">
                   <input {...register("friday", { required: true })} type="checkbox" value="No" /> No
@@ -42,7 +39,7 @@ export default function RSVPModal({ currentUser, sendRSVP, closeModal }) {
             </div>
             <br />
             <div className="rsvp-q">
-              <label>Are you joining us on Saturday?</label>
+              <label>Are you joining us on Saturday, 23 of July?</label>
               <div className="inputs">
                 <div className="checkbox">
                   <input {...register("saturday", { required: true })} type="checkbox" value="Yes" /> Yes
@@ -57,7 +54,7 @@ export default function RSVPModal({ currentUser, sendRSVP, closeModal }) {
             </div>
             <br />
             <div className="rsvp-q">
-              <label>Are you joining us on Sunday?</label>
+              <label>Are you joining us on Sunday, 24 of July?</label>
               <div className="inputs">
                 <div className="checkbox">
                   <input {...register("sunday", { required: true })} type="checkbox" value="Yes" /> Yes
@@ -111,9 +108,7 @@ export default function RSVPModal({ currentUser, sendRSVP, closeModal }) {
                               <br />
                               <input type="text" placeholder="Diet" name="diet" {...register('diet')} />
                               <br /> */}
-            <div className="rsvp-btn">
-              <button type="submit"><i className="rsvp-i" class="far fa-envelope"></i> Send RSVP</button>
-            </div>
+            <button className="rsvp-btn" type="submit"><i class="far fa-envelope"></i> Send RSVP</button>
           </div>
         </form>
       </div>

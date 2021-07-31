@@ -15,13 +15,18 @@
     flex-direction: column;
     padding: 25px;
 
-    .close-btn {
+    label p {
+      font-weight: bold;
+    }
 
-      button {
-        // display: flex;
-        // justify-content: flex-end;
-        // border: none;
-      }
+    p {
+      display: inline;
+    }
+
+    .close-btn {
+      border: none;
+      background-color: transparent;
+      width: fit-content;
     }
   }
 }
