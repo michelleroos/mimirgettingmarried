@@ -11,13 +11,36 @@
     width: fit-content;
     height: fit-content;
     background-color: white;
+    border-radius: 2px;
     display: flex;
     flex-direction: column;
     padding: 40px 80px;
     font-size: 12px;
 
-    label p {
-      font-weight: bold;
+    label {
+      p {
+        font-weight: bold;
+      }
+    }
+
+    .text {
+      display: block;
+      width: 60%;
+      border: none;
+      border-bottom: 1px solid lightgrey;
+      height: 36px;
+      padding: 5px;
+      
+      &::placeholder {
+        font-weight: bold;
+        color: rgb(215, 215, 215);
+      }
+      
+      &:focus {
+        outline: none;
+        border: none;
+        border-bottom: 1px solid pink;
+      }
     }
 
     p {
