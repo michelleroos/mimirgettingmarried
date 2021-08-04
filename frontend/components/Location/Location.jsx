@@ -1,17 +1,5 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-
-const gMaps = require('../../../config/keys').googleMaps;
-
-const containerStyle = {
-    width: '100%',
-    height: '400px'
-};
-
-const center = {
-    lat: 50.087810,
-    lng: 14.420460
-};
+import React, { useEffect } from 'react';
+import Map from './Map';
 
 export default function Location() {
 
@@ -19,34 +7,13 @@ export default function Location() {
         document.title = `Location | #mimirgettingmarried`;
     });
 
-    const { isLoaded } = useJsApiLoader({
-        id: 'google-map-script',
-        googleMapsApiKey: gMaps
-    })
+    return (
+        <div className="location-container">
+            <Map />
+            <h1>Villa Richter</h1>
+            <p>Villa Richter is a part of the St Wenceslas Vineyard complex at Prague Castle. The neoclassical Villa features restaurant Piano Nobile which has a sunny terrace overlooking the vineyard. The  menu at Piano Nobile is inspired by Czech and European cousine and uses seasonal and local ingredients.</p>
+        </div>
+    )
 
-    const [map, setMap] = useState(null)
-
-    const onLoad = useCallback(function callback(map) {
-        const bounds = new window.google.maps.LatLngBounds();
-        map.fitBounds(bounds);
-        setMap(map)
-    }, [])
-
-    const onUnmount = useCallback(function callback(map) {
-        setMap(null)
-    }, [])
-
-    return isLoaded ? (
-        <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            zoom={10}
-            onLoad={onLoad}
-            onUnmount={onUnmount}
-        >
-            { /* Child components, such as markers, info windows, etc. */}
-            <></>
-        </GoogleMap>
-    ) : <></>
 };
 

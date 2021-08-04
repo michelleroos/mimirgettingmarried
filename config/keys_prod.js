@@ -1,3 +1,3 @@
 module.exports = {
-  googleMaps: process.env.GOOGLE_MAPS,
+  mapsApiKey: process.env.GOOGLE_MAPS,
 }
