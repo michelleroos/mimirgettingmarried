@@ -1,3 +1,22 @@
+#logged-out-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+
+    p {
+        // background-color: white;
+        color: pink;
+        font-size: 12px;
+        // height: 30px;
+        text-align: center;
+        // position: fixed;
+        // left: 0;
+        // bottom: 0;
+        // width: 100%;
+    }
+}
+
 .navbarItems {
     display: flex;
     flex-direction: row;

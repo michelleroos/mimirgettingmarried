@@ -30,8 +30,8 @@ export default function Welcome({ currentUser, pathname }) {
         <div id="img-container">
           <Link to="/login">
             <button id="log-in-btn" type="submit">
-              {/* <i class="far fa-envelope"></i> LOG IN */}
-              Log in <i class="fas fa-arrow-right"></i>
+              <p>Log in</p>
+              <i className="fas fa-arrow-right"></i>
             </button>
           </Link>
         </div>
