@@ -2,51 +2,101 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 110px);
+  height: 100%;
+  // height: calc(100vh - 110px);
   // display: block;
-  position: relative;
+  // position: relative;
 
-  &::after {
-    content: '';
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/IMG_3125.jpeg?alt=media&token=329df3f9-01f2-436e-9ccc-2b3a3acacbab");
-    opacity: 0.6;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    z-index: -1;
-  }
+  // &::after {
+  //   content: '';
+  //   background-image: url("https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/IMG_3125.jpeg?alt=media&token=329df3f9-01f2-436e-9ccc-2b3a3acacbab");
+  //   opacity: 0.6;
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  //   background-position: center center;
+  //   position: absolute;
+  //   top: 0px;
+  //   right: 0px;
+  //   bottom: 0px;
+  //   left: 0px;
+  //   z-index: -1;
+  // }
 
-  .rsvp-btn {
-    background-color: transparent;
-    border: 1px solid pink;
-    border-radius: 30px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding: 0px 36px;
-    height: 40px;
-    color: pink;
-    // min-width: 115px;
-    // position: relative;
-    
-    i {
-      color: pink;
-    }
-    
-    &:hover {
-      transition: all 0.1s ease 0s;
-      color: white;
-      background-color: pink;
-      font-weight: bold;
-  
-      i {
-        color: white;
-        font-weight: bold;
+  form {
+
+    .rsvp-content {
+
+      .rsvp-q {
+
+        label {
+          font-weight: bold;
+          font-size: 18px;
+        }
+
+        .inputs {
+          margin: 20px 0 40px 0;
+          display: flex;
+          justify-content: space-around;
+
+          .rsvp-btn {
+            background-color: white;
+            border: 1px solid pink;
+            color: pink;
+            font-size: 12px;
+            height: 50px;
+            width: 50px;
+
+            &:hover {
+              background-color: pink;
+              border: 1px solid pink;
+              color: white;
+            }
+          }
+
+          .btn-clicked {
+            background-color: pink;
+            border: 1px solid pink;
+            color: white;
+            font-size: 12px;
+            height: 50px;
+            width: 50px;
+          }
+
+          .veggie {
+            width: 100px;
+            border-radius: 20px;
+          }
+        }
       }
     }
   }
+
+  // .rsvp-btn {
+  //   background-color: transparent;
+  //   border: 1px solid pink;
+  //   border-radius: 30px;
+  //   padding-top: 12px;
+  //   padding-bottom: 12px;
+  //   padding: 0px 36px;
+  //   height: 40px;
+  //   color: pink;
+  //   // min-width: 115px;
+  //   // position: relative;
+    
+  //   i {
+  //     color: pink;
+  //   }
+    
+  //   &:hover {
+  //     transition: all 0.1s ease 0s;
+  //     color: white;
+  //     background-color: pink;
+  //     font-weight: bold;
+  
+  //     i {
+  //       color: white;
+  //       font-weight: bold;
+  //     }
+  //   }
+  // }
 }
