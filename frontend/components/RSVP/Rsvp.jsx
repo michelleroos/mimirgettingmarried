@@ -154,6 +154,17 @@ export default function RSVPContainer({ currentUser, sendRSVP }) {
     )
   }
 
+  const SpecifyOtherDiet = () => {
+    return (
+      <div className="rsvp-q">
+        <h2>Please specify</h2>
+        <div className="inputs">
+          <input id="other-diet" type="text" />
+        </div>
+      </div>
+    )
+  }
+
   const rsvp = () => {
     return (
       <button className="rsvp-submit-btn" type="submit"><i className="far fa-envelope"></i> Send RSVP</button>
@@ -194,7 +205,9 @@ export default function RSVPContainer({ currentUser, sendRSVP }) {
 
           {clickSunday.no || clickSunday.yes || clickSunday.maybe ? diet() : <></>}
 
-          {clickDiet.vegan || clickDiet.vegetarian || clickDiet.other ? rsvp() : <></>}
+          {clickDiet.other ? SpecifyOtherDiet() : <></>}
+
+          {clickDiet.vegan || clickDiet.vegetarian || clickDiet.other? rsvp() : <></>}
 
         </div>
       </form>
