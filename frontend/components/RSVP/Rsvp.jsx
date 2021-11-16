@@ -5,6 +5,10 @@ import { useForm } from 'react-hook-form';
 export default function RSVPContainer({ currentUser, sendRSVP }) {
   const { register, handleSubmit } = useForm();
 
+  useEffect(() => {
+    document.title = `RSVP | #mimirgettingmarried`;
+  });
+
   const [clickSaturday, setClickSaturday] = useState({
     yes: false,
     no: false,
@@ -66,15 +70,15 @@ export default function RSVPContainer({ currentUser, sendRSVP }) {
   });
 
   const veganDiet = () => {
-    setClickSunday(prevState => ({...prevState, vegan: true, vegetarian: false, other: false}));
+    setClickDiet(prevState => ({...prevState, vegan: true, vegetarian: false, other: false}));
   }
 
   const vegetarianDiet = () => {
-    setClickSunday(prevState => ({...prevState, vegan: false, vegetarian: true, other: false}));
+    setClickDiet(prevState => ({...prevState, vegan: false, vegetarian: true, other: false}));
   }
 
   const otherDiet = () => {
-    setClickSunday(prevState => ({...prevState, vegan: false, vegetarian: false, other: true}));
+    setClickDiet(prevState => ({...prevState, vegan: false, vegetarian: false, other: true}));
   }
 
   const onSubmit = (data) => {
@@ -90,14 +94,10 @@ export default function RSVPContainer({ currentUser, sendRSVP }) {
     sendRSVP(info);
   }
 
-  useEffect(() => {
-    document.title = `RSVP | #mimirgettingmarried`;
-  });
-
   const childrenSaturday = () => {
     return (
       <div className="rsvp-q">
-        <label>Are you bringing any children?</label>
+        <h2>Are you bringing any children?</h2>
         <div className="inputs">
           <button className={clickSaturdayChildren.yes ? "btn-clicked" : "rsvp-btn"} onClick={yesSaturdayChildren}>Yes</button>
           <button className={clickSaturdayChildren.no ? "btn-clicked" : "rsvp-btn"} onClick={noSaturdayChildren}>No</button>
@@ -110,7 +110,7 @@ export default function RSVPContainer({ currentUser, sendRSVP }) {
   const childrenNumber = () => {
     return (
       <div className="rsvp-q">
-        <label>How many?</label>
+        <h2>How many?</h2>
         <div className="inputs">
           <input id="children-number" type="text" />
         </div>
@@ -118,11 +118,45 @@ export default function RSVPContainer({ currentUser, sendRSVP }) {
     )
   }
 
+  const sunday = () => {
+      return (
+        <div className="rsvp-q">
+          <h2>Are you joining us on Sunday, 24 of July?</h2>
+          <h2>(No children allowed)</h2>
+          <div className="inputs">
+            <button className={clickSunday.yes ? "btn-clicked" : "rsvp-btn"} onClick={yesSunday}>Yes</button>
+            <button className={clickSunday.no ? "btn-clicked" : "rsvp-btn"} onClick={noSunday}>No</button>
+            <button className={clickSunday.maybe ? "btn-clicked" : "rsvp-btn"} onClick={maybeSunday}>Maybe</button>
+          </div>
+        </div>
+      )
+  }
+
   const childrenSunday = () => {
+    return null;
+    // return (
+    //   <div className="rsvp-q">
+    //     <h2>Children are not allowed to join on Sunday</h2>
+    //   </div>
+    // )
+  }
+
+  const diet = () => {
     return (
       <div className="rsvp-q">
-        <label>Children are not allowed to join on Sunday</label>
+        <h2>Do you have any dietary restrictions?</h2>
+        <div className="inputs">
+          <button className={clickDiet.vegan ? "btn-clicked" : "rsvp-btn"} onClick={veganDiet}>Vegan</button>
+          <button className={clickDiet.vegetarian ? "btn-clicked veggie" : "rsvp-btn veggie"} onClick={vegetarianDiet}>Vegetarian</button>
+          <button className={clickDiet.other ? "btn-clicked" : "rsvp-btn"} onClick={otherDiet}>Other</button>
+        </div>
       </div>
+    )
+  }
+
+  const rsvp = () => {
+    return (
+      <button className="rsvp-submit-btn" type="submit"><i className="far fa-envelope"></i> Send RSVP</button>
     )
   }
 
@@ -133,7 +167,7 @@ export default function RSVPContainer({ currentUser, sendRSVP }) {
         <div className="rsvp-content">
           
           <div className="rsvp-q">
-            <label>Are you joining us on Saturday, 23 of July?</label>
+            <h2>Are you joining us on Saturday, 23 of July?</h2>
             <div className="inputs">
               <button className={clickSaturday.yes ? "btn-clicked" : "rsvp-btn"} onClick={yesSaturday}>Yes</button>
               <button className={clickSaturday.no ? "btn-clicked" : "rsvp-btn"} onClick={noSaturday}>No</button>
@@ -151,29 +185,16 @@ export default function RSVPContainer({ currentUser, sendRSVP }) {
           </div>
 
           {clickSaturday.yes || clickSaturday.maybe ? childrenSaturday() : <></>}
+
           {clickSaturdayChildren.yes || clickSaturdayChildren.maybe ? childrenNumber() : <></>}
-          
-          <div className="rsvp-q">
-            <label>Are you joining us on Sunday, 24 of July?</label>
-            <div className="inputs">
-              <button className={clickSunday.yes ? "btn-clicked" : "rsvp-btn"} onClick={yesSunday}>Yes</button>
-              <button className={clickSunday.no ? "btn-clicked" : "rsvp-btn"} onClick={noSunday}>No</button>
-              <button className={clickSunday.maybe ? "btn-clicked" : "rsvp-btn"} onClick={maybeSunday}>Maybe</button>
-            </div>
-          </div>
+
+          {clickSaturday.no || clickSaturdayChildren.yes || clickSaturdayChildren.no ||clickSaturdayChildren.maybe ? sunday() : <></>}
 
           {clickSunday.yes || clickSunday.maybe ? childrenSunday() : <></>}
-          
-          <div className="rsvp-q">
-            <label>Do you have any dietary restrictions?</label>
-            <div className="inputs">
-              <button className={clickDiet.vegan ? "btn-clicked" : "rsvp-btn"} onClick={veganDiet}>Vegan</button>
-              <button className={clickDiet.vegetarian ? "btn-clicked veggie" : "rsvp-btn veggie"} onClick={vegetarianDiet}>Vegetarian</button>
-              <button className={clickDiet.other ? "btn-clicked" : "rsvp-btn"} onClick={otherDiet}>Other</button>
-            </div>
-          </div>
 
-          <button className="rsvp-btn" type="submit"><i className="far fa-envelope"></i> Send RSVP</button>
+          {clickSunday.no || clickSunday.yes || clickSunday.maybe ? diet() : <></>}
+
+          {clickDiet.vegan || clickDiet.vegetarian || clickDiet.other ? rsvp() : <></>}
 
         </div>
       </form>
