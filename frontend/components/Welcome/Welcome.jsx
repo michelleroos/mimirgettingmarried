@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import UploadForm from '../UploadForm/UploadForm';
 import AMImageGrid from './AMImageGrid';
+import { Link } from 'react-router-dom';
 
 export default function Welcome({ currentUser, pathname }) {
 
@@ -27,9 +28,12 @@ export default function Welcome({ currentUser, pathname }) {
     return (
       <div id="welcome-container">
         <div id="img-container">
-          <button id="log-in-btn" type="submit">
-            <i class="far fa-envelope"></i> RSVP
-          </button>
+          <Link to="/login">
+            <button id="log-in-btn" type="submit">
+              {/* <i class="far fa-envelope"></i> LOG IN */}
+              Log in <i class="fas fa-arrow-right"></i>
+            </button>
+          </Link>
         </div>
       </div>
     )
