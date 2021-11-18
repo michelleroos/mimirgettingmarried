@@ -4,6 +4,9 @@ import { projectFirestore } from '../firebase/config';
 export default function useFirestore(collection) {
 
     const [docs, setDocs] = useState([])
+    const [location, setLocation] = useState([])
+    // const [docs, setDocs] = useState([])
+    const [sunday, setSunday] = useState([])
     
     useEffect(() => {
         const unsub = projectFirestore.collection(collection)
@@ -20,5 +23,5 @@ export default function useFirestore(collection) {
         
     }, [collection])
 
-    return { docs };
+    return { docs, location };
 }

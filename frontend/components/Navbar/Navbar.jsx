@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import UploadForm from '../UploadForm/UploadForm';
 import { Button } from './Button';
 import { MenuItems } from './MenuItems';
 
@@ -21,6 +22,7 @@ export default function Navbar({ currentUser, logOut }) {
   if (currentUser) {
     return (
       <nav id="navbar-container">
+        {/* <UploadForm /> */}
 
         <div className="nav-logo">
           <Link to="/">
@@ -53,7 +55,7 @@ export default function Navbar({ currentUser, logOut }) {
     )
   } else {
     return (
-      <div id="navbar-container logged-out-nav">
+      <div id="logged-out-nav">
         <p>JULY 23 2022 - PRAGUE</p>
       </div>
     )

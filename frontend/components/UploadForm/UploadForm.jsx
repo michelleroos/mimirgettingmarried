@@ -8,11 +8,16 @@ export default function UploadForm({ pathname }) {
     const [collection, setCollection] = useState('');
     const types = ['image/png', 'image/jpeg'];
 
+    const path = window.location.href;
+    console.log(path);
+
     const changeHandler = (e) => {
         let selected = e.target.files[0];
 
-        if (pathname == '/account') {
-            setCollection('profile-photos');
+        if (path.includes('account')) {
+            setCollection('sunday');
+        } else if (path.includes('location')) {
+            setCollection('location');
         } else {
             setCollection('am-photos');
         }
