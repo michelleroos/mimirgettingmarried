@@ -52,7 +52,7 @@ export default function Navbar({ currentUser, logOut }) {
   } else {
     return (
       <div id="logged-out-nav">
-        <p>PRAGUE - JULY 23 2022</p>
+        <p>JULY 23 2022 - PRAGUE</p>
       </div>
     )
   }
