@@ -44,8 +44,8 @@ export default function Location() {
         })}
       </div>
       <div className="location-text">
-        <p>The ceremony and reception will take place at Villa Richter (a classicist summerhouse from 1836) which is a part of the St Wenceslas Vineyard complex at Prague Castle. The complex offers it’s visitors a unique and undisturbed view of the panoramas of Old town, Lesser Town or the villa Belvedere.</p>
-        <p>The neoclassical Villa features restaurant Piano Nobile which has a sunny terrace overlooking the vineyard. The  menu at Piano Nobile is inspired by Czech and European cousine and uses seasonal and local ingredients.</p>
+        <p>The ceremony and reception will take place at Villa Richter (a classicist summerhouse from 1836) which is a part of the St Wenceslas Vineyard complex at Prague Castle. The complex offers its visitors a unique and undisturbed view of the panoramas of Old town, Lesser Town or the villa Belvedere.</p>
+        <p>The Villa features restaurant Piano Nobile which has a sunny terrace overlooking the vineyard. The  menu at Piano Nobile is inspired by Czech and European cousine and uses seasonal and local ingredients.</p>
         <p>The ceremony will be outdoor, weather permitting, and the reception under the marquee as pictured above. The late evening music will be moved from the marquee to the greenhouse.</p>
         <p>Vibe and dress code is festive. Photopraphy by Exclusive Weddings in Prague.</p>
       </div>

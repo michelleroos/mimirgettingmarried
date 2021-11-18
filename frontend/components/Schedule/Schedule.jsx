@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Timeline from './Timeline';
 
 export default function Schedule() {
 
@@ -7,29 +8,8 @@ export default function Schedule() {
     });
 
     const Schedule = () => (
-        <div className="account">
-            <table>
-                <tr>
-                    <th>Day</th>
-                    <th>Time</th>
-                    <th>Activity</th>
-                </tr>
-                <tr>
-                    <td>Friday</td>
-                    <td>20:00</td>
-                    <td>Drinks on us</td>
-                </tr>
-                <tr>
-                    <td>Saturday</td>
-                    <td>20:00</td>
-                    <td>Drinks on us</td>
-                </tr>
-                <tr>
-                    <td>Sunday</td>
-                    <td>20:00</td>
-                    <td>Drinks on us</td>
-                </tr>
-            </table>
+        <div id="schedule-container">
+            <Timeline />
         </div>
     );
     return Schedule();

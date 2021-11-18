@@ -16,6 +16,10 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
+        title: 'Prague',
+        cName: 'nav-links'
+    },
+    {
         title: 'Faq',
         cName: 'nav-links'
     },
