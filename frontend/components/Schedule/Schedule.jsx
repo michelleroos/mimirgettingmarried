@@ -8,7 +8,28 @@ export default function Schedule() {
 
     const Schedule = () => (
         <div className="account">
-            <h1>Schedule</h1>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Time</th>
+                    <th>Activity</th>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>20:00</td>
+                    <td>Drinks on us</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>20:00</td>
+                    <td>Drinks on us</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>20:00</td>
+                    <td>Drinks on us</td>
+                </tr>
+            </table>
         </div>
     );
     return Schedule();
