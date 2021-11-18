@@ -20,13 +20,15 @@ export default function Navbar({ currentUser, logOut }) {
 
   if (currentUser) {
     return (
-      <nav className="navbarItems">
+      <nav id="navbar-container">
+
         <div className="nav-logo">
           <Link to="/">
             <p className="logo">A & M</p>
             <i className="fas fa-heart"></i>
           </Link>
         </div>
+
         <>
           <div className="menu-icon" onClick={handleClick}>
             <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
@@ -51,7 +53,7 @@ export default function Navbar({ currentUser, logOut }) {
     )
   } else {
     return (
-      <div id="logged-out-nav">
+      <div id="navbar-container logged-out-nav">
         <p>JULY 23 2022 - PRAGUE</p>
       </div>
     )
