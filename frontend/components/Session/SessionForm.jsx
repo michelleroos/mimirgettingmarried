@@ -38,39 +38,39 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div id="session-container">
-            <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
 
-              <h1 className="session-title">
-                Sign in using your email and the passcode which was provided to you by email or return <Link to="/">home</Link>.
-              </h1>
+          <h1 className="session-title">
+            Sign in using your email and the passcode which was provided to you by email or return <Link to="/">home</Link>.
+          </h1>
 
-              <div className="session-errors">
-                {this.renderErrors()}
-              </div>
+          <div className="session-errors">
+            {this.renderErrors()}
+          </div>
 
-              <label>
-                <input
-                  type="text"
-                  value={this.state.email}
-                  placeholder="Email"
-                  onChange={this.update('email')} />
-              </label>
+          <label>
+            <input
+              type="text"
+              value={this.state.email}
+              placeholder="Email"
+              onChange={this.update('email')} />
+          </label>
 
-              <label>
-                <input
-                  type="password"
-                  value={this.state.password}
-                  placeholder="Passcode"
-                  onChange={this.update('password')} />
-              </label>
+          <label>
+            <input
+              type="password"
+              value={this.state.password}
+              placeholder="Passcode"
+              onChange={this.update('password')} />
+          </label>
 
-              <div className="session-actions">
-                <button><i className="fas fa-arrow-right"></i></button>
-              </div>
+          <div className="session-actions">
+            <button id="arrow-btn"><i className="fas fa-arrow-right"></i></button>
+          </div>
 
-              {/* <p>Do you want to demo the site?</p> */}
+          {/* <p>Do you want to demo the site?</p> */}
 
-            </form>
+        </form>
       </div>
       // <div className="session-container">
 
