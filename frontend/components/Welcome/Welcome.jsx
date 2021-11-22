@@ -3,6 +3,7 @@ import UploadForm from '../UploadForm/UploadForm';
 import AMImageGrid from './AMImageGrid';
 import { Link } from 'react-router-dom';
 import useFirestore from '../../hooks/useFirestore';
+import Image from './Image';
 
 export default function Welcome({ currentUser, pathname }) {
 
@@ -11,6 +12,14 @@ export default function Welcome({ currentUser, pathname }) {
   });
 
   const { docs } = useFirestore('am-photos');
+  const [isOpen, setIsOpen] = useState(false);
+  const [img, setImg] = useState('');
+  // let img = '';
+
+  const openModal = (imgUrl) => {
+    setIsOpen(true);
+    setImg(imgUrl);
+  }
 
   if (currentUser) {
     return (
@@ -20,11 +29,12 @@ export default function Welcome({ currentUser, pathname }) {
           {docs && docs.map(doc => (
             <div className="img-wrap"
               key={doc.id}
-              onClick={() => setSelectedImg(doc.url)}>
-              <img src={doc.url} alt="uploaded pic" style={{ width: '100%' }} />
+              onClick={() => openModal(doc.url)}>
+              <img src={doc.url} alt="uploaded pic" style={{ width: '100%' }}/>
             </div>
           ))}
         </div>
+        <Image isOpen={isOpen} setIsOpen={setIsOpen} img={img}/>
       </div>
     )
   } else {

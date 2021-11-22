@@ -1,40 +1,9 @@
-.faq-container {
-  margin: 0 auto;
+#faq-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
   
-  h1 {
-  }
-
-  .faq {
-    margin-top: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #666;
-
-    .question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      h3 {
-        font-size: 1.8rem;
-      }
-    }
-
-    .answer {
-      max-height: 0;
-      overflow: hidden;
-
-      p {
-        padding-top: 1rem;
-        line-height: 1.6rem;
-        font-size: 1.4rem;
-      }
-    }
-
-    &:active .answer {
-      max-height: 300px;
-    }
+  #faq-container {
+    width: 60%;
   }
 }
