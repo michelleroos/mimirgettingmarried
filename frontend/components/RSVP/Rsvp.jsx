@@ -3,11 +3,21 @@ import RSVPModal from './RsvpModal';
 import { useForm } from 'react-hook-form';
 
 export default function RSVPContainer({ currentUser, sendRSVP }) {
-  const { register, handleSubmit } = useForm();
-
+  
   useEffect(() => {
     document.title = `RSVP | #mimirgettingmarried`;
   });
+
+  const { register, handleSubmit } = useForm();
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/api/rsvp")
+      .then((res) => res.json())
+      .catch((err) => console.log(err))
+      // .then((data) => setData(data.message));
+  }, []);
 
   const [clickSaturday, setClickSaturday] = useState({
     yes: false,
@@ -171,52 +181,57 @@ export default function RSVPContainer({ currentUser, sendRSVP }) {
     )
   }
 
-  return (
-    <div className="rsvp-container">
-
-      <form className="rsvp-form" onSubmit={handleSubmit(onSubmit)}>
-        <div className="rsvp-content">
-          
-          <div className="rsvp-q">
-            <h2>Are you joining us on Saturday, 23 of July?</h2>
-            <div className="inputs">
-              <button className={clickSaturday.yes ? "btn-clicked" : "rsvp-btn"} onClick={yesSaturday}>Yes</button>
-              <button className={clickSaturday.no ? "btn-clicked" : "rsvp-btn"} onClick={noSaturday}>No</button>
-              <button className={clickSaturday.maybe ? "btn-clicked" : "rsvp-btn"} onClick={maybeSaturday}>Maybe</button>
-              {/* <div className="checkbox">
-                <input {...register("saturday", { required: true })} type="checkbox" value="Yes" /> Yes
+  if (!data) {
+    return null;
+  } else {
+    console.log(data);
+    return (
+      <div className="rsvp-container">
+  
+        <form className="rsvp-form" onSubmit={handleSubmit(onSubmit)}>
+          <div className="rsvp-content">
+            
+            <div className="rsvp-q">
+              <h2>Are you joining us on Saturday, 23 of July?</h2>
+              <div className="inputs">
+                <button className={clickSaturday.yes ? "btn-clicked" : "rsvp-btn"} onClick={yesSaturday}>Yes</button>
+                <button className={clickSaturday.no ? "btn-clicked" : "rsvp-btn"} onClick={noSaturday}>No</button>
+                <button className={clickSaturday.maybe ? "btn-clicked" : "rsvp-btn"} onClick={maybeSaturday}>Maybe</button>
+                {/* <div className="checkbox">
+                  <input {...register("saturday", { required: true })} type="checkbox" value="Yes" /> Yes
+                </div>
+                <div className="checkbox">
+                  <input {...register("saturday", { required: true })} type="checkbox" value="No" /> No
+                </div>
+                <div className="checkbox">
+                  <input {...register("saturday", { required: true })} type="checkbox" value="Maybe" /> Maybe
+                </div> */}
               </div>
-              <div className="checkbox">
-                <input {...register("saturday", { required: true })} type="checkbox" value="No" /> No
-              </div>
-              <div className="checkbox">
-                <input {...register("saturday", { required: true })} type="checkbox" value="Maybe" /> Maybe
-              </div> */}
             </div>
+  
+            {clickSaturday.yes || clickSaturday.maybe ? childrenSaturday() : <></>}
+  
+            {clickSaturdayChildren.yes || clickSaturdayChildren.maybe ? childrenNumber() : <></>}
+  
+            {clickSaturday.no || clickSaturdayChildren.yes || clickSaturdayChildren.no ||clickSaturdayChildren.maybe ? sunday() : <></>}
+  
+            {clickSunday.yes || clickSunday.maybe ? childrenSunday() : <></>}
+  
+            {clickSunday.no || clickSunday.yes || clickSunday.maybe ? diet() : <></>}
+  
+            {clickDiet.other ? SpecifyOtherDiet() : <></>}
+  
+            {clickDiet.vegan || clickDiet.vegetarian || clickDiet.other? rsvp() : <></>}
+  
           </div>
-
-          {clickSaturday.yes || clickSaturday.maybe ? childrenSaturday() : <></>}
-
-          {clickSaturdayChildren.yes || clickSaturdayChildren.maybe ? childrenNumber() : <></>}
-
-          {clickSaturday.no || clickSaturdayChildren.yes || clickSaturdayChildren.no ||clickSaturdayChildren.maybe ? sunday() : <></>}
-
-          {clickSunday.yes || clickSunday.maybe ? childrenSunday() : <></>}
-
-          {clickSunday.no || clickSunday.yes || clickSunday.maybe ? diet() : <></>}
-
-          {clickDiet.other ? SpecifyOtherDiet() : <></>}
-
-          {clickDiet.vegan || clickDiet.vegetarian || clickDiet.other? rsvp() : <></>}
-
-        </div>
-      </form>
-
-
-      {/* <button className="rsvp-btn" type="submit" onClick={() => {setOpenModal(true)}}>
-        <i class="far fa-envelope"></i> RSVP
-      </button>
-      {openModal && <RSVPModal currentUser={currentUser} sendRSVP={sendRSVP} closeModal={setOpenModal}/>} */}
-    </div>
-  )
+        </form>
+  
+  
+        {/* <button className="rsvp-btn" type="submit" onClick={() => {setOpenModal(true)}}>
+          <i class="far fa-envelope"></i> RSVP
+        </button>
+        {openModal && <RSVPModal currentUser={currentUser} sendRSVP={sendRSVP} closeModal={setOpenModal}/>} */}
+      </div>
+    )
+  }
 };

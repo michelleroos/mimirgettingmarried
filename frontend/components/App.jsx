@@ -30,7 +30,7 @@ export default function App() {
 
     return (
         <div className="app" >
-            
+
             {/* {!path && <NavbarContainer />} */}
             <NavbarContainer />
 
@@ -40,18 +40,18 @@ export default function App() {
             <ProtectedRoute path="/faq" component={Faq} />
 
             <Route path="/guests">
-                <ImageGrid setSelectedImg={setSelectedImg}/>
+                <ImageGrid setSelectedImg={setSelectedImg} />
             </Route>
 
             <Route path="/guests">
-                { selectedImg && 
-                <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg}/>}
+                {selectedImg &&
+                    <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />}
             </Route>
 
             <ProtectedRoute path="/location" component={Location} />
             <ProtectedRoute path="/rsvp" component={RSVPContainer} />
             <ProtectedRoute path="/schedule" component={Schedule} />
-            
+
             <AuthRoute path="/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignupFormContainer} />
 
