@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import UploadForm from '../UploadForm/UploadForm';
-import AMImageGrid from './AMImageGrid';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import useFirestore from '../../hooks/useFirestore';
+import AMImageGrid from './AMImageGrid';
 import Image from './Image';
+import UploadForm from '../UploadForm/UploadForm';
 
-export default function Welcome({ currentUser, pathname }) {
+// export default function Welcome({ currentUser, pathname }) {
+export default function Welcome() {
 
   useEffect(() => {
     document.title = `Welcome | #mimirgettingmarried`;
   });
 
+  const currentUserId = useSelector((state) => state.session.id);
   const { docs } = useFirestore('am-photos');
   const [isOpen, setIsOpen] = useState(false);
   const [img, setImg] = useState('');
@@ -21,7 +24,7 @@ export default function Welcome({ currentUser, pathname }) {
     setImg(imgUrl);
   }
 
-  if (currentUser) {
+  if (currentUserId) {
     return (
       <div id="welcome-container">
         {/* <UploadForm pathname={pathname} /> */}

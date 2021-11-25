@@ -18,7 +18,7 @@ import Schedule from "./Schedule/Schedule";
 import RSVPContainer from "./RSVP/_RsvpContainer";
 import UploadForm from "./UploadForm/UploadForm";
 import Welcome from "./Welcome/Welcome";
-import WelcomeContainer from "./Welcome/WelcomeContainer";
+// import WelcomeContainer from "./Welcome/WelcomeContainer";
 
 export default function App() {
 
@@ -29,7 +29,7 @@ export default function App() {
 
             <NavbarContainer />
 
-            <Route exact path="/" component={WelcomeContainer} />
+            <Route exact path="/" component={Welcome} />
 
             <ProtectedRoute path="/faq" component={Faq} />
             <ProtectedRoute path="/location" component={Location} />
