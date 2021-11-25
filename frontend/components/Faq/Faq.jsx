@@ -12,7 +12,7 @@ export default function Faq() {
       <div id="faq-container">
         {faqData.map((data, idx) => {
           return (
-            <div className="faq-item">
+            <div className="faq-item" key={idx}>
               <div className="question">
                 <h3>
                   {data.q}

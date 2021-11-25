@@ -8,7 +8,6 @@ class Api::SessionsController < ApplicationController
     if @user
       log_in!(@user)
       render "api/users/show"
-      # render json: ['Sign in successful'], status: 200
     else
       render json: ['ⓘ Unable to log in with provided credentials.'], status: 422
     end

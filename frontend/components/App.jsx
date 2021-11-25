@@ -10,7 +10,6 @@ import {
 import LoginFormContainer from "./Session/LoginFormContainer";
 import SignupFormContainer from "./Session/SignupFormContainer";
 import Welcome from "./Welcome/Welcome";
-import WelcomeContainer from "./Welcome/WelcomeContainer";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import RSVPContainer from "./RSVP/_RsvpContainer";
 import RSVP from "./RSVP/Rsvp";
@@ -19,14 +18,12 @@ import Guests from "./Guests/Guests";
 import Location from "./Location/Location";
 import Footer from "./Footer/Footer";
 import Schedule from "./Schedule/Schedule";
-import Account from "./Account/Account";
 import UploadForm from "./UploadForm/UploadForm";
 import ImageGrid from "./Guests/GuestImageGrid";
 import Modal from "./Guests/Modal";
 
 export default function App() {
 
-    // const [path] = useState(window.location.href.includes('login') || window.location.href.includes('signup') ? true : false);
     const [selectedImg, setSelectedImg] = useState(null);
 
     return (
@@ -35,9 +32,8 @@ export default function App() {
             {/* {!path && <NavbarContainer />} */}
             <NavbarContainer />
 
-            <Route exact path="/" component={WelcomeContainer} />
+            <Route exact path="/" component={Welcome} />
 
-            <ProtectedRoute path="/account" component={Account} />
             <ProtectedRoute path="/faq" component={Faq} />
 
             <Route path="/guests">

@@ -15,7 +15,7 @@ export default function RSVP() {
       .catch((err) => console.log(err))
   }, []);
 
-  const currentUserEmail = useSelector((state) => state.entities.users);
+  const currentUserEmail = useSelector((state) => state.entities.user);
   const currentUserId = useSelector((state) => state.session.id);
   const [data, setData] = useState(null);
 
@@ -27,7 +27,7 @@ export default function RSVP() {
   // }, []);
 
   const [rsvpReq, setRsvpReq] = useState({
-    user: currentUserEmail,
+    // user: currentUserEmail,
     friday: null,
     saturday: null,
     childrenSaturday: null,

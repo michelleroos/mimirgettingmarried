@@ -1,14 +1,14 @@
-import { connect } from 'react-redux';
-import Welcome from './Welcome';
+// import { connect } from 'react-redux';
+// import Welcome from './Welcome';
 
-const mapStateToProps = ({ session, entities: { users } }, ownProps) => {
-    return {
-        currentUser: users[session.id],
-        pathname: ownProps.location.pathname
-    };
-};
+// const mapStateToProps = ({ session, entities: { user } }, ownProps) => {
+//     return {
+//         currentUser: user[session.id],
+//         pathname: ownProps.location.pathname
+//     };
+// };
 
-const mapDispatchToProps = dispatch => ({
-});
+// const mapDispatchToProps = dispatch => ({
+// });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Welcome);
+// export default connect(mapStateToProps, mapDispatchToProps)(Welcome);
