@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import UploadForm from '../UploadForm/UploadForm';
 import { Button } from './Button';
 import { MenuItems } from './MenuItems';
 
-export default function Navbar({ currentUser, logOut }) {
+export default function Navbar({ logOut }) {
+  // export default function Navbar({ currentUser, logOut }) {
 
   const [clicked, setClicked] = useState(false);
-  // const [path] = useState(window.location.href.includes('login') || window.location.href.includes('signup') ? true : false);
+  const currentUserId = useSelector((state) => state.session.id);
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     setClicked(!clicked);
@@ -16,10 +19,11 @@ export default function Navbar({ currentUser, logOut }) {
   const logOutBtn = (
     <ul className="nav-session">
       <li className="nav-links-mobile"><Link to="/" onClick={logOut}>Log out</Link></li>
+      {/* <li className="nav-links-mobile"><Link to="/" onClick={dispatch(logOut())}>Log out</Link></li> */}
     </ul>
   )
 
-  if (currentUser) {
+  if (currentUserId) {
     return (
       <nav id="navbar-container">
         {/* <UploadForm /> */}
