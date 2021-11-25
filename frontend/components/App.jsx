@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import NavbarContainer from "./Navbar/NavbarContainer";
 import {
     Route,
     Redirect,
@@ -7,20 +6,19 @@ import {
     Link,
     HashRouter
 } from 'react-router-dom';
-import LoginFormContainer from "./Session/LoginFormContainer";
-import SignupFormContainer from "./Session/SignupFormContainer";
-import Welcome from "./Welcome/Welcome";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import RSVPContainer from "./RSVP/_RsvpContainer";
-import RSVP from "./RSVP/Rsvp";
+
 import Faq from "./FAQ/Faq";
-import Guests from "./Guests/Guests";
-import Location from "./Location/Location";
 import Footer from "./Footer/Footer";
+import Location from "./Location/Location";
+import LoginFormContainer from "./Session/LoginFormContainer";
+import NavbarContainer from "./Navbar/NavbarContainer";
+import RSVP from "./RSVP/Rsvp";
+import RSVPContainer from "./RSVP/_RsvpContainer";
 import Schedule from "./Schedule/Schedule";
+import SignupFormContainer from "./Session/SignupFormContainer";
 import UploadForm from "./UploadForm/UploadForm";
-import ImageGrid from "./Guests/GuestImageGrid";
-import Modal from "./Guests/Modal";
+import Welcome from "./Welcome/Welcome";
 
 export default function App() {
 
