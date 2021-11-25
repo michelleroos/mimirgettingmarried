@@ -8,15 +8,14 @@ export default function RSVP() {
   
   useEffect(() => {
     document.title = `RSVP | #mimirgettingmarried`;
-    // dispatch(getUser(currentUserId));
+    dispatch(getUser(currentUserId));
     fetch("http://localhost:3001/api/rsvp")
       .then((res) => res.json())
       .then((data) => setData(data.values))
       .catch((err) => console.log(err))
   }, []);
 
-  const currentUser = useSelector((state) => state.entities.user);
-  console.log(currentUser);
+  const currentUserEmail = useSelector((state) => state.entities.users);
   const currentUserId = useSelector((state) => state.session.id);
   const [data, setData] = useState(null);
 
@@ -28,7 +27,7 @@ export default function RSVP() {
   // }, []);
 
   const [rsvpReq, setRsvpReq] = useState({
-    user: "ww",
+    user: currentUserEmail,
     friday: null,
     saturday: null,
     childrenSaturday: null,
