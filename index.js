@@ -5,6 +5,9 @@ const { google } = require('googleapis');
 const PORT = process.env.PORT || 3001; // use live port or the declared one
 var cors = require('cors'); // req handled by cors first? 
 app.use(cors()) // handler
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.set("view engine", "ejs");
 // app.use(express.urlencoded({ extended: true }));
@@ -40,7 +43,7 @@ app.get("/api/rsvp", async (req, res) => { // api endpoint returns a CB. We deci
 
 app.post("/api/rsvp", async (req, res) => {
 
-  console.log(req);
+  console.log(req.body);
 
   // create client instance for auth
   const client = await auth.getClient();
@@ -54,7 +57,8 @@ app.post("/api/rsvp", async (req, res) => {
     valueInputOption: "USER_ENTERED", // parses info
     resource: {
       values: [
-        ["XXXXXXXXX", "XXXXXXXXX"], // this is one row
+        Object.keys(req.body), // this is one row
+        Object.values(req.body)
       ]
     }
   })
