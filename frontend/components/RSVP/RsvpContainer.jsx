@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import RSVPContainer from './Rsvp';
+import RSVP from './Rsvp';
 import { sendRSVP } from '../../actions/rsvp_actions';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RSVPContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(RSVP);

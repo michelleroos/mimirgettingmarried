@@ -1,7 +1,10 @@
+// ES5 way of requiring
 const express = require("express");
-const { google } = require('googleapis');
-const PORT = process.env.PORT || 3001;
 const app = express();
+const { google } = require('googleapis');
+const PORT = process.env.PORT || 3001; // use live port or the declared one
+var cors = require('cors'); // req handled by cors first? 
+app.use(cors()) // handler
 
 // app.set("view engine", "ejs");
 // app.use(express.urlencoded({ extended: true }));
@@ -18,7 +21,7 @@ const auth = new google.auth.GoogleAuth({
 const spreadsheetId = "1-R0vjBCOD5hcipk9AQbVUwQAH_0dFvQB2qs5gxsxWg0";
 const range = "rsvp";
 
-app.get("/api/rsvp", async (req, res) => {
+app.get("/api/rsvp", async (req, res) => { // api endpoint returns a CB. We decide what to do w res thru CB
 
   // create client instance for auth
   const client = await auth.getClient();
@@ -32,30 +35,30 @@ app.get("/api/rsvp", async (req, res) => {
     range,
   });
 
-  res.send(getRows.data);
+  res.send(getRows.data); // express/app sends to the client (the body)
 });
 
-// app.post("/rsvp", async (req, res) => {
+app.post("/api/rsvp", async (req, res) => {
 
-//   // create client instance for auth
-//   const client = await auth.getClient();
-//   // create Google sheets API instance
-//   const googleSheets = google.sheets({ version: "v4", auth: client })
+  // create client instance for auth
+  const client = await auth.getClient();
+  // create Google sheets API instance
+  const googleSheets = google.sheets({ version: "v4", auth: client })
 
-//   const writeRows = await googleSheets.spreadsheets.values.append({
-//     auth,
-//     spreadsheetId,
-//     range,
-//     valueInputOption: "USER_ENTERED", // parses info
-//     resource: {
-//       values: [
-//         ["XXXXXXXXX", "XXXXXXXXX"], // this is one row
-//       ]
-//     }
-//   })
+  const writeRows = await googleSheets.spreadsheets.values.append({
+    auth,
+    spreadsheetId,
+    range,
+    valueInputOption: "USER_ENTERED", // parses info
+    resource: {
+      values: [
+        ["XXXXXXXXX", "XXXXXXXXX"], // this is one row
+      ]
+    }
+  })
 
-//   res.send(writeRows);
-// });
+  res.send(writeRows);
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);

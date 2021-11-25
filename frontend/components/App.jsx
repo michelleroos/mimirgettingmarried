@@ -13,6 +13,7 @@ import Welcome from "./Welcome/Welcome";
 import WelcomeContainer from "./Welcome/WelcomeContainer";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import RSVPContainer from "./RSVP/RsvpContainer";
+import RSVP from "./RSVP/Rsvp";
 import Faq from "./FAQ/Faq";
 import Guests from "./Guests/Guests";
 import Location from "./Location/Location";
@@ -49,7 +50,7 @@ export default function App() {
             </Route>
 
             <ProtectedRoute path="/location" component={Location} />
-            <ProtectedRoute path="/rsvp" component={RSVPContainer} />
+            <ProtectedRoute path="/rsvp" component={RSVP} />
             <ProtectedRoute path="/schedule" component={Schedule} />
 
             <AuthRoute path="/login" component={LoginFormContainer} />
