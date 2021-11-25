@@ -13,7 +13,6 @@ const usersReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            console.log(action);
             return Object.assign({}, state, { [action.currentUser.user.id]: action.currentUser.user });
         case LOGOUT_CURRENT_USER:
             return _nullUser;

@@ -1,11 +1,11 @@
-import * as UserAPIUtil from '../util/user_api_util'
+import * as UserAPIUtil from '../util/user_api'
 
-export const GET_USER_INFO = "GET_USER_INFO";
+export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 
-const getUserAction = (user) => {
+const getUserAction = (currentUser) => {
   return {
-    type: GET_USER_INFO,
-    user: user
+    type: RECEIVE_CURRENT_USER,
+    currentUser: currentUser
   }
 }
 

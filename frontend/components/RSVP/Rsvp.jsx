@@ -3,24 +3,29 @@ import RSVPModal from './RsvpModal';
 import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
 
-export default function RSVP({ sendRSVP }) {
+export default function RSVP() {
+  const dispatch = useDispatch();
   
   useEffect(() => {
     document.title = `RSVP | #mimirgettingmarried`;
-    // dispatch(getUser(currentUserId))
-  });
-
-  // const dispatch = useDispatch();
-  // const currentUser = useSelector((state) => state.entities.user);
-  // const currentUserId = useSelector((state) => state.session.id);
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
+    // dispatch(getUser(currentUserId));
     fetch("http://localhost:3001/api/rsvp")
       .then((res) => res.json())
       .then((data) => setData(data.values))
       .catch((err) => console.log(err))
   }, []);
+
+  const currentUser = useSelector((state) => state.entities.user);
+  console.log(currentUser);
+  const currentUserId = useSelector((state) => state.session.id);
+  const [data, setData] = useState(null);
+
+  // useEffect(() => {
+  //   fetch("http://localhost:3001/api/rsvp")
+  //     .then((res) => res.json())
+  //     .then((data) => setData(data.values))
+  //     .catch((err) => console.log(err))
+  // }, []);
 
   const [rsvpReq, setRsvpReq] = useState({
     user: "ww",

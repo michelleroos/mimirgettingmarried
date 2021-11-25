@@ -12,7 +12,7 @@ import SignupFormContainer from "./Session/SignupFormContainer";
 import Welcome from "./Welcome/Welcome";
 import WelcomeContainer from "./Welcome/WelcomeContainer";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import RSVPContainer from "./RSVP/RsvpContainer";
+import RSVPContainer from "./RSVP/_RsvpContainer";
 import RSVP from "./RSVP/Rsvp";
 import Faq from "./FAQ/Faq";
 import Guests from "./Guests/Guests";
