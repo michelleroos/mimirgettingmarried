@@ -9,13 +9,6 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.set("view engine", "ejs");
-// app.use(express.urlencoded({ extended: true }));
-
-// app.get("/rsvp"), (req, res) => {
-//   res.render("index")
-// }
-
 const auth = new google.auth.GoogleAuth({
   keyFile: "./config/credentials.json",
   scopes: 'https://www.googleapis.com/auth/spreadsheets',
@@ -43,8 +36,6 @@ app.get("/api/rsvp", async (req, res) => { // api endpoint returns a CB. We deci
 
 app.post("/api/rsvp", async (req, res) => {
 
-  console.log(req.body);
-
   // create client instance for auth
   const client = await auth.getClient();
   // create Google sheets API instance
@@ -57,7 +48,7 @@ app.post("/api/rsvp", async (req, res) => {
     valueInputOption: "USER_ENTERED", // parses info
     resource: {
       values: [
-        Object.keys(req.body), // this is one row
+        // Object.keys(req.body), // this is one row
         Object.values(req.body)
       ]
     }

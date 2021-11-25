@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import RSVPModal from './RsvpModal';
 import { useForm } from 'react-hook-form';
+import { useSelector, useDispatch } from 'react-redux';
 
-export default function RSVP({ currentUser, sendRSVP }) {
-
+export default function RSVP({ sendRSVP }) {
+  
   useEffect(() => {
     document.title = `RSVP | #mimirgettingmarried`;
+    // dispatch(getUser(currentUserId))
   });
 
+  // const dispatch = useDispatch();
+  // const currentUser = useSelector((state) => state.entities.user);
+  // const currentUserId = useSelector((state) => state.session.id);
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -18,7 +23,7 @@ export default function RSVP({ currentUser, sendRSVP }) {
   }, []);
 
   const [rsvpReq, setRsvpReq] = useState({
-    // email: currentUser.email,
+    user: "ww",
     friday: null,
     saturday: null,
     childrenSaturday: null,
