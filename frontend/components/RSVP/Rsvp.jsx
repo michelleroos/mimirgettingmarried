@@ -25,6 +25,8 @@ export default function RSVP() {
   const [rsvpReq, setRsvpReq] = useState({
     user: null,
     friday: null,
+    childrenFriday: null,
+    childrenFridayNumber: null,
     saturday: null,
     childrenSaturday: null,
     childrenSaturdayNumber: null,
@@ -34,45 +36,44 @@ export default function RSVP() {
   });
 
   const updateRsvp = (val) => {
-    if (val === "sat-yes") {
+    if (val === "fri-yes") {
+      setRsvpReq({ ...rsvpReq, friday: "yes" });
+    } else if (val === "fri-no") {
+      setRsvpReq({ ...rsvpReq, friday: "no" });
+    } else if (val === "fri-maybe") {
+      setRsvpReq({ ...rsvpReq, friday: "maybe" });
+    } else if (val === "fri-children-yes") {
+      setRsvpReq({ ...rsvpReq, childrenFriday: "yes" });
+    } else if (val === "fri-children-no") {
+      setRsvpReq({ ...rsvpReq, childrenFriday: "no" });
+    } else if (val === "fri-children-maybe") {
+      setRsvpReq({ ...rsvpReq, childrenFriday: "maybe" });
+    } else if (val === "sat-yes") {
       setRsvpReq({ ...rsvpReq, saturday: "yes" });
-      console.log(rsvpReq);
     } else if (val === "sat-no") {
       setRsvpReq({ ...rsvpReq, saturday: "no" });
-      console.log(rsvpReq);
     } else if (val === "sat-maybe") {
       setRsvpReq({ ...rsvpReq, saturday: "maybe" });
-      console.log(rsvpReq);
     } else if (val === "sat-children-yes") {
       setRsvpReq({ ...rsvpReq, childrenSaturday: "yes" });
-      console.log(rsvpReq);
     } else if (val === "sat-children-no") {
       setRsvpReq({ ...rsvpReq, childrenSaturday: "no" });
-      console.log(rsvpReq);
     } else if (val === "sat-children-maybe") {
       setRsvpReq({ ...rsvpReq, childrenSaturday: "maybe" });
-      console.log(rsvpReq);
     } else if (!isNaN(Number(val)) ) {
       setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: Number(val) });
-      console.log(rsvpReq);
     } else if (val === "sun-yes") {
       setRsvpReq({ ...rsvpReq, sunday: "yes" });
-      console.log(rsvpReq);
     } else if (val === "sun-no") {
       setRsvpReq({ ...rsvpReq, sunday: "no" });
-      console.log(rsvpReq);
     } else if (val === "sun-maybe") {
       setRsvpReq({ ...rsvpReq, sunday: "maybe" });
-      console.log(rsvpReq);
     } else if (val === "vegan") {
       setRsvpReq({ ...rsvpReq, diet: "vegan" });
-      console.log(rsvpReq);
     } else if (val === "vegetarian") {
       setRsvpReq({ ...rsvpReq, diet: "vegetarian" });
-      console.log(rsvpReq);
     } else if (val === "other") {
       setRsvpReq({ ...rsvpReq, diet: "other" });
-      console.log(rsvpReq);
     } else if (isNaN(Number(val))) {
       setRsvpReq({ ...rsvpReq, otherDiet: val });
     }
@@ -86,6 +87,44 @@ export default function RSVP() {
     };
     fetch("http://localhost:3001/api/rsvp", reqOptions)
     .then(res => console.log('sent!'))
+  }
+
+  const Friday = () => {
+    return (
+      <div className="rsvp-q">
+        <h2>Are you joining us on Friday, 22 of July?</h2>
+        <div className="inputs">
+          <button className={rsvpReq.friday === "yes" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("fri-yes")}>Yes</button>
+          <button className={rsvpReq.friday === "no" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("fri-no")}>No</button>
+          <button className={rsvpReq.friday === "maybe" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("fri-maybe")}>Maybe</button>
+        </div>
+      </div>
+    )
+  }
+
+  const ChildrenFriday = () => {
+    return (
+      <div className="rsvp-q">
+        <h2>Are you bringing any children?</h2>
+        <div className="inputs">
+          <button className={rsvpReq.childrenFriday === "yes" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("fri-children-yes")}>Yes</button>
+          <button className={rsvpReq.childrenFriday === "no" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("fri-children-no")}>No</button>
+          <button className={rsvpReq.childrenFriday === "maybe" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("fri-children-no")}>Maybe</button>
+        </div>
+      </div>
+    )
+  }
+
+  const ChildrenFridayNumber = () => {
+    return (
+      <div className="rsvp-q">
+        <h2>How many?</h2>
+        <div className="inputs">
+          {/* <input id="children-number" type="text" onChange={e => updateRsvp(e.target.value)} /> */}
+          <input id="children-number" type="text" onChange={e => setRsvpReq({ ...rsvpReq, childrenFridayNumber: Number(e.target.value) })} />
+        </div>
+      </div>
+    )
   }
 
   const Saturday = () => {
@@ -114,13 +153,13 @@ export default function RSVP() {
     )
   }
 
-  const childrenNumber = () => {
+  const ChildrenSaturdayNumber = () => {
     return (
       <div className="rsvp-q">
         <h2>How many?</h2>
         <div className="inputs">
-          <input id="children-number" type="text" onChange={e => updateRsvp(e.target.value)} />
-          {/* <input id="children-number" type="text" onChange={() => updateRsvp("5")} /> */}
+          {/* <input id="children-number" type="text" onChange={e => updateRsvp(e.target.value)} /> */}
+          <input id="children-number" type="text" onChange={e => setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: Number(e.target.value) })} />
         </div>
       </div>
     )
@@ -179,11 +218,17 @@ export default function RSVP() {
         <form className="rsvp-form">
           <div className="rsvp-content">
 
-            {Saturday()}
+            {Friday()}
+
+            {rsvpReq.friday === "yes" || rsvpReq.friday === "maybe" ? ChildrenFriday() : <></>}
+
+            {rsvpReq.childrenFriday === "yes" || rsvpReq.childrenFriday === "maybe" ? ChildrenFridayNumber() : <></>}
+
+            {rsvpReq.friday === "no" || rsvpReq.childrenFridayNumber ? Saturday() : <></>}
 
             {rsvpReq.saturday === "yes" || rsvpReq.saturday === "maybe" ? ChildrenSaturday() : <></>}
 
-            {rsvpReq.childrenSaturday === "yes" || rsvpReq.childrenSaturday === "maybe" ? childrenNumber() : <></>}
+            {rsvpReq.childrenSaturday === "yes" || rsvpReq.childrenSaturday === "maybe" ? ChildrenSaturdayNumber() : <></>}
             
             {rsvpReq.childrenSaturday === "no" || rsvpReq.childrenSaturdayNumber ? Sunday() : <></>}
 
