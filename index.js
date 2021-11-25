@@ -40,6 +40,8 @@ app.get("/api/rsvp", async (req, res) => { // api endpoint returns a CB. We deci
 
 app.post("/api/rsvp", async (req, res) => {
 
+  console.log(req);
+
   // create client instance for auth
   const client = await auth.getClient();
   // create Google sheets API instance
