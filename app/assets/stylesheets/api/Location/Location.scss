@@ -1,27 +1,130 @@
 .location-container {
-  margin: 50px 0 50px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-rows: 200px;
+  grid-template-areas: 
+  "fri-header fri-img fri-text"
+  "sat-header sat-img-1 sat-img-2"
+  "sat-img-3 sat-text-1 sat-img-2"
+  "sat-text-2 sat-img-4 sat-text-3"
+  "sun-header sun-img-1 sun-text-1"
+  "sun-img-2 sun-text-2 sun-img-3";
 
-  h1 {
+  div {
     margin: 0 0 15px 0;
   }
 
-  .img-grid {
-
-  }
-
-  .location-text {
+  .location-text, .location-imgs {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    margin: 30px 0 0 0;
 
     p {
-      margin: 0 0 15px 0;
-      line-height: 1.5;
+      width: 80%;
+      margin: 0 0 20px 0;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      letter-spacing: 3px;
     }
   }
 
-  #map {
-    width: 100%;
-    height: 500px;
+  img {
+    width: 300px;
+    border-radius: 3px;
+  }
+
+  #fri-img {
+    grid-area: fri-img;
+  }
+
+  #fri-header {
+    grid-area: fri-header;
+  }
+
+  #fri-text {
+    grid-area: fri-text;
+  }
+
+  #sat-header {
+    grid-area: sat-header;
+  }
+
+  #sat-img-1 {
+    grid-area: sat-img-1;
+  }
+
+  #sat-img-2 {
+    grid-area: sat-img-2;
+  }
+
+  #sat-img-3 {
+    grid-area: sat-img-3;
+  }
+
+  #sat-text-1 {
+    grid-area: sat-text-1
+  }
+
+  #sat-text-2 {
+    grid-area: sat-text-2
+  }
+
+  #sat-img-4 {
+    grid-area: sat-img-4;
+  }
+
+  #sun-header {
+    grid-area: sun-header;
+  }
+
+  #sun-img-1 {
+    grid-area: sun-img-1;
+  }
+
+  #sun-text-1 {
+    grid-area: sun-text-1;
+  }
+
+  #sun-img-2 {
+    grid-area: sun-img-2;
+  }
+
+  #sun-text-2 {
+    grid-area: sun-text-2;
+  }
+
+  #sun-img-3 {
+    grid-area: sun-img-3;
   }
 }
+
+// .location-container {
+//   margin: 50px 0 50px 0;
+
+//   h1 {
+//     margin: 0 0 15px 0;
+//   }
+
+//   .img-grid {
+
+//   }
+
+//   .location-text {
+//     display: flex;
+//     flex-direction: column;
+//     margin: 30px 0 0 0;
+
+//     p {
+//       margin: 0 0 15px 0;
+//       line-height: 1.5;
+//     }
+//   }
+
+//   #map {
+//     width: 100%;
+//     height: 500px;
+//   }
+// }
