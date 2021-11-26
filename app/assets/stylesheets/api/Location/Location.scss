@@ -12,6 +12,10 @@
 
   div {
     margin: 0 0 15px 0;
+
+    &:hover {
+      font-weight: bold;
+    }
   }
 
   .location-text, .location-imgs {
@@ -34,6 +38,11 @@
   img {
     width: 300px;
     border-radius: 3px;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   #fri-img {

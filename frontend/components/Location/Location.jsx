@@ -42,7 +42,7 @@ export default function Location() {
         <img src={satThree} alt="" />
       </div>
       <div id="sat-text-1" className="location-text">
-        <p>The ceremony and reception will take place at on Saturday afternoon and evening at <a href="http://www.villarichter.cz/lang/en/" target="_blank">Villa Richter</a>. Villa Richter is a classicist summerhouse from 1836 that is a part of the St Wenceslas Vineyard complex at Prague Castle. The complex offers its visitors a unique and undisturbed view of the panoramas of Old town, Lesser Town and the Villa Belvedere.</p>
+        <p>The ceremony and reception will take place on Saturday afternoon and evening at <a href="http://www.villarichter.cz/lang/en/" target="_blank">Villa Richter</a>. Villa Richter is a classicist summerhouse from 1836 that is a part of the St Wenceslas Vineyard complex at Prague Castle. The complex offers a unique and undisturbed view of the panoramas of Old town, Lesser Town and the Villa Belvedere.</p>
         <p>Click <a href="https://www.google.com/maps/place/Villa+Richter/@50.0925169,14.406056,17z/data=!3m1!4b1!4m5!3m4!1s0x470b94e0852c61fb:0x4bb05a616b525517!8m2!3d50.0925169!4d14.4082447" target="_blank">here</a> for Villa Richter on Google Maps.</p>
       </div>
       <div id="sat-text-2" className="location-text">
@@ -53,7 +53,7 @@ export default function Location() {
       </div>
       <div id="sat-text-3" className="location-text">
         <p>The ceremony will be outdoor, weather permitting, and the reception under the marquee as pictured. The late evening music will be moved from the marquee to the greenhouse.</p>
-        <p>Vibe and dress code is festive. Photopraphy by Exclusive Weddings in Prague.</p>
+        <p>Vibe and dress code is festive. Photopraphy by <a href="http://www.exclusiveweddingsinprague.com/" target="_blank">Exclusive Weddings in Prague</a>.</p>
       </div>
       <div id="sun-header" className="location-headers location-text">
         <h1>SUNDAY</h1>
