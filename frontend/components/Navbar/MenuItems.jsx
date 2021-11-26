@@ -3,10 +3,6 @@ export const MenuItems = [
         title: 'Rsvp',
         cName: 'nav-links'
     },
-    // {
-    //     title: 'Guests',
-    //     cName: 'nav-links'
-    // },
     {
         title: 'Location',
         cName: 'nav-links'
@@ -16,15 +12,7 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
-        title: 'Prague',
-        cName: 'nav-links'
-    },
-    {
         title: 'Faq',
         cName: 'nav-links'
     },
-    // {
-    //     title: 'Account',
-    //     cName: 'nav-links'
-    // }
 ]

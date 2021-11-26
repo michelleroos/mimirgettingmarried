@@ -42,7 +42,8 @@ export default function Location() {
         <img src={satThree} alt="" />
       </div>
       <div id="sat-text-1" className="location-text">
-        <p>The ceremony and reception will take place at Villa Richter, a classicist summerhouse from 1836 that is a part of the St Wenceslas Vineyard complex at Prague Castle. The complex offers its visitors a unique and undisturbed view of the panoramas of Old town, Lesser Town and the Villa Belvedere.</p>
+        <p>The ceremony and reception will take place at on Saturday afternoon and evening at <a href="http://www.villarichter.cz/lang/en/" target="_blank">Villa Richter</a>. Villa Richter is a classicist summerhouse from 1836 that is a part of the St Wenceslas Vineyard complex at Prague Castle. The complex offers its visitors a unique and undisturbed view of the panoramas of Old town, Lesser Town and the Villa Belvedere.</p>
+        <p>Click <a href="https://www.google.com/maps/place/Villa+Richter/@50.0925169,14.406056,17z/data=!3m1!4b1!4m5!3m4!1s0x470b94e0852c61fb:0x4bb05a616b525517!8m2!3d50.0925169!4d14.4082447" target="_blank">here</a> for Villa Richter on Google Maps.</p>
       </div>
       <div id="sat-text-2" className="location-text">
         <p>The Villa features restaurant Piano Nobile which has a sunny terrace overlooking the vineyard. The  menu at Piano Nobile is inspired by Czech and European cousine and uses seasonal and local ingredients.</p>
@@ -61,12 +62,14 @@ export default function Location() {
         <img src={sunOne} alt="" />
       </div>
       <div id="sun-text-1" className="location-text">
-        <p>We will be hosting a party with a Berlin based surprise DJ on Sunday at the Glass Bar.</p>
+        <p>On Sunday afternoon we will be hosting a party with a Berlin based surprise DJ on Sunday at <a href="https://www.glassbar.cz/">Glass Bar</a>.</p>
+        <p>Click <a href="https://www.google.com/maps/place/Glass+Bar/@50.075451,14.4120057,17z/data=!3m1!4b1!4m5!3m4!1s0x470b94f6c339f665:0x89f8681b400807c9!8m2!3d50.0755656!4d14.4141744" target="_blank">here</a> for Glass Bar on Google Maps.</p>
       </div>
       <div id="sun-img-2" className="location-imgs">
         <img src={sunTwo} alt="" />
       </div>
       <div id="sun-text-2" className="location-text">
+        
         <p>Part indoor lounge with panoramic windows and part open-air rooftop terrace and located on top of  famous and spectacular Dancing House building, the Glass Bar is a relaxing café-style rooftop bar, offering grand views over the Prague Castle, the National Theatre and the river.</p>
       </div>
       <div id="sun-img-3" className="location-imgs">
