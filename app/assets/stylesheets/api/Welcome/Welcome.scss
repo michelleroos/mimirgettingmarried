@@ -1,3 +1,78 @@
+#welcome-container {
+  #logged-in-img-grid {
+    column-count: 3;
+    column-width: 33%;
+
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    -webkit-column-width: 33%;
+    -moz-column-width: 33%;
+
+    .img-wrap {
+      opacity: 0.8;
+      // -webkit-transition: all 350ms ease;
+      // transition: all 350ms ease;
+      margin-bottom: 12px;
+      cursor: pointer;
+
+      img {
+        border-radius: 2px;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  #logged-in-img-carousel {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    i {
+      font-size: 50px;
+      position: absolute;
+      color: black;
+      cursor: pointer;
+      z-index: 100;
+      user-select: none;
+    }
+
+    .fa-caret-left {
+      top: 50%;
+      left: 32px;
+    }
+
+    .fa-caret-right {
+      top: 50%;
+      right: 32px;
+    }
+
+    .img-container {
+      opacity: 0;
+      transition-duration: 1s ease;
+
+      img {
+
+      }
+
+      .carousel-img {
+        width: 1000px;
+        // height: 600px;
+        border-radius: 6px;
+      }
+    }
+
+    .active {
+      opacity: 1;
+      transition-duration: 1s;
+      transform: scale(1.08);
+    }
+  }
+
   #disclosure-modal-container {
     #modal-bg {
       background-color: rgba(0, 0, 0, 0.5);
@@ -11,43 +86,25 @@
     }
 
     #disclosure-modal {
-      // width: 500px;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      // transform: translate(-50%, -50%);
-      z-index: 1000;
+      // // width: 500px;
+      // position: fixed;
+      // top: 50%;
+      // left: 50%;
+      // // transform: translate(-50%, -50%);
+      // z-index: 1000;
+
+        position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
       img {
-        width: 50%;
+        width: 70%;
       }
     }
   }
 
-.img-grid {
-  column-count: 3;
-  column-width: 33%;
-
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  -webkit-column-width: 33%;
-  -moz-column-width: 33%;
-
-  .img-wrap {
-    opacity: 0.8;
-    // -webkit-transition: all 350ms ease;
-    // transition: all 350ms ease;
-    margin-bottom: 12px;
-    cursor: pointer;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-}
-
-#welcome-container {
-  #img-container {
+  #logged-out-img-container {
     display: flex;
     align-items: center;
     justify-content: center;

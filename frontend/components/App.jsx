@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import {
-    Route,
-    Redirect,
-    Switch,
-    Link,
-    HashRouter
+  Route,
+  Redirect,
+  Switch,
+  Link,
+  HashRouter
 } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
@@ -22,23 +22,19 @@ import Welcome from "./Welcome/Welcome";
 
 export default function App() {
 
-    const [selectedImg, setSelectedImg] = useState(null);
+  const [selectedImg, setSelectedImg] = useState(null);
 
-    return (
-        <div className="app" >
+  return (
+    <div className="app" >
 
-            <NavbarContainer />
-
-            <Route exact path="/" component={Welcome} />
-
-            <ProtectedRoute path="/faq" component={Faq} />
-            <ProtectedRoute path="/location" component={Location} />
-            <ProtectedRoute path="/rsvp" component={RSVP} />
-            <ProtectedRoute path="/schedule" component={Schedule} />
-
-            <AuthRoute path="/login" component={LoginFormContainer} />
-
-            <Footer />
-        </div >
-    )
+      <NavbarContainer />
+      <Route exact path="/" component={Welcome} />
+      <ProtectedRoute path="/faq" component={Faq} />
+      <ProtectedRoute path="/location" component={Location} />
+      <ProtectedRoute path="/rsvp" component={RSVP} />
+      <ProtectedRoute path="/schedule" component={Schedule} />
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <Footer />
+    </div >
+  )
 }
