@@ -25,19 +25,20 @@ export default function Welcome() {
 
   if (currentUserId) {
     return (
-      <ImageCarousel />
+          <ImageCarousel open={open} setOpen={setOpen} img={img}/>
       // <div id="welcome-container">
       //   {/* <UploadForm pathname={pathname} /> */}
       //   <div id="logged-in-img-grid">
       //     {docs && docs.map(doc => (
       //       <div className="img-wrap"
-      //         key={doc.id}
-      //         onClick={() => openModal(doc.url)}>
+      //       key={doc.id}
+      //       onClick={() => openModal(doc.url)}>
       //         <img src={doc.url} alt="uploaded pic" style={{ width: '100%' }}/>
       //       </div>
       //     ))}
       //   </div>
-      //   <Image open={open} setOpen={setOpen} img={img}/>
+      //   <ImageCarousel open={open} setOpen={setOpen} img={img}/>
+      //   {/* <Image open={open} setOpen={setOpen} img={img}/> */}
       // </div>
     )
   } else {

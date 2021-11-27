@@ -1,4 +1,7 @@
 #welcome-container {
+  height: calc(100vh -100px);
+  // width: 100%;
+
   #logged-in-img-grid {
     column-count: 3;
     column-width: 33%;
@@ -25,54 +28,6 @@
     }
   }
 
-  #logged-in-img-carousel {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    i {
-      font-size: 50px;
-      position: absolute;
-      color: black;
-      cursor: pointer;
-      z-index: 100;
-      user-select: none;
-    }
-
-    .fa-caret-left {
-      top: 50%;
-      left: 32px;
-    }
-
-    .fa-caret-right {
-      top: 50%;
-      right: 32px;
-    }
-
-    .img-container {
-      opacity: 0;
-      transition-duration: 1s ease;
-
-      img {
-
-      }
-
-      .carousel-img {
-        width: 1000px;
-        // height: 600px;
-        border-radius: 6px;
-      }
-    }
-
-    .active {
-      opacity: 1;
-      transition-duration: 1s;
-      transform: scale(1.08);
-    }
-  }
-
   #disclosure-modal-container {
     #modal-bg {
       background-color: rgba(0, 0, 0, 0.5);
@@ -85,21 +40,64 @@
       cursor: pointer;
     }
 
-    #disclosure-modal {
-      // // width: 500px;
-      // position: fixed;
-      // top: 50%;
-      // left: 50%;
-      // // transform: translate(-50%, -50%);
-      // z-index: 1000;
+    // #disclosure-modal {
+    //   // // width: 500px;
+    //   // position: fixed;
+    //   // top: 50%;
+    //   // left: 50%;
+    //   // // transform: translate(-50%, -50%);
+    //   // z-index: 1000;
 
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+
+    //   img {
+    //     width: 70%;
+    //   }
+    // }
+
+    #img-carousel {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        font-size: 50px;
         position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+        color: pink;
+        cursor: pointer;
+        z-index: 100;
+        user-select: none;
+      }
 
-      img {
-        width: 70%;
+      .fa-caret-left {
+        top: 50%;
+        left: 32px;
+      }
+
+      .fa-caret-right {
+        top: 50%;
+        right: 32px;
+      }
+
+      .img-container {
+        opacity: 0;
+        transition-duration: 1s ease;
+
+        img {
+          width: 50%;
+          // max-height: 10%;
+          border-radius: 3px;
+        }
+      }
+
+      .active {
+        opacity: 1;
+        transition-duration: 1s;
+        transform: scale(1.08);
       }
     }
   }
