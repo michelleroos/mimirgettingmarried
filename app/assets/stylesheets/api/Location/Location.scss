@@ -1,4 +1,5 @@
 .location-container {
+  height: calc(100vh - 100px);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   // grid-template-rows: 200px;

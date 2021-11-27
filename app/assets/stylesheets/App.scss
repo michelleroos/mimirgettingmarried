@@ -1,48 +1,49 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    color: #666;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: #666;
 
-    p {
-        font-size: 12px;
-    }
+  p {
+    font-size: 12px;
+  }
 }
 
 body {
-    max-width: 960px;
-    margin: 0 auto;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-a, button {
-    cursor: pointer;
-    text-decoration: none;
+a,
+button {
+  cursor: pointer;
+  text-decoration: none;
 }
 
 a {
-    color: pink;
-    
-    p {
-        color: pink;
+  color: pink;
 
-        &:hover {
-            font-weight: bold;
-            color: rgb(251, 150, 167);
-        }
-    }
-    
-    i {
-        color: rgb(251, 150, 167);
-    }
+  p {
+    color: pink;
 
     &:hover {
-        // text-decoration: underline;
-        font-weight: bold;
-        color: rgb(251, 150, 167);
+      font-weight: bold;
+      color: rgb(251, 150, 167);
     }
+  }
+
+  i {
+    color: rgb(251, 150, 167);
+  }
+
+  &:hover {
+    // text-decoration: underline;
+    font-weight: bold;
+    color: rgb(251, 150, 167);
+  }
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }

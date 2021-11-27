@@ -215,7 +215,7 @@ export default function RSVP() {
     return (
       <div className="rsvp-container">
 
-        <form className="rsvp-form">
+        {/* <form className="rsvp-form"> */}
           <div className="rsvp-content">
 
             {Friday()}
@@ -239,7 +239,7 @@ export default function RSVP() {
             {rsvpReq.diet === "other" ? SpecifyOtherDiet() : <></>}
 
           </div>
-        </form>
+        {/* </form> */}
       </div>
     )
   }

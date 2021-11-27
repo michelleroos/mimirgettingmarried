@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: calc(100vh - 100px);
   // height: calc(100vh - 110px);
   // display: block;
   // position: relative;
@@ -22,12 +22,12 @@
   //   z-index: -1;
   // }
 
-  form {
+  // form {
     .rsvp-content {
       display: flex;
       flex-direction: column;
-      // justify-content: center;
-      // align-items: center;
+      height: calc(100vh - 100px);
+      justify-content: center;
 
       .rsvp-q {
         h2 {
@@ -116,7 +116,7 @@
         }
       }
     }
-  }
+  // }
 
   // .rsvp-btn {
   //   background-color: transparent;
