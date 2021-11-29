@@ -63,6 +63,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      height: calc(100vh - 100px);
 
       i {
         font-size: 50px;
@@ -86,12 +87,11 @@
       .img-container {
         opacity: 0;
         transition-duration: 1s ease;
-
-        img {
-          width: 50%;
-          // max-height: 10%;
-          border-radius: 3px;
-        }
+        width: 50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 3px;
       }
 
       .active {

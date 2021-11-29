@@ -29,7 +29,7 @@ export default function ImageCarousel() {
           <div id="disclosure-modal">
             <img src={img} />
           </div> */}
-          <div id="img-carousel">
+          {/* <div id="img-carousel">
             <i className="fas fa-caret-left" onClick={nextImg}></i>
             <i className="fas fa-caret-right" onClick={prevImg}></i>
             {docs.map((img, idx) => {
@@ -40,6 +40,17 @@ export default function ImageCarousel() {
                   )}
                 </div>
               )
+            })}
+          </div> */}
+          <div id="img-carousel">
+            <i className="fas fa-caret-left" onClick={nextImg}></i>
+            <i className="fas fa-caret-right" onClick={prevImg}></i>
+            {docs.map((img, idx) => {
+              if (idx === currentImg) {
+                return (
+                  <img src={img.url} alt={img.id} key={idx} className={idx === currentImg ? "img-container active" : "img-container"} />
+                )
+              }
             })}
           </div>
         </div>
