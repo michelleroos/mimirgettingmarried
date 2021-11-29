@@ -17,29 +17,34 @@ export default function Welcome() {
   const { docs } = useFirestore('am-photos');
   const [open, setOpen] = useState(false);
   const [img, setImg] = useState('');
+  const [index, setIndex] = useState(0);
 
-  const openModal = (imgUrl) => {
+  const openCarousel = (idx) => {
     setOpen(true);
-    setImg(imgUrl);
+    setIndex(idx)
   }
+
+  // const openModal = (imgUrl) => {
+  //   setOpen(true);
+  //   setImg(imgUrl);
+  // }
 
   if (currentUserId) {
     return (
-          <ImageCarousel open={open} setOpen={setOpen} img={img}/>
-      // <div id="welcome-container">
-      //   {/* <UploadForm pathname={pathname} /> */}
-      //   <div id="logged-in-img-grid">
-      //     {docs && docs.map(doc => (
-      //       <div className="img-wrap"
-      //       key={doc.id}
-      //       onClick={() => openModal(doc.url)}>
-      //         <img src={doc.url} alt="uploaded pic" style={{ width: '100%' }}/>
-      //       </div>
-      //     ))}
-      //   </div>
-      //   <ImageCarousel open={open} setOpen={setOpen} img={img}/>
-      //   {/* <Image open={open} setOpen={setOpen} img={img}/> */}
-      // </div>
+          // <ImageCarousel open={open} setOpen={setOpen} img={img}/>
+
+      <div id="welcome-container">
+        {/* <UploadForm pathname={pathname} /> */}
+        <div id="logged-in-img-grid">
+          {docs && docs.map((doc, idx) => (
+            <div className="img-wrap" key={idx} onClick={() => openCarousel(idx)}>
+              <img src={doc.url} alt="uploaded pic" style={{ width: '100%' }}/>
+            </div>
+          ))}
+        </div>
+        {open ? <ImageCarousel open={open} setOpen={setOpen} index={index} /> : null}
+        {/* <Image open={open} setOpen={setOpen} img={img}/> */}
+      </div>
     )
   } else {
     return (

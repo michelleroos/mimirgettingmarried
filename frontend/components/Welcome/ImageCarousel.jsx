@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import useFirestore from '../../hooks/useFirestore';
 
-export default function ImageCarousel() {
+export default function ImageCarousel({open, setOpen, index}) {
 
   const { docs } = useFirestore('am-photos');
-  const [currentImg, setCurrentImg] = useState(0);
+  const [currentImg, setCurrentImg] = useState(index);
   const length = docs.length || null;
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
   const prevImg = () => {
     setCurrentImg(currentImg === 0 ? length - 1 : currentImg - 1)
@@ -21,10 +21,10 @@ export default function ImageCarousel() {
     return null;
   } else {
     return (
-      <div id="welcome-container">
+      // <div id="welcome-container">
         <div id="disclosure-modal-container">
-          {/* <div id="modal-bg" onClick={() => setOpen(false)}>
-          </div> */}
+          <div id="modal-bg" onClick={() => setOpen(false)}>
+          </div>
           {/* 
           <div id="disclosure-modal">
             <img src={img} />
@@ -54,7 +54,7 @@ export default function ImageCarousel() {
             })}
           </div>
         </div>
-      </div>
+      // </div>
     )
   }
 }
