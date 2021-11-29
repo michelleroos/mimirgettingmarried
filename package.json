@@ -11,7 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --watch --mode=development",
-    "build": "webpack --mode=production",
+    "prod": "webpack --mode=production",
     "start": "nodemon index.js"
   },
   "proxy": "http://localhost:3001",
