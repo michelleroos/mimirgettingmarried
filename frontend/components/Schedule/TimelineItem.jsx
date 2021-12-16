@@ -13,7 +13,7 @@ export default function TimelineItem({ data }) {
         <div id="text" className="schedule-detail">
           <p>{data.text}</p>
         </div>
-        <span className="circle"></span>
+        {/* <span className="circle"></span> */}
       </div>
     </div>
   )

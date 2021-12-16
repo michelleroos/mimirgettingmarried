@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import useFirestore from '../../hooks/useFirestore';
-import Image from './Image';
+import Image from './_Image';
 import UploadForm from '../UploadForm/UploadForm';
 import ImageCarousel from './ImageCarousel';
 
