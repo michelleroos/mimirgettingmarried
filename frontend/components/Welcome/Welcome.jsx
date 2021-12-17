@@ -66,7 +66,8 @@ export default function Welcome() {
   return (
     <div id="welcome-container">
       {currentUserId ? loggedIn : loggedOut}
-      {img ? <ImageCarousel open={open} setOpen={setOpen} index={index} img={img} setImg={setImg} imgID={imgID}/> : null}
+      {img && <ImageCarousel img={img} setImg={setImg} imgID={imgID} />}
+      {/* {img ? <ImageCarousel open={open} setOpen={setOpen} index={index} img={img} setImg={setImg} imgID={imgID}/> : null} */}
     </div>
   )
 

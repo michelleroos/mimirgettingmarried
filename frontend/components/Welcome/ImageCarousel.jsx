@@ -2,18 +2,20 @@ import React, { useEffect, useState } from 'react';
 // import { useSelector } from 'react-redux';
 // import useFirestore from '../../hooks/useFirestore';
 
-export default function ImageCarousel({ open, setOpen, index, img, setImg, imgID }) {
+export default function ImageCarousel({ img, setImg, imgID }) {
+// export default function ImageCarousel({ open, setOpen, index, img, setImg, imgID }) {
 
   // const { docs } = useFirestore('am-photos');
   // const [currentImg, setCurrentImg] = useState(index);
   // const length = docs.length || null;
 
   const handleClick = (e) => {
-    if (e.target.classList.contains('modal-bg')) setImg(null)
+    // if (e.target.id.contains('modal-bg')) setImg(null);
+    if (e.target.id === 'modal-bg') setImg(null);
   }
 
   const carousel = (
-    <div id="modal-bg" onClick={(e) => handleClick(e)}>
+    <div id="modal-bg" onClick={handleClick}>
       <img src={img} alt={imgID} />
     </div>
   )
