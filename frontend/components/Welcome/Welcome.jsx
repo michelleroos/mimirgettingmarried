@@ -24,40 +24,36 @@ export default function Welcome() {
     setIndex(idx)
   }
 
+  const loggedIn = (
+    <div id="logged-in-img-grid">
+      {docs && docs.map((doc, idx) => (
+        <div className="img-wrap" key={idx} onClick={() => openCarousel(idx)}>
+          <img src={doc.url} alt={doc.id} style={{ width: '100%' }} />
+        </div>
+      ))}
+      {open ? <ImageCarousel open={open} setOpen={setOpen} index={index} /> : null}
+    </div>
+  )
+
+  const loggedOut = (
+    <div id="logged-out-img-container">
+      <Link to="/login">
+        <button id="log-in-btn" type="submit">
+          <p>Log in</p>
+          <i className="fas fa-arrow-right"></i>
+        </button>
+      </Link>
+    </div>
+  )
+
+  return (
+    <div id="welcome-container">
+      {currentUserId ? loggedIn : loggedOut}
+    </div>
+  )
+
   // const openModal = (imgUrl) => {
   //   setOpen(true);
   //   setImg(imgUrl);
   // }
-
-  if (currentUserId) {
-    return (
-          // <ImageCarousel open={open} setOpen={setOpen} img={img}/>
-
-      <div id="welcome-container">
-        {/* <UploadForm pathname={pathname} /> */}
-        <div id="logged-in-img-grid">
-          {docs && docs.map((doc, idx) => (
-            <div className="img-wrap" key={idx} onClick={() => openCarousel(idx)}>
-              <img src={doc.url} alt="uploaded pic" style={{ width: '100%' }}/>
-            </div>
-          ))}
-        </div>
-        {open ? <ImageCarousel open={open} setOpen={setOpen} index={index} /> : null}
-        {/* <Image open={open} setOpen={setOpen} img={img}/> */}
-      </div>
-    )
-  } else {
-    return (
-      <div id="welcome-container">
-        <div id="logged-out-img-container">
-          <Link to="/login">
-            <button id="log-in-btn" type="submit">
-              <p>Log in</p>
-              <i className="fas fa-arrow-right"></i>
-            </button>
-          </Link>
-        </div>
-      </div>
-    )
-  }
 };
