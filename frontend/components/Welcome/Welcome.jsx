@@ -16,7 +16,9 @@ export default function Welcome() {
   const currentUserId = useSelector((state) => state.session.id);
   const { docs } = useFirestore('am-photos');
   const [open, setOpen] = useState(false);
-  const [img, setImg] = useState('');
+  const [img, setImg] = useState(null);
+  const [imgID, setImgID] = useState(null);
+  // const [img, setImg] = useState('');
   const [index, setIndex] = useState(0);
 
   const openCarousel = (idx) => {
@@ -24,14 +26,29 @@ export default function Welcome() {
     setIndex(idx)
   }
 
+  const handleClick = (url, id) => {
+    setImg(url);
+    setImgID(id);
+  }
+
+  // const loggedIn = (
+  //   <div id="logged-in-img-grid">
+  //     {docs && docs.map((doc, idx) => (
+  //       <div className="img-wrap" key={idx} onClick={() => openCarousel(idx)}>
+  //         <img src={doc.url} alt={doc.id} style={{ width: '100%' }} />
+  //       </div>
+  //     ))}
+  //     {open ? <ImageCarousel open={open} setOpen={setOpen} index={index} /> : null}
+  //   </div>
+  // )
+
   const loggedIn = (
     <div id="logged-in-img-grid">
       {docs && docs.map((doc, idx) => (
-        <div className="img-wrap" key={idx} onClick={() => openCarousel(idx)}>
-          <img src={doc.url} alt={doc.id} style={{ width: '100%' }} />
+        <div className="img-wrap" key={idx} onClick={() => handleClick(doc.url, doc.id)}>
+          <img src={doc.url} alt={doc.id} />
         </div>
       ))}
-      {open ? <ImageCarousel open={open} setOpen={setOpen} index={index} /> : null}
     </div>
   )
 
@@ -49,6 +66,7 @@ export default function Welcome() {
   return (
     <div id="welcome-container">
       {currentUserId ? loggedIn : loggedOut}
+      {img ? <ImageCarousel open={open} setOpen={setOpen} index={index} img={img} setImg={setImg} imgID={imgID}/> : null}
     </div>
   )
 
