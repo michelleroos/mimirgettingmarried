@@ -3,26 +3,29 @@
   position: relative;
 
   #logged-in-img-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 40px;
+    column-count: 3;
+    column-width: 33%;
 
     .img-wrap {
       opacity: 0.8;
       cursor: pointer;
       overflow: hidden;
-      height: 0;
-      padding: 50% 0;
-      position: relative;
+      margin-bottom: 24px;
+
+      // height: 0;
+      // padding: 50% 0;
+      // position: relative;
 
       img {
         border-radius: 2px;
-        min-width: 100%;
-        min-height: 100%;
-        max-width: 150%;
-        position: absolute;
-        top: 0;
-        left: 0;
+        // min-width: 100%;
+        // min-height: 100%;
+        // max-width: 150%;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        width: 95%;
+        height: auto;
       }
 
       &:hover {
@@ -49,6 +52,13 @@
       box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
       border: 3px solid white;
       cursor: auto;
+    }
+
+    p {
+      background-color: white;
+      margin: 10px;
+      color: black;
+      font-size: 18px;
     }
   }
 
