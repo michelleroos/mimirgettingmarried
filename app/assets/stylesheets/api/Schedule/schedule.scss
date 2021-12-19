@@ -1,8 +1,42 @@
 #schedule-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: calc(100vh - 100px);
+
+  .day-schedule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+
+    .detailed-schedule-container {
+      display: flex;
+      
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 30px;
+
+        i, h3, p {
+          margin: 5px;
+        }
+      }
+    }
+  }
+
+  i {
+    font-size: 24px;
+    color: pink;
+  }
+
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
   
   #timeline-container {
     margin: 50px 0 100px 0;
