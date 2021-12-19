@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import RSVPModal from './RsvpModal';
 import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
 
