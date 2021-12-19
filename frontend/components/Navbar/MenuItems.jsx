@@ -4,10 +4,6 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
-        title: 'Location',
-        cName: 'nav-links'
-    },
-    {
         title: 'Schedule',
         cName: 'nav-links'
     },

@@ -30,7 +30,6 @@ export default function App() {
       <NavbarContainer />
       <Route exact path="/" component={Welcome} />
       <ProtectedRoute path="/faq" component={Faq} />
-      <ProtectedRoute path="/location" component={Location} />
       <ProtectedRoute path="/rsvp" component={RSVP} />
       <ProtectedRoute path="/schedule" component={Schedule} />
       <AuthRoute path="/login" component={LoginFormContainer} />
