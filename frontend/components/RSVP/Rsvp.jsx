@@ -72,9 +72,9 @@ export default function RSVP() {
       setShowChildrenSaturday(true);
     } else if (val === "sat-children-yes") {
       setRsvpReq({ ...rsvpReq, childrenSaturday: "yes" });
-      // setShowChildrenSaturdayNumber(true);
-      setShowChildrenSaturday(false);
-      setShowSunday(true);
+      setShowChildrenSaturdayNumber(true);
+      // setShowChildrenSaturday(false);
+      // setShowSunday(true);
     } else if (val === "sat-children-no") {
       setRsvpReq({ ...rsvpReq, childrenSaturday: "no" });
       setShowSaturday(false);
@@ -82,14 +82,14 @@ export default function RSVP() {
       setShowSunday(true);
     } else if (val === "sat-children-maybe") {
       setRsvpReq({ ...rsvpReq, childrenSaturday: "maybe" });
-      // setShowChildrenSaturdayNumber(true);
-      setShowChildrenSaturday(false);
+      setShowChildrenSaturdayNumber(true);
+      // setShowChildrenSaturday(false);
+      // setShowSunday(true);
+    } else if (!isNaN(val)) {
+      setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: val });
+      setShowSaturday(false);
+      setShowChildrenSaturdayNumber(false);
       setShowSunday(true);
-    // } else if (!isNaN(Number(val))) {
-    //   setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: Number(val) });
-    //   setShowSaturday(false);
-    //   setShowChildrenSaturdayNumber(false);
-    //   setShowSunday(true);
     } else if (val === "sun-yes") {
       setRsvpReq({ ...rsvpReq, sunday: "yes" });
       setShowSunday(false);
@@ -213,7 +213,8 @@ export default function RSVP() {
         <h2>How many?</h2>
         <div className="inputs">
           {/* <input id="children-number" type="text" onChange={e => updateRsvp(e.target.value)} /> */}
-          <input id="children-number" type="text" onChange={e => setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: Number(e.target.value) })} />
+          {/* <input id="children-number" type="text" onChange={e => setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: Number(e.target.value) })} /> */}
+          <input id="children-number" type="number" onChange={e => setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: e.target.value })} />
         </div>
       </div>
     )
@@ -296,7 +297,7 @@ export default function RSVP() {
 
       {showChildrenSaturday && ChildrenSaturday()}
 
-      {showChildrenSaturdayNumber && ChildrenSaturdayNumber()}
+      {showChildrenSaturdayNumber && !rsvpReq.ChildrenSaturdayNumber ? ChildrenSaturdayNumber() : null}
 
       {showSunday && Sunday()}
 
