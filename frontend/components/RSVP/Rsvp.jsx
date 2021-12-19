@@ -5,10 +5,10 @@ import { useSelector, useDispatch } from 'react-redux';
 
 export default function RSVP() {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     document.title = `RSVP | #mimirgettingmarried`;
-      
+
     dispatch(getUser(currentUserId))
       .then((res) => setRsvpReq({ ...rsvpReq, user: res.currentUser.user.email }))
 
@@ -21,6 +21,17 @@ export default function RSVP() {
   const currentUser = useSelector((state) => state.entities.user.user);
   const currentUserId = useSelector((state) => state.session.id);
   const [data, setData] = useState(null);
+  const [users, setUsers] = useState(null);
+
+  // const updateValues = (responses) => {
+  //   setData(responses.values);
+  //   console.log(data);
+  //   const userArr = [];
+  //   responses.values.forEach((val) => {
+  //     userArr.push(val[0])
+  //   })
+  //   setUsers(userArr);
+  // }
 
   const [rsvpReq, setRsvpReq] = useState({
     user: null,
@@ -38,20 +49,32 @@ export default function RSVP() {
   const updateRsvp = (val) => {
     if (val === "fri-yes") {
       setRsvpReq({ ...rsvpReq, friday: "yes" });
+      setShowFriday(false);
+      setShowChildrenFriday(true);
     } else if (val === "fri-no") {
       setRsvpReq({ ...rsvpReq, friday: "no" });
+      setShowFriday(false);
+      setShowSaturday(true);
     } else if (val === "fri-maybe") {
       setRsvpReq({ ...rsvpReq, friday: "maybe" });
+      setShowFriday(false);
+      setShowChildrenFriday(true);
     } else if (val === "fri-children-yes") {
       setRsvpReq({ ...rsvpReq, childrenFriday: "yes" });
+      setShowChildrenFriday(false);
+      setShowChildrenFridayNumber(true)
     } else if (val === "fri-children-no") {
       setRsvpReq({ ...rsvpReq, childrenFriday: "no" });
     } else if (val === "fri-children-maybe") {
       setRsvpReq({ ...rsvpReq, childrenFriday: "maybe" });
+      setShowChildrenFriday(false);
+      setShowChildrenFridayNumber(true)
     } else if (val === "sat-yes") {
       setRsvpReq({ ...rsvpReq, saturday: "yes" });
     } else if (val === "sat-no") {
       setRsvpReq({ ...rsvpReq, saturday: "no" });
+      setShowSaturday(false);
+      setShowSunday(true);
     } else if (val === "sat-maybe") {
       setRsvpReq({ ...rsvpReq, saturday: "maybe" });
     } else if (val === "sat-children-yes") {
@@ -60,34 +83,48 @@ export default function RSVP() {
       setRsvpReq({ ...rsvpReq, childrenSaturday: "no" });
     } else if (val === "sat-children-maybe") {
       setRsvpReq({ ...rsvpReq, childrenSaturday: "maybe" });
-    } else if (!isNaN(Number(val)) ) {
+    } else if (!isNaN(Number(val))) {
       setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: Number(val) });
+      // setShowChildrenFridayNumber(false);
+      // setShowSaturday(true);
     } else if (val === "sun-yes") {
       setRsvpReq({ ...rsvpReq, sunday: "yes" });
+      // setShowSaturday(false);
     } else if (val === "sun-no") {
       setRsvpReq({ ...rsvpReq, sunday: "no" });
+      setShowSunday(false);
+      setNoJoin(true);
+      setRsvpOption(true);
     } else if (val === "sun-maybe") {
       setRsvpReq({ ...rsvpReq, sunday: "maybe" });
+      // setShowSaturday(false);
     } else if (val === "vegan") {
       setRsvpReq({ ...rsvpReq, diet: "vegan" });
+      // setShowDiet(false);
     } else if (val === "vegetarian") {
       setRsvpReq({ ...rsvpReq, diet: "vegetarian" });
+      // setShowDiet(false);
     } else if (val === "other") {
       setRsvpReq({ ...rsvpReq, diet: "other" });
+      // setShowDiet(false);
+      // setShowOtherDiet(true);
     } else if (isNaN(Number(val))) {
       setRsvpReq({ ...rsvpReq, otherDiet: val });
+      // setShowOtherDiet(false);
     }
   }
 
   const sendRsvp = (req) => {
     const reqOptions = {
       method: "POST",
-      headers: {"Content-Type": "application/json"},
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req)
     };
     fetch("http://localhost:3001/api/rsvp", reqOptions)
-    .then(res => console.log('sent!'))
+      .then(res => console.log('sent!'))
   }
+
+  const [showFriday, setShowFriday] = useState(true);
 
   const Friday = () => {
     return (
@@ -102,6 +139,8 @@ export default function RSVP() {
     )
   }
 
+  const [showChildrenFriday, setShowChildrenFriday] = useState(false);
+
   const ChildrenFriday = () => {
     return (
       <div className="rsvp-q">
@@ -115,6 +154,8 @@ export default function RSVP() {
     )
   }
 
+  const [showChildrenFridayNumber, setShowChildrenFridayNumber] = useState(null);
+
   const ChildrenFridayNumber = () => {
     return (
       <div className="rsvp-q">
@@ -126,6 +167,8 @@ export default function RSVP() {
       </div>
     )
   }
+
+  const [showSaturday, setShowSaturday] = useState(null);
 
   const Saturday = () => {
     return (
@@ -165,6 +208,8 @@ export default function RSVP() {
     )
   }
 
+  const [showSunday, setShowSunday] = useState(null);
+
   const Sunday = () => {
     return (
       <div className="rsvp-q">
@@ -197,11 +242,13 @@ export default function RSVP() {
       <div className="rsvp-q">
         <h2>Please specify</h2>
         <div className="inputs">
-          <input id="other-diet" type="text" onChange={e => updateRsvp(e.target.value)}/>
+          <input id="other-diet" type="text" onChange={e => updateRsvp(e.target.value)} />
         </div>
       </div>
     )
   }
+
+  const [rsvpOption, setRsvpOption] = useState(null);
 
   const RsvpBtn = () => {
     return (
@@ -209,38 +256,69 @@ export default function RSVP() {
     )
   }
 
-  if (!data) {
-    return null;
-  } else {
+  const [noJoin, setNoJoin] = useState(null);
+
+  const NotJoining = () => {
+    return (
+      <div className="rsvp-q">
+        <h2>OK :(</h2>
+      </div>
+    )
+  }
+
+  const formSubmitted = (
+    <div id="rsvp-response">
+      You've already RSVP'd
+    </div>
+  )
+
+  const form = (
+    <div className="rsvp-content">
+
+      {showFriday && Friday()}
+
+      {showChildrenFriday && ChildrenFriday()}
+
+      {showSaturday && Saturday()}
+
+      {showChildrenFridayNumber && ChildrenFridayNumber()}
+
+      {showSunday && Sunday()}
+
+      {noJoin && NotJoining()}
+
+      {rsvpOption && RsvpBtn()}
+
+      {/* {rsvpReq.friday === "yes" || rsvpReq.friday === "maybe" ? ChildrenFriday() : <></>} */}
+
+      {/* {rsvpReq.childrenFriday === "yes" || rsvpReq.childrenFriday === "maybe" ? ChildrenFridayNumber() : <></>} */}
+
+      {/* {rsvpReq.friday === "no" || rsvpReq.childrenFridayNumber ? Saturday() : <></>}
+
+      {rsvpReq.saturday === "yes" || rsvpReq.saturday === "maybe" ? ChildrenSaturday() : <></>}
+
+      {rsvpReq.childrenSaturday === "yes" || rsvpReq.childrenSaturday === "maybe" ? ChildrenSaturdayNumber() : <></>}
+
+      {rsvpReq.childrenSaturday === "no" || rsvpReq.childrenSaturdayNumber ? Sunday() : <></>}
+
+      {rsvpReq.sunday === "yes" || rsvpReq.sunday === "no" || rsvpReq.sunday === "maybe" ? Diet() : <></>}
+
+      {rsvpReq.diet === "vegan" || rsvpReq.diet === "vegetarian" || rsvpReq.otherDiet ? RsvpBtn() : <></>}
+
+      {rsvpReq.diet === "other" ? SpecifyOtherDiet() : <></>} */}
+
+    </div>
+  )
+
+  if (data) {
     return (
       <div className="rsvp-container">
-
+        {form}
         {/* <form className="rsvp-form"> */}
-          <div className="rsvp-content">
-
-            {Friday()}
-
-            {rsvpReq.friday === "yes" || rsvpReq.friday === "maybe" ? ChildrenFriday() : <></>}
-
-            {rsvpReq.childrenFriday === "yes" || rsvpReq.childrenFriday === "maybe" ? ChildrenFridayNumber() : <></>}
-
-            {rsvpReq.friday === "no" || rsvpReq.childrenFridayNumber ? Saturday() : <></>}
-
-            {rsvpReq.saturday === "yes" || rsvpReq.saturday === "maybe" ? ChildrenSaturday() : <></>}
-
-            {rsvpReq.childrenSaturday === "yes" || rsvpReq.childrenSaturday === "maybe" ? ChildrenSaturdayNumber() : <></>}
-            
-            {rsvpReq.childrenSaturday === "no" || rsvpReq.childrenSaturdayNumber ? Sunday() : <></>}
-
-            {rsvpReq.sunday === "yes" || rsvpReq.sunday === "no" || rsvpReq.sunday === "maybe" ? Diet() : <></>}
-
-            {rsvpReq.diet === "vegan" || rsvpReq.diet === "vegetarian" || rsvpReq.otherDiet ? RsvpBtn() : <></>}
-
-            {rsvpReq.diet === "other" ? SpecifyOtherDiet() : <></>}
-
-          </div>
         {/* </form> */}
       </div>
     )
+  } else {
+    return null;
   }
 };
