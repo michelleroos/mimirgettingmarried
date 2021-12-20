@@ -14,6 +14,10 @@ export default function Schedule() {
   const close = (e) => {
     if (e.target.classList.contains('modal-bg')) {
       setFriday(false);
+      setMingle(false);
+      setCeremony(false);
+      setReception(false);
+      setSunday(false);
     }
   }
 
@@ -43,19 +47,22 @@ export default function Schedule() {
             <i class="fas fa-cocktail"></i>
             <h3>Mingle</h3>
             <p>15:00</p>
-            <p>Villa Richter Fountain</p>
+            <p className="hover" onClick={() => setMingle(true)}>Villa Richter Fountain</p>
+            {mingle && <Mingle close={close}/>}
           </div>
           <div className="schedule-details">
             <i class="fas fa-heart"></i>
             <h3>Ceremony</h3>
             <p>16:00</p>
-            <p>Villa Richter</p>
+            <p className="hover" onClick={() => setCeremony(true)}>Villa Richter</p>
+            {ceremony && <Ceremony close={close}/>}
           </div>
           <div className="schedule-details">
             <i class="fas fa-utensils"></i>
             <h3>Reception</h3>
             <p>18:00</p>
-            <p>X @ Villa Richter</p>
+            <p className="hover" onClick={() => setReception(true)}>X @ Villa Richter</p>
+            {reception && <Reception close={close}/>}
           </div>
           <div className="schedule-details">
             <i class="fas fa-guitar"></i>
@@ -77,6 +84,8 @@ export default function Schedule() {
             <i class="fas fa-music"></i>
             <h3>Party</h3>
             <p>17:00 until late</p>
+            <p className="hover" onClick={() => setSunday(true)}>GLASS Bar</p>
+            {sunday && <Sunday close={close}/>}
           </div>
         </div>
       </div>
