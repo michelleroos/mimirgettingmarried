@@ -2,15 +2,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 100px);
-  // overflow: scroll;
-  margin: 300px auto;
+  // height: calc(100vh - 100px);
+  // margin: 300px auto;
 
   #faq-container {
     width: 60%;
 
-    .faq-item {
+    #set-all {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
 
+      i {
+        // font-size: 20px;
+        // color: pink;
+        margin: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #666666;
+      }
+    }
+
+    .faq-item {
       .faq-hide {
         display: none;
       }
@@ -24,7 +37,6 @@
         h4 {
           margin: 20px 20px 10px 0;
         }
-
       }
 
       .answer {
