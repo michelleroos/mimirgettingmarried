@@ -11,7 +11,7 @@ export default function Schedule() {
     document.title = `Schedule | #mimirgettingmarried`;
   });
 
-  const close = () => {
+  const close = (e) => {
     if (e.target.classList.contains('modal-bg')) {
       setFriday(false);
     }
