@@ -7,10 +7,24 @@ export default function Faq() {
     document.title = `FAQ | #mimirgettingmarried`;
   });
 
-  const [clicked, setClicked] = useState(false);
-  const updateClicked = () => {
-    if (clicked) setClicked(false)
-    if (!clicked) setClicked(true)
+  const [expand, setExpand] = useState({
+    0: false,
+    1: false, 
+    2: false, 
+    3: false,
+    4: false,
+    5: false,
+    6: false,
+    7: false,
+    8: false,
+    9: false,
+    10: false,
+    11: false,
+  })
+
+  const updateClicked = (num) => {
+    if (expand[num]) setExpand({ ...expand, [num]: false });
+    if (!expand[num]) setExpand({ ...expand, [num]: true });
   };
 
   const Faq = () => (
@@ -19,15 +33,15 @@ export default function Faq() {
         {faqData.map((data, idx) => {
           return (
             <div className="faq-item" key={idx}>
-              <div className="question" onClick={() => updateClicked()}>
+              <div className="question" onClick={() => updateClicked(idx)}>
                 <h4>
                   {data.q}
                 </h4>
-                <h4 className={clicked ? "faq-hide" : "faq-plus"}>+</h4>
-                <h4 className={clicked ? "faq-minus" : "faq-hide"}>-</h4>
+                <h4 className={expand[idx] ? "faq-hide" : "faq-plus"}>+</h4>
+                <h4 className={expand[idx] ? "faq-minus" : "faq-hide"}>-</h4>
               </div>
               <div className="answer">
-                <p className={clicked ? "faq-answer" : "faq-hide"}>
+                <p className={expand[idx] ? "faq-answer" : "faq-hide"}>
                   {data.a}
                 </p>
               </div>

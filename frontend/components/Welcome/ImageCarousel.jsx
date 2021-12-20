@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 // import useFirestore from '../../hooks/useFirestore';
 
 export default function ImageCarousel({ img, setImg, imgID }) {
-// export default function ImageCarousel({ open, setOpen, index, img, setImg, imgID }) {
+  // export default function ImageCarousel({ open, setOpen, index, img, setImg, imgID }) {
 
   // const { docs } = useFirestore('am-photos');
   // const [currentImg, setCurrentImg] = useState(index);
@@ -17,7 +17,7 @@ export default function ImageCarousel({ img, setImg, imgID }) {
   const carousel = (
     <div id="modal-bg" onClick={handleClick}>
       <img src={img} alt={imgID} />
-      <p>Here is a text description</p>
+      {/* <p>Here is a text description</p> */}
     </div>
   )
 

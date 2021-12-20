@@ -3,7 +3,8 @@
   align-items: center;
   justify-content: center;
   height: calc(100vh - 100px);
-  overflow: scroll;
+  // overflow: scroll;
+  margin: 300px auto;
 
   #faq-container {
     width: 60%;
