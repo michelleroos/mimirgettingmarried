@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
-import Timeline from './Timeline';
-import timelineData from './data';
+import React, { useEffect, useState } from 'react';
+import Ceremony from './Ceremony';
+import Friday from './Friday';
+import Mingle from './Mingle';
+import Reception from './Reception';
+import Sunday from './Sunday';
 
 export default function Schedule() {
 
@@ -8,43 +11,59 @@ export default function Schedule() {
     document.title = `Schedule | #mimirgettingmarried`;
   });
 
+  const close = () => {
+    if (e.target.classList.contains('modal-bg')) {
+      setFriday(false);
+    }
+  }
+
+  const [friday, setFriday] = useState(false);
+  const [mingle, setMingle] = useState(false);
+  const [ceremony, setCeremony] = useState(false);
+  const [reception, setReception] = useState(false);
+  const [sunday, setSunday] = useState(false);
+
   const Schedule = () => (
     <div id="schedule-container">
       <div class="day-schedule">
         <h2>Friday - 22 July</h2>
         <div className="detailed-schedule-container">
-          <div>
+          <div className="schedule-details">
             <i class="fas fa-beer"></i>
             <h3>Meet & greet</h3>
-            <p>TBD</p>
+            <p className="hover" onClick={() => setFriday(true)}>TBD</p>
+            {friday && <Friday close={close} />}
           </div>
         </div>
       </div>
       <div class="day-schedule">
         <h2>Saturday - 23 July</h2>
         <div className="detailed-schedule-container">
-          <div>
+          <div className="schedule-details">
             <i class="fas fa-cocktail"></i>
             <h3>Mingle</h3>
             <p>15:00</p>
+            <p>Villa Richter Fountain</p>
           </div>
-          <div>
+          <div className="schedule-details">
             <i class="fas fa-heart"></i>
             <h3>Ceremony</h3>
             <p>16:00</p>
             <p>Villa Richter</p>
           </div>
-          <div>
+          <div className="schedule-details">
             <i class="fas fa-utensils"></i>
             <h3>Reception</h3>
             <p>18:00</p>
+            <p>X @ Villa Richter</p>
           </div>
-          <div>
+          <div className="schedule-details">
             <i class="fas fa-guitar"></i>
             <h3>Music</h3>
             <p>20:00</p>
+            <p>X @ Villa Richter</p>
           </div>
-          <div>
+          <div className="schedule-details">
             <i class="fas fa-hourglass-end"></i>
             <h3>Party ends</h3>
             <p>00:00</p>
@@ -54,33 +73,13 @@ export default function Schedule() {
       <div class="day-schedule">
         <h2>Sunday - 24 July</h2>
         <div className="detailed-schedule-container">
-          <div>
+          <div className="schedule-details">
             <i class="fas fa-music"></i>
             <h3>Party</h3>
-            <p>17:00</p>
+            <p>17:00 until late</p>
           </div>
         </div>
       </div>
-      {/* <Timeline /> */}
-      {/* <div id="timeline-container">
-        {timelineData.map((data, idx) => {
-          return (
-            <div id="timeline-item">
-              <div id="timeline-item-header">
-                <div id="day" className="schedule-detail">
-                  <p>{data.day}</p>
-                </div>
-                <div id="time" className="schedule-detail">
-                  <p>{data.time}</p>
-                </div>
-              </div>
-              <div id="text" className="schedule-detail">
-                <p>{data.text}</p>
-              </div>
-            </div>
-          )
-        })}
-      </div> */}
     </div>
   );
   return Schedule();
