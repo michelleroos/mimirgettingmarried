@@ -72,8 +72,8 @@ export default function RSVP() {
       setShowChildrenSaturday(true);
     } else if (val === "sat-children-yes") {
       setRsvpReq({ ...rsvpReq, childrenSaturday: "yes" });
+      setShowChildrenSaturday(false);
       setShowChildrenSaturdayNumber(true);
-      // setShowChildrenSaturday(false);
       // setShowSunday(true);
     } else if (val === "sat-children-no") {
       setRsvpReq({ ...rsvpReq, childrenSaturday: "no" });
@@ -82,12 +82,13 @@ export default function RSVP() {
       setShowSunday(true);
     } else if (val === "sat-children-maybe") {
       setRsvpReq({ ...rsvpReq, childrenSaturday: "maybe" });
+      setShowChildrenSaturday(false);
       setShowChildrenSaturdayNumber(true);
-      // setShowChildrenSaturday(false);
       // setShowSunday(true);
-    } else if (!isNaN(val)) {
-      setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: val });
-      setShowSaturday(false);
+    } else if (val.target.id === 'childrenSaturdayNumber') {
+    // } else if (!isNaN(val)) {
+      setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: val.target.value });
+      setShowChildrenSaturday(false);
       setShowChildrenSaturdayNumber(false);
       setShowSunday(true);
     } else if (val === "sun-yes") {
@@ -141,7 +142,7 @@ export default function RSVP() {
           <button className={rsvpReq.friday === "yes" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("fri-yes")}>Yes</button>
           <button className={rsvpReq.friday === "no" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("fri-no")}>No</button>
           <button className={rsvpReq.friday === "maybe" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("fri-maybe")}>Maybe</button>
-          {showFriday && <i className="fas fa-caret-right"></i>}
+          {rsvpReq.friday && <i className="fas fa-caret-right"></i>}
         </div>        
       </div>
     )
@@ -216,16 +217,16 @@ export default function RSVP() {
 
   const ChildrenSaturdayNumber = () => {
     return (
-      <div className="rsvp-q">
+      <div className="rsvp-q" id="childrenSaturdayNumber">
         <h2>How many?</h2>
         <div className="inputs">
           <i className="fas fa-caret-left"></i>
           {/* <input id="children-number" type="text" onChange={e => updateRsvp(e.target.value)} /> */}
           {/* <input id="children-number" type="text" onChange={e => setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: Number(e.target.value) })} /> */}
-          <input id="children-number" type="number" onChange={e => setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: e.target.value })} />
+          {/* <input id="children-number" type="text" onChange={e => setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: e.target.value })} /> */}
+          <input id="children-number" type="text" onChange={e => updateRsvp(e)} />
           <i className="fas fa-caret-right"></i>
         </div>
-        
       </div>
     )
   }

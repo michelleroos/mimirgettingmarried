@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { set } from 'react-hook-form';
 import faqData from './data';
 
 export default function Faq() {
@@ -20,14 +21,17 @@ export default function Faq() {
     9: false,
     10: false,
     11: false,
-  })
+  });
 
   const updateClicked = (num) => {
     if (expand[num]) setExpand({ ...expand, [num]: false });
     if (!expand[num]) setExpand({ ...expand, [num]: true });
   };
 
+  const [expanded, setExpanded] = useState(false);
+
   const expandAll = () => {
+    setExpanded(true);
     setExpand({
       0: true,
       1: true,
@@ -41,10 +45,11 @@ export default function Faq() {
       9: true,
       10: true,
       11: true,
-    })
-  }
+    });
+  };
 
   const collapseAll = () => {
+    setExpanded(false);
     setExpand({
       0: false,
       1: false,
@@ -58,15 +63,15 @@ export default function Faq() {
       9: false,
       10: false,
       11: false,
-    })
-  }
+    });
+  };
 
   const Faq = () => (
     <div id="faq-wrapper">
       <div id="faq-container">
         <div id="set-all">
-          <i class="fas fa-expand-alt" onClick={() => expandAll()}></i>
-          <i class="fas fa-compress-alt" onClick={() => collapseAll()}></i>
+          {expanded ? <i class="fas fa-compress-alt" onClick={() => collapseAll()}></i> :
+            <i class="fas fa-expand-alt" onClick={() => expandAll()}></i>}
         </div>
         {faqData.map((data, idx) => {
           return (
