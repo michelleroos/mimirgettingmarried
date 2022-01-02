@@ -141,7 +141,8 @@ export default function RSVP() {
           <button className={rsvpReq.friday === "yes" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("fri-yes")}>Yes</button>
           <button className={rsvpReq.friday === "no" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("fri-no")}>No</button>
           <button className={rsvpReq.friday === "maybe" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("fri-maybe")}>Maybe</button>
-        </div>
+          {showFriday && <i className="fas fa-caret-right"></i>}
+        </div>        
       </div>
     )
   }
@@ -182,10 +183,13 @@ export default function RSVP() {
       <div className="rsvp-q">
         <h2>Are you joining us on Saturday, 23 of July?</h2>
         <div className="inputs">
+          <i className="fas fa-caret-left"></i>
           <button className={rsvpReq.saturday === "yes" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sat-yes")}>Yes</button>
           <button className={rsvpReq.saturday === "no" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sat-no")}>No</button>
           <button className={rsvpReq.saturday === "maybe" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sat-maybe")}>Maybe</button>
+          <i className="fas fa-caret-right"></i>
         </div>
+        
       </div>
     )
   }
@@ -197,10 +201,13 @@ export default function RSVP() {
       <div className="rsvp-q">
         <h2>Are you bringing any children?</h2>
         <div className="inputs">
+          <i className="fas fa-caret-left"></i>
           <button className={rsvpReq.childrenSaturday === "yes" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sat-children-yes")}>Yes</button>
           <button className={rsvpReq.childrenSaturday === "no" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sat-children-no")}>No</button>
           <button className={rsvpReq.childrenSaturday === "maybe" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sat-children-maybe")}>Maybe</button>
+          <i className="fas fa-caret-right"></i>
         </div>
+        
       </div>
     )
   }
@@ -212,10 +219,13 @@ export default function RSVP() {
       <div className="rsvp-q">
         <h2>How many?</h2>
         <div className="inputs">
+          <i className="fas fa-caret-left"></i>
           {/* <input id="children-number" type="text" onChange={e => updateRsvp(e.target.value)} /> */}
           {/* <input id="children-number" type="text" onChange={e => setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: Number(e.target.value) })} /> */}
           <input id="children-number" type="number" onChange={e => setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: e.target.value })} />
+          <i className="fas fa-caret-right"></i>
         </div>
+        
       </div>
     )
   }
@@ -228,10 +238,13 @@ export default function RSVP() {
         <h2>Are you joining us on Sunday, 24 of July?</h2>
         <h2>(Sorry - no children allowed)</h2>
         <div className="inputs">
+          <i className="fas fa-caret-left"></i>
           <button className={rsvpReq.sunday === "yes" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sun-yes")}>Yes</button>
           <button className={rsvpReq.sunday === "no" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sun-no")}>No</button>
           <button className={rsvpReq.sunday === "maybe" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sun-maybe")}>Maybe</button>
+          <i className="fas fa-caret-right"></i>
         </div>
+        
       </div>
     )
   }
@@ -243,10 +256,13 @@ export default function RSVP() {
       <div className="rsvp-q">
         <h2>Do you have any dietary restrictions?</h2>
         <div className="inputs">
+          <i className="fas fa-caret-left"></i>
           <button className={rsvpReq.diet === "vegan" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("vegan")}>Vegan</button>
           <button className={rsvpReq.diet === "vegetarian" ? "btn-clicked veggie" : "rsvp-btn veggie"} onClick={() => updateRsvp("vegetarian")}>Vegetarian</button>
           <button className={rsvpReq.diet === "other" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("other")}>Other</button>
+          <i className="fas fa-caret-right"></i>
         </div>
+        
       </div>
     )
   }
@@ -258,8 +274,11 @@ export default function RSVP() {
       <div className="rsvp-q">
         <h2>Please specify</h2>
         <div className="inputs">
+          <i className="fas fa-caret-left"></i>
           <input id="other-diet" type="text" onChange={e => updateRsvp(e.target.value)} />
+          <i className="fas fa-caret-right"></i>
         </div>
+        
       </div>
     )
   }
