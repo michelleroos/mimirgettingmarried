@@ -23,9 +23,9 @@ export default function RSVP() {
 
   const [rsvpReq, setRsvpReq] = useState({
     user: null,
-    friday: null,
-    childrenFriday: null,
-    childrenFridayNumber: null,
+    // friday: null,
+    // childrenFriday: null,
+    // childrenFridayNumber: null,
     saturday: null,
     childrenSaturday: null,
     childrenSaturdayNumber: null,
@@ -190,7 +190,7 @@ export default function RSVP() {
 
       {Saturday()}
 
-      {rsvpReq.saturday && ChildrenSaturday()}
+      {(rsvpReq.saturday === 'yes' || rsvpReq.saturday === 'maybe') && ChildrenSaturday()}
 
       {(rsvpReq.childrenSaturday === 'yes' || rsvpReq.childrenSaturday === 'maybe') && ChildrenSaturdayNumber()}
 
