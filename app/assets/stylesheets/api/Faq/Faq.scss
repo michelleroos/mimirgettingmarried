@@ -4,6 +4,12 @@
   justify-content: center;
   // height: calc(100vh - 100px);
   // margin: 300px auto;
+    background-image: url("https://t4.ftcdn.net/jpg/02/20/75/09/360_F_220750918_IqQStixRCJz3LdhP6xjiC69yYT5BGBXP.jpg");
+  background-repeat: no-repeat;
+  background-position: center; /* Center the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  height: auto;
+
 
   #faq-container {
     width: 60%;
