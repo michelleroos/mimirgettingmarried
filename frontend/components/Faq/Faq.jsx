@@ -49,44 +49,6 @@ export default function Faq() {
     });
   };
 
-  const expandAll = () => {
-    setExpanded(true);
-    setExpand({
-      0: true,
-      1: true,
-      2: true,
-      3: true,
-      4: true,
-      5: true,
-      6: true,
-      7: true,
-      8: true,
-      9: true,
-      10: true,
-      11: true,
-      12: true
-    });
-  };
-
-  const collapseAll = () => {
-    setExpanded(false);
-    setExpand({
-      0: false,
-      1: false,
-      2: false,
-      3: false,
-      4: false,
-      5: false,
-      6: false,
-      7: false,
-      8: false,
-      9: false,
-      10: false,
-      11: false,
-      12: false
-    });
-  };
-
   const Faq = () => (
     <div id="faq-wrapper">
       <div id="faq-container">
