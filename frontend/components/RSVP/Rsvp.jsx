@@ -14,18 +14,16 @@ export default function RSVP() {
     fetch("http://localhost:3001/api/rsvp")
       .then((res) => res.json())
       .then((data) => setData(data.values))
+      // .then((data) => console.log(data))
       .catch((err) => console.log(err))
   }, []);
 
-  // const currentUser = useSelector((state) => state.entities.user.user);
+  const currentUser = useSelector((state) => state.entities.user.user);
   const currentUserId = useSelector((state) => state.session.id);
   const [data, setData] = useState(null);
 
   const [rsvpReq, setRsvpReq] = useState({
     user: null,
-    // friday: null,
-    // childrenFriday: null,
-    // childrenFridayNumber: null,
     saturday: null,
     childrenSaturday: null,
     childrenSaturdayNumber: null,
@@ -53,9 +51,8 @@ export default function RSVP() {
       setRsvpReq({ ...rsvpReq, childrenSaturday: "no" });
     } else if (val === "sat-children-maybe") {
       setRsvpReq({ ...rsvpReq, childrenSaturday: "maybe" });
-    } else if (val.target.id === 'childrenSaturdayNumber') {
-    // } else if (!isNaN(val)) {
-      setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: val.target.value });
+    } else if (!isNaN(val)) {
+      setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: val });
     } else if (val === "sun-yes") {
       setRsvpReq({ ...rsvpReq, sunday: "yes" });
     } else if (val === "sun-no") {
@@ -141,10 +138,7 @@ export default function RSVP() {
       <div className="rsvp-q" id="childrenSaturdayNumber">
         <h2>How many?</h2>
         <div className="inputs">
-          {/* <input id="children-number" type="text" onChange={e => updateRsvp(e.target.value)} /> */}
-          {/* <input id="children-number" type="text" onChange={e => setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: Number(e.target.value) })} /> */}
-          {/* <input id="children-number" type="text" onChange={e => setRsvpReq({ ...rsvpReq, childrenSaturdayNumber: e.target.value })} /> */}
-          <input id="children-number" type="text" onChange={e => updateRsvp(e)} />
+          <input id="children-number" type="text" onChange={e => updateRsvp(e.target.value)} />
         </div>
       </div>
     )
@@ -181,7 +175,7 @@ export default function RSVP() {
 
   const formSubmitted = (
     <div id="rsvp-response">
-      You've already RSVP'd
+      You've already RSVP'd :)
     </div>
   )
 
@@ -205,15 +199,29 @@ export default function RSVP() {
     </div>
   )
 
-  if (data) {
+  const alreadySubmitted = (data) => {
+    if (!data) {
+      return false;
+    }
+    for (let input of data) {
+      if (input[0] === currentUser) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  if (alreadySubmitted()) {
+    return formSubmitted()
+  } else if (data) {
     return (
       <div className="rsvp-container">
         {form}
-        {/* <form className="rsvp-form"> */}
-        {/* </form> */}
       </div>
     )
   } else {
-    return null;
+    return (
+      <div>Something went wrong :(</div>
+    );
   }
 };

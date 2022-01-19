@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { set } from 'react-hook-form';
 import faqData from './data';
 
 export default function Faq() {
@@ -21,6 +20,7 @@ export default function Faq() {
     9: false,
     10: false,
     11: false,
+    12: false
   });
 
   const updateClicked = (num) => {
@@ -29,6 +29,25 @@ export default function Faq() {
   };
 
   const [expanded, setExpanded] = useState(false);
+
+  const setAll = (expandedStatus) => {
+    setExpanded(!expandedStatus);
+    setExpand({
+      0: !expandedStatus,
+      1: !expandedStatus,
+      2: !expandedStatus,
+      3: !expandedStatus,
+      4: !expandedStatus,
+      5: !expandedStatus,
+      6: !expandedStatus,
+      7: !expandedStatus,
+      8: !expandedStatus,
+      9: !expandedStatus,
+      10: !expandedStatus,
+      11: !expandedStatus,
+      12: !expandedStatus
+    });
+  };
 
   const expandAll = () => {
     setExpanded(true);
@@ -45,6 +64,7 @@ export default function Faq() {
       9: true,
       10: true,
       11: true,
+      12: true
     });
   };
 
@@ -63,23 +83,31 @@ export default function Faq() {
       9: false,
       10: false,
       11: false,
+      12: false
     });
   };
 
   const Faq = () => (
     <div id="faq-wrapper">
       <div id="faq-container">
-        <div id="set-all">
-          {expanded ? <i class="fas fa-compress-alt" onClick={() => collapseAll()}></i> :
-            <i class="fas fa-expand-alt" onClick={() => expandAll()}></i>}
+
+        <div className="faq-item">
+          <div className="question" onClick={() => setAll(expanded)}>
+            {expanded ? <h5>Collapse all</h5> : <h5>Expand all</h5>}
+            
+            {expanded ? 
+            <i className="fas fa-compress-alt"></i> :
+            <i className="fas fa-expand-alt"></i>}
+          </div>
         </div>
+
         {faqData.map((data, idx) => {
           return (
             <div className="faq-item" key={idx}>
               <div className="question" onClick={() => updateClicked(idx)}>
-                <h4>
+                <h5>
                   {data.q}
-                </h4>
+                </h5>
                 <h4 className={expand[idx] ? "faq-hide" : "faq-plus"}>+</h4>
                 <h4 className={expand[idx] ? "faq-minus" : "faq-hide"}>-</h4>
               </div>
