@@ -208,7 +208,7 @@ export default function RSVP() {
   return (
     <div id="rsvp-wrapper">
       <div id="rsvp-container">
-        
+
         {Saturday()}
 
         {(rsvpReq.saturday === 'yes' || rsvpReq.saturday === 'maybe') && ChildrenSaturday()}
@@ -219,7 +219,7 @@ export default function RSVP() {
 
         {rsvpReq.diet === 'other' && SpecifyOtherDiet()}
 
-        {Sunday()}
+        {rsvpReq.otherDiet || (rsvpReq.diet !== 'other' && rsvpReq.diet) && Sunday()}
 
         {rsvpReq.sunday && RsvpBtn()}
 
