@@ -44,7 +44,6 @@ export default function RSVP() {
   });
 
   const updateRsvp = (val) => {
-    console.log(val);
     if (val === "sat-yes") {
       setRsvpReq({ ...rsvpReq, saturday: "yes" });
     } else if (val === "sat-no") {
@@ -76,6 +75,32 @@ export default function RSVP() {
     };
   };
 
+  const SaturdayChildren = () => {
+    return (
+      <div className="question">
+        <h2>Are you bringing any children?</h2>
+        <div className="inputs">
+          <div className="check">
+            <label><input type="radio" name="sat-children" id='yes' onClick={() => updateRsvp("sat-children-yes")} />Yes</label>
+            <label><input type="radio" name="sat-children" id='no' onClick={() => updateRsvp("sat-children-no")} />No</label>
+            <label><input type="radio" name="sat-children" id='maybe' onClick={() => updateRsvp("sat-children-maybe")} />Maybe</label>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const SaturdayChildrenNumber = () => {
+    return (
+      <div className="question">
+        <h2>How many?</h2>
+        <div className="inputs">
+          <input id="children-number" type="text" onChange={e => updateRsvp(e.target.value)} />
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div id="rsvp-wrapper">
       <div id="rsvp-container">
@@ -84,6 +109,7 @@ export default function RSVP() {
           <img src="https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/IMG_20200920_183756.jpeg?alt=media&token=2ea8a703-c0a3-4b7e-b550-ddbc19d98ef8" alt="" />
           <img src="https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/IMG_20200920_183756.jpeg?alt=media&token=2ea8a703-c0a3-4b7e-b550-ddbc19d98ef8" alt="" />
         </div>
+
         <div className="question">
           <h2>Are you joining us on Saturday, 23 of July?</h2>
           <div className="inputs">
@@ -94,6 +120,10 @@ export default function RSVP() {
             </div>
           </div>
         </div>
+
+        {(rsvpReq.saturday === 'yes' || rsvpReq.saturday === 'maybe') && SaturdayChildren()}
+        {(rsvpReq.childrenSaturday === 'yes' || rsvpReq.childrenSaturday === 'maybe') && SaturdayChildrenNumber()}
+
         <div className="question">
           <h2>Are you joining us on Sunday, 24 of July?</h2>
           <h3>(+18 years only)</h3>
