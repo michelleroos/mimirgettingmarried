@@ -36,11 +36,11 @@ export default function RSVP() {
   const [rsvpReq, setRsvpReq] = useState({
     user: null,
     saturday: null,
+    diet: null,
+    otherDiet: null,
     childrenSaturday: null,
     childrenSaturdayNumber: null,
     sunday: null,
-    diet: null,
-    otherDiet: null,
   });
 
   const updateRsvp = (val) => {
@@ -72,6 +72,8 @@ export default function RSVP() {
       setRsvpReq({ ...rsvpReq, diet: "chicken" });
     } else if (val === "fish") {
       setRsvpReq({ ...rsvpReq, diet: "fish" });
+    } else if (val === "none") {
+      setRsvpReq({ ...rsvpReq, diet: "none" });
     } else if (val === "other") {
       setRsvpReq({ ...rsvpReq, diet: "other" });
     } else if (isNaN(Number(val))) {
@@ -87,9 +89,23 @@ export default function RSVP() {
           <div className="check">
             <label><input type="radio" name="diet" id='vegan' onClick={() => updateRsvp("vegan")} />Vegan</label>
             <label><input type="radio" name="diet" id='vegetarian' onClick={() => updateRsvp("vegetarian")} />Vegetarian</label>
-            <label><input type="radio" name="diet" id='vegetarian' onClick={() => updateRsvp("vegetarian")} />Chicken</label>
-            <label><input type="radio" name="diet" id='vegetarian' onClick={() => updateRsvp("vegetarian")} />Fish</label>
+            <label><input type="radio" name="diet" id='chicken' onClick={() => updateRsvp("vegetarian")} />Chicken</label>
+            <label><input type="radio" name="diet" id='fish' onClick={() => updateRsvp("vegetarian")} />Fish</label>
+            <label><input type="radio" name="diet" id='none' onClick={() => updateRsvp("none")} />None</label>
             <label><input type="radio" name="diet" id='other' onClick={() => updateRsvp("other")} />Other</label>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const OtherDiet = () => {
+    return (
+      <div className="question">
+        <h2>Please specify</h2>
+        <div className="inputs">
+          <div className="check">
+            <input id="other-diet" type="text" onChange={e => updateRsvp(e.target.value)} />
           </div>
         </div>
       </div>
@@ -143,12 +159,12 @@ export default function RSVP() {
         </div>
 
         {(rsvpReq.saturday === 'yes' || rsvpReq.saturday === 'maybe') && Diet()}
-        {/* {(rsvpReq.saturday === 'yes' || rsvpReq.saturday === 'maybe') && SaturdayChildren()} */}
+        {rsvpReq.diet === 'other' && OtherDiet()}
+        {(rsvpReq.otherDiet && rsvpReq.otherDiet.length > 0) && SaturdayChildren()}
         {(rsvpReq.childrenSaturday === 'yes' || rsvpReq.childrenSaturday === 'maybe') && SaturdayChildrenNumber()}
 
         <div className="question">
-          <h2>Are you joining us on Sunday, 24 of July?</h2>
-          <h3>(+18 years only)</h3>
+          <h2>Are you joining us on Sunday, 24 of July? (+18 years only)</h2>
           <div className="inputs">
             <div className="check">
               <label><input type="radio" name="sun" id='yes' onClick={() => updateRsvp("sun-yes")} />Yes</label>
