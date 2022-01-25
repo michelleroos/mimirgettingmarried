@@ -2,76 +2,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 100px);
+  // height: calc(100vh - 100px);
 
   #rsvp-container {
     // width: 60%;
 
-    .rsvp-q {
+    #rsvp-photos {
+      img {
+        height: 200px;
+        margin: 0 20px 0 0;
+        border-radius: 3px;
+      }
+    }
+
+    .question {
       h2 {
-        font-weight: bold;
-        font-size: 18px;
       }
 
       .inputs {
-        margin: 20px 0 40px 0;
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-
-        .rsvp-btn {
-          background-color: white;
-          border: 1px solid pink;
-          color: pink;
-          font-size: 12px;
-          height: 50px;
-          width: 50px;
-
-          &:hover {
-            background-color: pink;
-            border: 1px solid pink;
-            color: white;
-          }
-        }
-
-        i {
-          color: pink;
-          cursor: pointer;
-        }
-
-        .btn-clicked {
-          background-color: pink;
-          border: 1px solid pink;
-          color: white;
-          font-size: 12px;
-          height: 50px;
-          width: 50px;
-        }
-
-        .veggie {
-          width: 100px;
-          border-radius: 30px;
-        }
-
-        #children-number,
-        #other-diet {
-          display: block;
-          width: 100%;
-          border: none;
-          border-bottom: 1px solid lightgrey;
-          height: 36px;
-          padding: 5px;
-
-          &::placeholder {
-            font-weight: bold;
-            color: rgb(215, 215, 215);
-          }
-
-          &:focus {
-            outline: none;
-            border: none;
-            border-bottom: 1px solid pink;
-          }
+        .input {
         }
       }
     }
@@ -103,6 +53,105 @@
   }
 }
 
+// #rsvp-wrapper {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   // height: calc(100vh - 100px);
+
+//   #rsvp-container {
+//     // width: 60%;
+
+//     .rsvp-q {
+//       h2 {
+//         font-weight: bold;
+//         font-size: 18px;
+//       }
+
+//       .inputs {
+//         margin: 20px 0 40px 0;
+//         display: flex;
+//         justify-content: space-around;
+//         align-items: center;
+
+//         .rsvp-btn {
+//           background-color: white;
+//           border: 1px solid pink;
+//           color: pink;
+//           font-size: 12px;
+//           height: 50px;
+//           width: 50px;
+
+//           &:hover {
+//             background-color: pink;
+//             border: 1px solid pink;
+//             color: white;
+//           }
+//         }
+
+//         .btn-clicked {
+//           background-color: pink;
+//           border: 1px solid pink;
+//           color: white;
+//           font-size: 12px;
+//           height: 50px;
+//           width: 50px;
+//         }
+
+//         .veggie {
+//           width: 100px;
+//           border-radius: 30px;
+//         }
+
+//         #children-number,
+//         #other-diet {
+//           display: block;
+//           width: 100%;
+//           border: none;
+//           border-bottom: 1px solid lightgrey;
+//           height: 36px;
+//           padding: 5px;
+
+//           &::placeholder {
+//             font-weight: bold;
+//             color: rgb(215, 215, 215);
+//           }
+
+//           &:focus {
+//             outline: none;
+//             border: none;
+//             border-bottom: 1px solid pink;
+//           }
+//         }
+//       }
+//     }
+
+//     .rsvp-submit-btn {
+//       width: 120px;
+//       border-radius: 30px;
+//       height: 50px;
+//       font-size: 12px;
+//       background-color: white;
+//       border: 1px solid pink;
+//       color: pink;
+//       align-self: center;
+
+//       i {
+//         color: pink;
+//       }
+
+//       &:hover {
+//         background-color: pink;
+//         border: 1px solid pink;
+//         color: white;
+
+//         i {
+//           color: white;
+//         }
+//       }
+//     }
+//   }
+// }
 
 // .rsvp-container {
 //   display: flex;

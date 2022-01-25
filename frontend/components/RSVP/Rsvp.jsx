@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+// import faqData from '../Faq/data';
 // import { useForm } from 'react-hook-form';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 export default function RSVP() {
@@ -43,6 +44,7 @@ export default function RSVP() {
   });
 
   const updateRsvp = (val) => {
+    console.log(val);
     if (val === "sat-yes") {
       setRsvpReq({ ...rsvpReq, saturday: "yes" });
     } else if (val === "sat-no") {
@@ -74,171 +76,39 @@ export default function RSVP() {
     };
   };
 
-  const Saturday = () => {
-    return (
-      <div className="rsvp-q">
-        <h2>Are you joining us on Saturday, 23 of July?</h2>
-        <div className="inputs">
-          <button className={rsvpReq.saturday === "yes" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sat-yes")}>Yes</button>
-          <button className={rsvpReq.saturday === "no" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sat-no")}>No</button>
-          <button className={rsvpReq.saturday === "maybe" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sat-maybe")}>Maybe</button>
-        </div>
-      </div>
-    )
-  }
-
-  const Diet = () => {
-    return (
-      <div className="rsvp-q">
-        <h2>Do you have any dietary restrictions?</h2>
-        <div className="inputs">
-          <button className={rsvpReq.diet === "vegan" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("vegan")}>Vegan</button>
-          <button className={rsvpReq.diet === "vegetarian" ? "btn-clicked veggie" : "rsvp-btn veggie"} onClick={() => updateRsvp("vegetarian")}>Vegetarian</button>
-          <button className={rsvpReq.diet === "other" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("other")}>Other</button>
-        </div>
-
-      </div>
-    )
-  }
-
-  const SpecifyOtherDiet = () => {
-    return (
-      <div className="rsvp-q">
-        <h2>Please specify</h2>
-        <div className="inputs">
-          <input id="other-diet" type="text" onChange={e => updateRsvp(e.target.value)} />
-        </div>
-
-      </div>
-    )
-  }
-
-  const ChildrenSaturday = () => {
-    return (
-      <div className="rsvp-q">
-        <h2>Are you bringing any children?</h2>
-        <div className="inputs">
-          <button className={rsvpReq.childrenSaturday === "yes" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sat-children-yes")}>Yes</button>
-          <button className={rsvpReq.childrenSaturday === "no" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sat-children-no")}>No</button>
-          <button className={rsvpReq.childrenSaturday === "maybe" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sat-children-maybe")}>Maybe</button>
-        </div>
-
-      </div>
-    )
-  }
-
-  const ChildrenSaturdayNumber = () => {
-    return (
-      <div className="rsvp-q" id="childrenSaturdayNumber">
-        <h2>How many?</h2>
-        <div className="inputs">
-          <input id="children-number" type="text" onChange={e => updateRsvp(e.target.value)} />
-        </div>
-      </div>
-    )
-  }
-
-  const Sunday = () => {
-    return (
-      <div className="rsvp-q">
-        <h2>Are you joining us on Sunday, 24 of July?</h2>
-        <h2>(Sorry - no children allowed)</h2>
-        <div className="inputs">
-          <button className={rsvpReq.sunday === "yes" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sun-yes")}>Yes</button>
-          <button className={rsvpReq.sunday === "no" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sun-no")}>No</button>
-          <button className={rsvpReq.sunday === "maybe" ? "btn-clicked" : "rsvp-btn"} onClick={() => updateRsvp("sun-maybe")}>Maybe</button>
-        </div>
-
-      </div>
-    )
-  }
-
-  const RsvpBtn = () => {
-    return (
-      <button className="rsvp-submit-btn" onClick={() => sendRsvp(rsvpReq)}><i className="far fa-envelope"></i> Send RSVP</button>
-    )
-  }
-
-  const NotJoining = () => {
-    return (
-      <div className="rsvp-q">
-        <h2>OK :(</h2>
-      </div>
-    )
-  }
-
-  const formSubmitted = (
-    <div id="rsvp-response">
-      You've already RSVP'd :)
-    </div>
-  )
-
-  // const form = (
-  //   <div className="rsvp-content">
-
-  //     {Saturday()}
-
-  //     {(rsvpReq.saturday === 'yes' || rsvpReq.saturday === 'maybe') && ChildrenSaturday()}
-
-  //     {(rsvpReq.childrenSaturday === 'yes' || rsvpReq.childrenSaturday === 'maybe') && ChildrenSaturdayNumber()}
-
-  //     {(rsvpReq.childrenSaturdayNumber || rsvpReq.childrenSaturday === 'no') && Diet()}
-
-  //     {rsvpReq.diet === 'other' && SpecifyOtherDiet()}
-
-  //     {Sunday()}
-
-  //     {rsvpReq.sunday && RsvpBtn()}
-
-  //   </div>
-  // )
-
-  const alreadySubmitted = (data) => {
-    if (!data) {
-      return false;
-    }
-    for (let input of data) {
-      if (input[0] === currentUser) {
-        return true;
-      }
-    }
-    return false;
-  }
-
   return (
     <div id="rsvp-wrapper">
       <div id="rsvp-container">
-
-        {Saturday()}
-
-        {(rsvpReq.saturday === 'yes' || rsvpReq.saturday === 'maybe') && ChildrenSaturday()}
-
-        {(rsvpReq.childrenSaturday === 'yes' || rsvpReq.childrenSaturday === 'maybe') && ChildrenSaturdayNumber()}
-
-        {(rsvpReq.childrenSaturdayNumber || rsvpReq.childrenSaturday === 'no') && Diet()}
-
-        {rsvpReq.diet === 'other' && SpecifyOtherDiet()}
-
-        {rsvpReq.otherDiet || (rsvpReq.diet !== 'other' && rsvpReq.diet) && Sunday()}
-
-        {rsvpReq.sunday && RsvpBtn()}
-
+        <div id="rsvp-photos">
+          <img src="https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/IMG_20200920_183756.jpeg?alt=media&token=2ea8a703-c0a3-4b7e-b550-ddbc19d98ef8" alt="" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/IMG_20200920_183756.jpeg?alt=media&token=2ea8a703-c0a3-4b7e-b550-ddbc19d98ef8" alt="" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/IMG_20200920_183756.jpeg?alt=media&token=2ea8a703-c0a3-4b7e-b550-ddbc19d98ef8" alt="" />
+        </div>
+        <div className="question">
+          <h2>Are you joining us on Saturday, 23 of July?</h2>
+          <div className="inputs">
+            <div className="check">
+              <label><input type="radio" name="sat" id='yes' onClick={() => updateRsvp("sat-yes")}/>Yes</label>
+              <label><input type="radio" name="sat" id='no' onClick={() => updateRsvp("sat-no")}/>No</label>
+              <label><input type="radio" name="sat" id='maybe' onClick={() => updateRsvp("sat-maybe")}/>Maybe</label>
+            </div>
+          </div>
+        </div>
+        <div className="question">
+          <h2>Are you joining us on Sunday, 24 of July?</h2>
+          <h3>(+18 years only)</h3>
+          <div className="inputs">
+            <div className="check">
+              <label><input type="radio" name="sun" id='yes' onClick={() => updateRsvp("sun-yes")} />Yes</label>
+              <label><input type="radio" name="sun" id='no' onClick={() => updateRsvp("sun-no")} />No</label>
+              <label><input type="radio" name="sun" id='maybe' onClick={() => updateRsvp("sun-maybe")} />Maybe</label>
+            </div>
+          </div>
+        </div>
+        <div className="question">
+          <button className="rsvp-submit-btn" onClick={() => sendRsvp(rsvpReq)}><i className="far fa-envelope"></i> Send RSVP</button>
+        </div>
       </div>
     </div>
-
   )
-
-  // if (alreadySubmitted()) {
-  //   return formSubmitted()
-  // } else if (data) {
-  //   return (
-  //     <div className="rsvp-container">
-  //       {form}
-  //     </div>
-  //   )
-  // } else {
-  //   return (
-  //     <div>Something went wrong :(</div>
-  //   );
-  // }
 };
