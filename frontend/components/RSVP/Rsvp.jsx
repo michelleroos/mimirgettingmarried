@@ -68,11 +68,32 @@ export default function RSVP() {
       setRsvpReq({ ...rsvpReq, diet: "vegan" });
     } else if (val === "vegetarian") {
       setRsvpReq({ ...rsvpReq, diet: "vegetarian" });
+    } else if (val === "chicken") {
+      setRsvpReq({ ...rsvpReq, diet: "chicken" });
+    } else if (val === "fish") {
+      setRsvpReq({ ...rsvpReq, diet: "fish" });
     } else if (val === "other") {
       setRsvpReq({ ...rsvpReq, diet: "other" });
     } else if (isNaN(Number(val))) {
       setRsvpReq({ ...rsvpReq, otherDiet: val });
     };
+  };
+
+  const Diet = () => {
+    return (
+      <div className="question">
+        <h2>Do you have any dietary restrictions or preferences?</h2>
+        <div className="inputs">
+          <div className="check">
+            <label><input type="radio" name="diet" id='vegan' onClick={() => updateRsvp("vegan")} />Vegan</label>
+            <label><input type="radio" name="diet" id='vegetarian' onClick={() => updateRsvp("vegetarian")} />Vegetarian</label>
+            <label><input type="radio" name="diet" id='vegetarian' onClick={() => updateRsvp("vegetarian")} />Chicken</label>
+            <label><input type="radio" name="diet" id='vegetarian' onClick={() => updateRsvp("vegetarian")} />Fish</label>
+            <label><input type="radio" name="diet" id='other' onClick={() => updateRsvp("other")} />Other</label>
+          </div>
+        </div>
+      </div>
+    );
   };
 
   const SaturdayChildren = () => {
@@ -121,7 +142,8 @@ export default function RSVP() {
           </div>
         </div>
 
-        {(rsvpReq.saturday === 'yes' || rsvpReq.saturday === 'maybe') && SaturdayChildren()}
+        {(rsvpReq.saturday === 'yes' || rsvpReq.saturday === 'maybe') && Diet()}
+        {/* {(rsvpReq.saturday === 'yes' || rsvpReq.saturday === 'maybe') && SaturdayChildren()} */}
         {(rsvpReq.childrenSaturday === 'yes' || rsvpReq.childrenSaturday === 'maybe') && SaturdayChildrenNumber()}
 
         <div className="question">
