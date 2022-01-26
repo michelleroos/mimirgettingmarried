@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRsvp }) {
+export default function UpdateRsvpModal({ rsvpReq, setUpdateRsvpModal, updateRsvp, changeRsvp }) {
 
   const closeModal = (e) => {
-    if (e.target.id === 'rsvp-modal-bg') setRsvpModal(false);
+    if (e.target.id === 'rsvp-modal-bg') setUpdateRsvpModal(false);
   };
 
   const Diet = () => {
@@ -12,27 +12,27 @@ export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRs
         <p>Do you have any dietary restrictions or preferences?</p>
         <div className="inputs">
           <div className="check">
-            <label className="radio" onClick={() => updateRsvpReq("vegan")}>
+            <label className="radio" onClick={() => updateRsvp("vegan")}>
               <input type="radio" name="diet" id='vegan' className="radio-input" />
               <div className="radio-div"></div> Vegan
             </label>
-            <label className="radio" onClick={() => updateRsvpReq("vegetarian")}>
+            <label className="radio" onClick={() => updateRsvp("vegetarian")}>
               <input type="radio" name="diet" id='vegetarian' className="radio-input" />
               <div className="radio-div"></div> Vegetarian
             </label>
-            <label className="radio" onClick={() => updateRsvpReq("fish")}>
+            <label className="radio" onClick={() => updateRsvp("fish")}>
               <input type="radio" name="diet" id='fish' className="radio-input" />
               <div className="radio-div"></div> Fish
             </label>
-            <label className="radio" onClick={() => updateRsvpReq("chicken")}>
+            <label className="radio" onClick={() => updateRsvp("chicken")}>
               <input type="radio" name="diet" id='chicken' className="radio-input" />
               <div className="radio-div"></div> Chicken
             </label>
-            <label className="radio" onClick={() => updateRsvpReq("none")}>
+            <label className="radio" onClick={() => updateRsvp("none")}>
               <input type="radio" name="diet" id='none' className="radio-input" />
               <div className="radio-div"></div> None
             </label>
-            <label className="radio" onClick={() => updateRsvpReq("other")}>
+            <label className="radio" onClick={() => updateRsvp("other")}>
               <input type="radio" name="diet" id='other' className="radio-input" />
               <div className="radio-div"></div> Other
             </label>
@@ -48,7 +48,7 @@ export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRs
         <p>Please specify</p>
         <div className="inputs">
           <div className="check">
-            <input id="other-diet" type="text" onChange={e => updateRsvpReq(e.target.value)} />
+            <input id="other-diet" type="text" onChange={e => updateRsvp(e.target.value)} />
           </div>
         </div>
       </div>
@@ -61,15 +61,15 @@ export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRs
         <p>Will you bring any children?</p>
         <div className="inputs">
           <div className="check">
-            <label className="radio" onClick={() => updateRsvpReq("sat-children-yes")}>
+            <label className="radio" onClick={() => updateRsvp("sat-children-yes")}>
               <input type="radio" name="sat-children" id='yes' className="radio-input" />
               <div className="radio-div"></div> Yes
             </label>
-            <label className="radio" onClick={() => updateRsvpReq("sat-children-no")}>
+            <label className="radio" onClick={() => updateRsvp("sat-children-no")}>
               <input type="radio" name="sat-children" id='no' className="radio-input" />
               <div className="radio-div"></div> No
             </label>
-            <label className="radio" onClick={() => updateRsvpReq("sat-children-maybe")}>
+            <label className="radio" onClick={() => updateRsvp("sat-children-maybe")}>
               <input type="radio" name="sat-children" id='maybe' className="radio-input" />
               <div className="radio-div"></div> Maybe
             </label>
@@ -84,7 +84,7 @@ export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRs
       <div className="question">
         <p>How many?</p>
         <div className="inputs">
-          <input id="children-number" type="text" onChange={e => updateRsvpReq(e.target.value)} />
+          <input id="children-number" type="text" onChange={e => updateRsvp(e.target.value)} />
         </div>
       </div>
     );
@@ -98,15 +98,15 @@ export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRs
             <p>Will you attend our wedding on the 23rd of July?</p>
             <div className="inputs">
               <div className="check">
-                <label className="radio" onClick={() => updateRsvpReq("sat-yes")}>
+                <label className="radio" onClick={() => updateRsvp("sat-yes")}>
                   <input type="radio" name="sat" id='yes' className="radio-input" />
                   <div className="radio-div"></div> Yes
                 </label>
-                <label className="radio" onClick={() => updateRsvpReq("sat-no")}>
+                <label className="radio" onClick={() => updateRsvp("sat-no")}>
                   <input type="radio" name="sat" id='no' className="radio-input" />
                   <div className="radio-div"></div> No
                 </label>
-                <label className="radio" onClick={() => updateRsvpReq("sat-maybe")}>
+                <label className="radio" onClick={() => updateRsvp("sat-maybe")}>
                   <input type="radio" name="sat" id='maybe' className="radio-input" />
                   <div className="radio-div"></div> Maybe
                 </label>
@@ -123,23 +123,23 @@ export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRs
             <p>Will you join our party on Sunday the 24th of July? (+18 years only)</p>
             <div className="inputs">
               <div className="check">
-                <label className="radio" onClick={() => updateRsvpReq("sun-yes")}>
+                <label className="radio" onClick={() => updateRsvp("sun-yes")}>
                   <input type="radio" name="sun" id='yes' className="radio-input" />
                   <div className="radio-div"></div> Yes
                 </label>
-                <label className="radio" onClick={() => updateRsvpReq("sun-no")}>
+                <label className="radio" onClick={() => updateRsvp("sun-no")}>
                   <input type="radio" name="sun" id='no' className="radio-input" />
                   <div className="radio-div"></div> No
                 </label>
-                <label className="radio" onClick={() => updateRsvpReq("sun-maybe")}>
+                <label className="radio" onClick={() => updateRsvp("sun-maybe")}>
                   <input type="radio" name="sun" id='maybe' className="radio-input" />
                   <div className="radio-div"></div> Maybe
                 </label>
               </div>
             </div>
           </div>
-          <button id="rsvp-submit-btn" onClick={() => sendRsvp(rsvpReq)}>
-            <p>Send RSVP</p>
+          <button id="rsvp-submit-btn" onClick={() => changeRsvp(rsvpReq)}>
+            <p>Update RSVP</p>
             <i className="far fa-envelope"></i>
           </button>
         </div>

@@ -156,6 +156,14 @@
     // height: 100vh;
     position: relative;
 
+    h3,
+    h2 {
+      font-family: "Poppins", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin: 0 0 10px 0;
+    }
+
     &::after {
       content: "";
       background-image: url("https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/IMG_20200920_183756.jpeg?alt=media&token=2ea8a703-c0a3-4b7e-b550-ddbc19d98ef8");
@@ -190,7 +198,8 @@
         box-shadow: 3px 5px 6px rgb(85, 85, 85);
       }
 
-      #rsvp-note {
+      #rsvp-note,
+      #rsvp-update {
         background-color: white;
         box-shadow: 3px 5px 6px rgb(85, 85, 85);
         width: 400px;
@@ -201,53 +210,38 @@
         top: 40px;
         left: 40px;
 
-        h3,
-        h2 {
-          font-family: "Poppins", sans-serif;
-          text-transform: uppercase;
-          letter-spacing: 3px;
-          margin: 0 0 10px 0;
-        }
-
-        #rsvp-btn-wrap {
+        #rsvp-submit-btn {
+          background-color: transparent;
+          border: 1px solid pink;
+          border-radius: 30px;
+          height: 40px;
+          width: 120px;
+          min-width: 100px;
+          color: pink;
           display: flex;
+          align-items: center;
           justify-content: center;
-          align-content: center;
-          margin: 30px;
+          transition: transform 0.15s;
 
-          #rsvp-submit-btn {
-            background-color: transparent;
-            border: 1px solid pink;
-            border-radius: 30px;
-            height: 40px;
-            width: 120px;
-            min-width: 100px;
+          p,
+          i {
+            font-size: 15px;
+            margin: 0 5px 0 0;
             color: pink;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.15s;
+          }
 
-            p,
-            i {
-              font-size: 15px;
-              margin: 0 5px 0 0;
-              color: pink;
+          &:hover {
+            transition: all 0.1s ease 0s;
+            background-color: pink;
+
+            p {
+              font-weight: bold;
+              color: white;
             }
 
-            &:hover {
-              transition: all 0.1s ease 0s;
-              background-color: pink;
-
-              p {
-                font-weight: bold;
-                color: white;
-              }
-
-              i {
-                color: white;
-                font-weight: bold;
-              }
+            i {
+              color: white;
+              font-weight: bold;
             }
           }
         }

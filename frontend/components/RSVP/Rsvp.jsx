@@ -1,9 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import RsvpModal from './RsvpModal';
+import UpdateRsvpModal from './UpdateRsvpModal';
 
 export default function RSVP() {
   const dispatch = useDispatch();
+
+  const currentUser = useSelector((state) => state.entities.user.user);
+  const currentUserId = useSelector((state) => state.session.id);
+  const [data, setData] = useState(null);
+  const [rsvpModal, setRsvpModal] = useState(false);
+  const [updateRsvpModal, setUpdateRsvpModal] = useState(false);
+
+  const [rsvpReq, setRsvpReq] = useState({
+    user: null,
+    saturday: null,
+    diet: null,
+    otherDiet: null,
+    childrenSaturday: null,
+    childrenSaturdayNumber: null,
+    sunday: null,
+  });
 
   useEffect(() => {
     document.title = `RSVP | #mimirgettingmarried`;
@@ -18,6 +35,16 @@ export default function RSVP() {
       .catch((err) => console.log(err))
   }, []);
 
+  const changeRsvp = (req) => {
+    const reqOptions = {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(req)
+    };
+    fetch(`http://localhost:3001/api/rsvp/${email}`, reqOptions)
+      .then(res => console.log('updated!'))
+  };
+
   const sendRsvp = (req) => {
     const reqOptions = {
       method: "POST",
@@ -26,24 +53,9 @@ export default function RSVP() {
     };
     fetch("http://localhost:3001/api/rsvp", reqOptions)
       .then(res => console.log('sent!'))
-  }
+  };
 
-  const currentUser = useSelector((state) => state.entities.user.user);
-  const currentUserId = useSelector((state) => state.session.id);
-  const [data, setData] = useState(null);
-  const [modal, setModal] = useState(false);
-
-  const [rsvpReq, setRsvpReq] = useState({
-    user: null,
-    saturday: null,
-    diet: null,
-    otherDiet: null,
-    childrenSaturday: null,
-    childrenSaturdayNumber: null,
-    sunday: null,
-  });
-
-  const updateRsvp = (val) => {
+  const updateRsvpReq = (val) => {
     if (val === "sat-yes") {
       setRsvpReq({ ...rsvpReq, saturday: "yes" });
     } else if (val === "sat-no") {
@@ -81,23 +93,43 @@ export default function RSVP() {
     };
   };
 
+  const Invitation = () => {
+    return (
+      <div id="rsvp-note">
+        <h2>Dear family & friends - </h2>
+        <h3>We're delighted to invite you to our wedding!</h3>
+        <h3>Please RSVP by June 23rd.</h3>
+        <div id="rsvp-btn-wrap">
+          <button id="rsvp-submit-btn" onClick={() => setRsvpModal(true)}>
+            <p>RSVP</p>
+            <i className="far fa-envelope"></i>
+          </button>
+        </div>
+      </div>
+    );
+  };
+
+  const UpdateInvitation = () => {
+    return (
+      <div id="rsvp-update">
+        <h2>Thank you for sending your RSVP -</h2>
+        <h3>Change of plans? Please update your reply.</h3>
+        <button id="rsvp-submit-btn" onClick={() => setUpdateRsvpModal(true)}>
+          <p>RSVP</p>
+          <i className="far fa-envelope"></i>
+        </button>
+      </div>
+    )
+  }
+
   return (
     <div id="rsvp-wrapper">
-      {modal && <RsvpModal setModal={setModal} updateRsvp={updateRsvp} rsvpReq={rsvpReq} sendRsvp={sendRsvp}/>}
+      {rsvpModal && <RsvpModal setRsvpModal={setRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} sendRsvp={sendRsvp} />}
+      {updateRsvpModal && <UpdateRsvpModal setUpdateRsvpModal={setUpdateRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} changeRsvp={changeRsvp}/>}
       <div id="rsvp-img-container">
         <div id="rsvp-invitation">
           <div id="envelope"></div>
-          <div id="rsvp-note">
-            <h2>Dear family & friends - </h2>
-            <h3>We're delighted to invite you to our wedding!</h3>
-            <h3>Please RSVP by June 23rd.</h3>
-            <div id="rsvp-btn-wrap">
-              <button id="rsvp-submit-btn" onClick={() => setModal(true)}>
-                <p>RSVP</p>
-                <i className="far fa-envelope"></i>
-              </button>
-            </div>
-          </div>
+          {data ? UpdateInvitation() : Invitation()}
         </div>
       </div>
     </div>

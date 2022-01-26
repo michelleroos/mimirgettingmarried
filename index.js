@@ -31,8 +31,35 @@ app.get("/api/rsvp", async (req, res) => { // api endpoint returns a CB. We deci
     range,
   });
 
+  // How to filter user?
+  // getRows.data.values.filter(entry => entry[0])
+
   res.send(getRows.data); // express/app sends to the client (the body)
 });
+
+// app.put("/api/rsvp/email"), async (req, res) => { // <<<<<<<<<<<<<<<<<<<
+
+//   // create client instance for auth
+//   const client = await auth.getClient();
+//   // create Google sheets API instance
+//   const googleSheets = google.sheets({ version: "v4", auth: client })
+
+//   const updateRow = await googleSheets.spreadsheets.values.append({
+//     auth,
+//     spreadsheetId,
+//     range,
+//     valueInputOption: "USER_ENTERED", // parses info
+//     resource: {
+//       values: [
+//         // Object.keys(req.body), // header
+//         Object.values(req.body) // values
+//       ]
+//     }
+//   })
+
+//   res.send(updateRow);
+
+// }
 
 app.post("/api/rsvp", async (req, res) => {
 
