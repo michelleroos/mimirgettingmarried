@@ -32,7 +32,7 @@ export default function RSVP() {
   const currentUser = useSelector((state) => state.entities.user.user);
   const currentUserId = useSelector((state) => state.session.id);
   const [data, setData] = useState(null);
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(true);
 
   const [rsvpReq, setRsvpReq] = useState({
     user: null,
@@ -94,9 +94,15 @@ export default function RSVP() {
             <p>Are you attending our wedding on the 23rd of July?</p>
             <div className="inputs">
               <div className="check">
-                <label><input type="radio" name="sat" id='yes' onClick={() => updateRsvp("sat-yes")} />Yes</label>
-                <label><input type="radio" name="sat" id='no' onClick={() => updateRsvp("sat-no")} />No</label>
-                <label><input type="radio" name="sat" id='maybe' onClick={() => updateRsvp("sat-maybe")} />Maybe</label>
+                <label className="radio" onClick={() => updateRsvp("sat-yes")}><input type="radio" name="sat" id='yes' className="radio-input"/>
+                  <div className="radio-div"></div> Yes
+                </label>
+                <label className="radio" onClick={() => updateRsvp("sat-no")}><input type="radio" name="sat" id='no' className="radio-input"/>
+                  <div className="radio-div"></div> No
+                </label>
+                <label className="radio" onClick={() => updateRsvp("sat-maybe")}><input type="radio" name="sat" id='maybe' className="radio-input"/>
+                  <div className="radio-div"></div> Maybe
+                </label>
               </div>
             </div>
           </div>
