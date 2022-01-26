@@ -197,6 +197,10 @@ export default function RSVP() {
               </div>
             </div>
           </div>
+          <button id="rsvp-submit-btn" onClick={() => sendRsvp(rsvpReq)}>
+            <i className="far fa-envelope"></i> 
+            <p>Send RSVP</p>
+            </button>
         </div>
       </div>
     );

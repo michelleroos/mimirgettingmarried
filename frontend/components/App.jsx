@@ -15,7 +15,6 @@ import LoginFormContainer from "./Session/LoginFormContainer";
 import NavbarContainer from "./Navbar/NavbarContainer";
 import RSVP from "./RSVP/Rsvp";
 import Schedule from "./Schedule/Schedule";
-import RSVPContainer from "./RSVP/_RsvpContainer";
 import UploadForm from "./UploadForm/UploadForm";
 import Welcome from "./Welcome/Welcome";
 // import WelcomeContainer from "./Welcome/WelcomeContainer";
