@@ -83,7 +83,7 @@ export default function Schedule() {
           <div className="detailed-schedule-container">
             <div className="schedule-details">
               <i class="fas fa-music"></i>
-              <h3>Party</h3>
+              <h3>Party continues</h3>
               <p>17:00 until late</p>
               <p className="hover" onClick={() => setSunday(true)}>GLASS Bar</p>
               {sunday && <Sunday close={close} />}
