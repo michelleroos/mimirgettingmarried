@@ -10,7 +10,7 @@ import ImageCarousel from './ImageCarousel';
 export default function Welcome() {
 
   useEffect(() => {
-    document.title = `Welcome | #mimirgettingmarried`;
+    document.title = `A & M | #mimirgettingmarried`;
   });
 
   const currentUserId = useSelector((state) => state.session.id);
@@ -29,18 +29,7 @@ export default function Welcome() {
   const handleClick = (url, id) => {
     setImg(url);
     setImgID(id);
-  }
-
-  // const loggedIn = (
-  //   <div id="logged-in-img-grid">
-  //     {docs && docs.map((doc, idx) => (
-  //       <div className="img-wrap" key={idx} onClick={() => openCarousel(idx)}>
-  //         <img src={doc.url} alt={doc.id} style={{ width: '100%' }} />
-  //       </div>
-  //     ))}
-  //     {open ? <ImageCarousel open={open} setOpen={setOpen} index={index} /> : null}
-  //   </div>
-  // )
+  };
 
   const loggedIn = (
     <div id="logged-in-img-grid">
@@ -67,12 +56,6 @@ export default function Welcome() {
     <div id="welcome-container">
       {currentUserId ? loggedIn : loggedOut}
       {img && <ImageCarousel img={img} setImg={setImg} imgID={imgID} />}
-      {/* {img ? <ImageCarousel open={open} setOpen={setOpen} index={index} img={img} setImg={setImg} imgID={imgID}/> : null} */}
     </div>
-  )
-
-  // const openModal = (imgUrl) => {
-  //   setOpen(true);
-  //   setImg(imgUrl);
-  // }
+  );
 };

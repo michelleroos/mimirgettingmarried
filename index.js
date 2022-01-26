@@ -48,7 +48,7 @@ app.post("/api/rsvp", async (req, res) => {
     valueInputOption: "USER_ENTERED", // parses info
     resource: {
       values: [
-        Object.keys(req.body), // header
+        // Object.keys(req.body), // header
         Object.values(req.body) // values
       ]
     }
