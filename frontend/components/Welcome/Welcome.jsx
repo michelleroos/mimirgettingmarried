@@ -24,7 +24,7 @@ export default function Welcome() {
   const openCarousel = (idx) => {
     setOpen(true);
     setIndex(idx)
-  }
+  };
 
   const handleClick = (url, id) => {
     setImg(url);
