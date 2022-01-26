@@ -123,7 +123,8 @@
         justify-content: center;
         transition: transform 0.15s;
 
-        p, i {
+        p,
+        i {
           font-size: 15px;
           margin: 0 5px 0 0;
           color: pink;
@@ -192,7 +193,6 @@
       #rsvp-note {
         background-color: white;
         box-shadow: 3px 5px 6px rgb(85, 85, 85);
-        // opacity: 0.6;
         width: 400px;
         height: 270px;
         border-radius: 10px;
@@ -214,329 +214,44 @@
           justify-content: center;
           align-content: center;
           margin: 30px;
+
+          #rsvp-submit-btn {
+            background-color: transparent;
+            border: 1px solid pink;
+            border-radius: 30px;
+            height: 40px;
+            width: 120px;
+            min-width: 100px;
+            color: pink;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.15s;
+
+            p,
+            i {
+              font-size: 15px;
+              margin: 0 5px 0 0;
+              color: pink;
+            }
+
+            &:hover {
+              transition: all 0.1s ease 0s;
+              background-color: pink;
+
+              p {
+                font-weight: bold;
+                color: white;
+              }
+
+              i {
+                color: white;
+                font-weight: bold;
+              }
+            }
+          }
         }
       }
     }
   }
 }
-
-// #rsvp-wrapper {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   height: calc(100vh - 150px);
-
-//   #rsvp-container {
-//     // width: 60%;
-
-//     #rsvp-photos {
-//       img {
-//         height: 200px;
-//         margin: 0 20px 0 0;
-//         border-radius: 3px;
-//       }
-//     }
-
-//     .question {
-//       h2 {
-//         margin: 0 0 10px 0;
-//       }
-
-//       .inputs {
-//         display: flex;
-//         margin: 0 0 20px 0;
-
-//         label {
-//           margin: 0 15px 0 0;
-
-//           input {
-//             margin: 0 5px 0 0;
-//           }
-//         }
-//       }
-//     }
-
-//     .rsvp-submit-btn {
-//       width: 120px;
-//       border-radius: 30px;
-//       height: 50px;
-//       font-size: 12px;
-//       background-color: white;
-//       border: 1px solid pink;
-//       color: pink;
-//       align-self: center;
-
-//       i {
-//         color: pink;
-//       }
-
-//       &:hover {
-//         background-color: pink;
-//         border: 1px solid pink;
-//         color: white;
-
-//         i {
-//           color: white;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// #rsvp-wrapper {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   // height: calc(100vh - 100px);
-
-//   #rsvp-container {
-//     // width: 60%;
-
-//     .rsvp-q {
-//       h2 {
-//         font-weight: bold;
-//         font-size: 18px;
-//       }
-
-//       .inputs {
-//         margin: 20px 0 40px 0;
-//         display: flex;
-//         justify-content: space-around;
-//         align-items: center;
-
-//         .rsvp-btn {
-//           background-color: white;
-//           border: 1px solid pink;
-//           color: pink;
-//           font-size: 12px;
-//           height: 50px;
-//           width: 50px;
-
-//           &:hover {
-//             background-color: pink;
-//             border: 1px solid pink;
-//             color: white;
-//           }
-//         }
-
-//         .btn-clicked {
-//           background-color: pink;
-//           border: 1px solid pink;
-//           color: white;
-//           font-size: 12px;
-//           height: 50px;
-//           width: 50px;
-//         }
-
-//         .veggie {
-//           width: 100px;
-//           border-radius: 30px;
-//         }
-
-//         #children-number,
-//         #other-diet {
-//           display: block;
-//           width: 100%;
-//           border: none;
-//           border-bottom: 1px solid lightgrey;
-//           height: 36px;
-//           padding: 5px;
-
-//           &::placeholder {
-//             font-weight: bold;
-//             color: rgb(215, 215, 215);
-//           }
-
-//           &:focus {
-//             outline: none;
-//             border: none;
-//             border-bottom: 1px solid pink;
-//           }
-//         }
-//       }
-//     }
-
-//     .rsvp-submit-btn {
-//       width: 120px;
-//       border-radius: 30px;
-//       height: 50px;
-//       font-size: 12px;
-//       background-color: white;
-//       border: 1px solid pink;
-//       color: pink;
-//       align-self: center;
-
-//       i {
-//         color: pink;
-//       }
-
-//       &:hover {
-//         background-color: pink;
-//         border: 1px solid pink;
-//         color: white;
-
-//         i {
-//           color: white;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// .rsvp-container {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   height: auto;
-//   // height: calc(100vh - 100px);
-//   // height: calc(100vh - 110px);
-//   // display: block;
-//   // position: relative;
-
-//   // &::after {
-//   //   content: '';
-//   //   background-image: url("https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/IMG_3125.jpeg?alt=media&token=329df3f9-01f2-436e-9ccc-2b3a3acacbab");
-//   //   opacity: 0.6;
-//   //   background-size: cover;
-//   //   background-repeat: no-repeat;
-//   //   background-position: center center;
-//   //   position: absolute;
-//   //   top: 0px;
-//   //   right: 0px;
-//   //   bottom: 0px;
-//   //   left: 0px;
-//   //   z-index: -1;
-//   // }
-
-//   // form {
-//   .rsvp-content {
-//     display: flex;
-//     flex-direction: column;
-//     height: calc(100vh - 100px);
-//     justify-content: center;
-
-//     .rsvp-q {
-//       h2 {
-//         font-weight: bold;
-//         font-size: 18px;
-//       }
-
-//       .inputs {
-//         margin: 20px 0 40px 0;
-//         display: flex;
-//         justify-content: space-around;
-//         align-items: center;
-
-//         .rsvp-btn {
-//           background-color: white;
-//           border: 1px solid pink;
-//           color: pink;
-//           font-size: 12px;
-//           height: 50px;
-//           width: 50px;
-
-//           &:hover {
-//             background-color: pink;
-//             border: 1px solid pink;
-//             color: white;
-//           }
-//         }
-
-//         i {
-//           color: pink;
-//           cursor: pointer;
-//         }
-
-//         .btn-clicked {
-//           background-color: pink;
-//           border: 1px solid pink;
-//           color: white;
-//           font-size: 12px;
-//           height: 50px;
-//           width: 50px;
-//         }
-
-//         .veggie {
-//           width: 100px;
-//           border-radius: 30px;
-//         }
-
-//         #children-number,
-//         #other-diet {
-//           display: block;
-//           width: 100%;
-//           border: none;
-//           border-bottom: 1px solid lightgrey;
-//           height: 36px;
-//           padding: 5px;
-
-//           &::placeholder {
-//             font-weight: bold;
-//             color: rgb(215, 215, 215);
-//           }
-
-//           &:focus {
-//             outline: none;
-//             border: none;
-//             border-bottom: 1px solid pink;
-//           }
-//         }
-//       }
-//     }
-
-//     .rsvp-submit-btn {
-//       width: 120px;
-//       border-radius: 30px;
-//       height: 50px;
-//       font-size: 12px;
-//       background-color: white;
-//       border: 1px solid pink;
-//       color: pink;
-//       align-self: center;
-
-//       i {
-//         color: pink;
-//       }
-
-//       &:hover {
-//         background-color: pink;
-//         border: 1px solid pink;
-//         color: white;
-
-//         i {
-//           color: white;
-//         }
-//       }
-//     }
-//   }
-//   // }
-
-//   // .rsvp-btn {
-//   //   background-color: transparent;
-//   //   border: 1px solid pink;
-//   //   border-radius: 30px;
-//   //   padding-top: 12px;
-//   //   padding-bottom: 12px;
-//   //   padding: 0px 36px;
-//   //   height: 40px;
-//   //   color: pink;
-//   //   // min-width: 115px;
-//   //   // position: relative;
-
-//   //   i {
-//   //     color: pink;
-//   //   }
-
-//   //   &:hover {
-//   //     transition: all 0.1s ease 0s;
-//   //     color: white;
-//   //     background-color: pink;
-//   //     font-weight: bold;
-
-//   //     i {
-//   //       color: white;
-//   //       font-weight: bold;
-//   //     }
-//   //   }
-//   // }
-// }
