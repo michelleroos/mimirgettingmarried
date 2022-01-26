@@ -32,7 +32,7 @@ export default function RSVP() {
   const currentUser = useSelector((state) => state.entities.user.user);
   const currentUserId = useSelector((state) => state.session.id);
   const [data, setData] = useState(null);
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
 
   const [rsvpReq, setRsvpReq] = useState({
     user: null,
@@ -82,12 +82,16 @@ export default function RSVP() {
     };
   };
 
+  const closeModal = (e) => {
+    if (e.target.id === 'rsvp-modal-bg') setModal(false);
+  };
+
   const Modal = () => {
     return (
-      <div id="rsvp-modal-bg">
+      <div id="rsvp-modal-bg" onClick={closeModal}>
         <div id="rsvp-modal">
           <div className="question">
-            <p>Are you joining us on Saturday, 23 of July?</p>
+            <p>Are you attending our wedding on the 23rd of July?</p>
             <div className="inputs">
               <div className="check">
                 <label><input type="radio" name="sat" id='yes' onClick={() => updateRsvp("sat-yes")} />Yes</label>
@@ -139,7 +143,7 @@ export default function RSVP() {
           </div>
 
           <div className="question">
-            <p>Are you joining us on Sunday, 24 of July? (+18 years only)</p>
+            <p>Are you joining our party on Sunday the 24th of July? (+18 years only)</p>
             <div className="inputs">
               <div className="check">
                 <label><input type="radio" name="sun" id='yes' onClick={() => updateRsvp("sun-yes")} />Yes</label>
@@ -164,7 +168,7 @@ export default function RSVP() {
             <h3>We're delighted to invite you to our wedding!</h3>
             <h3>Please RSVP by June 23rd.</h3>
             <div id="rsvp-btn-wrap">
-              <button id="rsvp-submit-btn">
+              <button id="rsvp-submit-btn" onClick={() => setModal(true)}>
                 <p>RSVP</p>
                 <i className="far fa-envelope"></i>
               </button>
