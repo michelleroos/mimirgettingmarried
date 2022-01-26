@@ -21,6 +21,7 @@
         display: flex;
 
         .schedule-details {
+          cursor: pointer;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -83,7 +84,28 @@
         border-radius: 3px;
         cursor: auto;
         background: white;
-        padding: 20px;
+        padding: 30px;
+
+        h2 {
+          font-family: "Poppins", sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          margin: 0 0 10px 0;
+        }
+
+        h3 {
+          line-height: 1.5;
+          margin-bottom: 10px;
+        }
+      }
+
+      #friday-modal {
+
+        img {
+          height: 200px;
+          width: auto;
+          border-radius: 3px;
+        }
       }
     }
   }

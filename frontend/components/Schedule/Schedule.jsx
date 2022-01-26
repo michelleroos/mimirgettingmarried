@@ -30,40 +30,41 @@ export default function Schedule() {
   const Schedule = () => (
     <div id="schedule-container-outer">
       <div id="schedule-container">
+        {friday && <Friday close={close} />}
+        {mingle && <Mingle close={close} />}
+        {ceremony && <Ceremony close={close} />}
+        {reception && <Reception close={close} />}
+        {sunday && <Sunday close={close} />}
         <div class="day-schedule">
           <h2>Friday - 22 July</h2>
           <div className="detailed-schedule-container">
-            <div className="schedule-details">
+            <div className="schedule-details" onClick={() => setFriday(true)}>
               <i class="fas fa-beer"></i>
               <h3>Meet & greet</h3>
-              <p className="hover" onClick={() => setFriday(true)}>TBD</p>
-              {friday && <Friday close={close} />}
+              <p className="hover">TBD</p>
             </div>
           </div>
         </div>
         <div class="day-schedule">
           <h2>Saturday - 23 July</h2>
           <div className="detailed-schedule-container">
-            <div className="schedule-details">
+            <div className="schedule-details" onClick={() => setMingle(true)}>
               <i class="fas fa-cocktail"></i>
               <h3>Mingle</h3>
               <p>15:00</p>
-              <p className="hover" onClick={() => setMingle(true)}>Villa Richter Fountain</p>
-              {mingle && <Mingle close={close} />}
+              <p className="hover">Villa Richter Fountain</p>
             </div>
-            <div className="schedule-details">
+            <div className="schedule-details" onClick={() => setCeremony(true)}>
               <i class="fas fa-heart"></i>
               <h3>Ceremony</h3>
               <p>16:00</p>
-              <p className="hover" onClick={() => setCeremony(true)}>Villa Richter</p>
-              {ceremony && <Ceremony close={close} />}
+              <p className="hover">Villa Richter</p>
             </div>
-            <div className="schedule-details">
+            <div className="schedule-details" onClick={() => setReception(true)}>
               <i class="fas fa-utensils"></i>
               <h3>Reception</h3>
               <p>18:00</p>
-              <p className="hover" onClick={() => setReception(true)}>X @ Villa Richter</p>
-              {reception && <Reception close={close} />}
+              <p className="hover">X @ Villa Richter</p>
             </div>
             <div className="schedule-details">
               <i class="fas fa-guitar"></i>
@@ -81,12 +82,11 @@ export default function Schedule() {
         <div class="day-schedule">
           <h2>Sunday - 24 July</h2>
           <div className="detailed-schedule-container">
-            <div className="schedule-details">
+            <div className="schedule-details" onClick={() => setSunday(true)}>
               <i class="fas fa-music"></i>
               <h3>Party continues</h3>
               <p>17:00 until late</p>
-              <p className="hover" onClick={() => setSunday(true)}>GLASS Bar</p>
-              {sunday && <Sunday close={close} />}
+              <p className="hover">GLASS Bar</p>
             </div>
           </div>
         </div>
