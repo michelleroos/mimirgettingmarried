@@ -41,7 +41,7 @@ export default function RSVP() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req)
     };
-    fetch(`http://localhost:3001/api/rsvp/${email}`, reqOptions)
+    fetch(`http://localhost:3001/api/rsvp/${req.user}`, reqOptions)
       .then(res => console.log('updated!'))
   };
 
