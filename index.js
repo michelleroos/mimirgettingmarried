@@ -32,9 +32,8 @@ app.get("/api/rsvp", async (req, res) => { // api endpoint returns a CB. We deci
   });
 
   // How to filter user?
-  // getRows.data.values.filter(entry => entry[0])
-
-  res.send(getRows.data); // express/app sends to the client (the body)
+  res.send(getRows.data.values); // express/app sends to the client (the body)
+  // res.send(getRows.data.values.filter(entry => entry[0] === req)); 
 });
 
 // app.put("/api/rsvp/email"), async (req, res) => { // <<<<<<<<<<<<<<<<<<<

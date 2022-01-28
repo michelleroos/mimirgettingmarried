@@ -6,9 +6,10 @@ import UpdateRsvpModal from './UpdateRsvpModal';
 export default function RSVP() {
   const dispatch = useDispatch();
 
-  const currentUser = useSelector((state) => state.entities.user.user);
+  // const currentUser = useSelector((state) => state.entities.user.user);
   const currentUserId = useSelector((state) => state.session.id);
-  const [data, setData] = useState(null);
+  const [userData, setUserData] = useState(null);
+  const [email, setEmail] = useState(null);
   const [rsvpModal, setRsvpModal] = useState(false);
   const [updateRsvpModal, setUpdateRsvpModal] = useState(false);
 
@@ -26,14 +27,32 @@ export default function RSVP() {
     document.title = `RSVP | #mimirgettingmarried`;
 
     dispatch(getUser(currentUserId))
-      .then((res) => setRsvpReq({ ...rsvpReq, user: res.currentUser.user.email }))
+      .then((res) => useRes(res))
 
-    fetch("http://localhost:3001/api/rsvp")
+    fetch(`http://localhost:3001/api/rsvp`)
       .then((res) => res.json())
-      .then((data) => setData(data.values))
+      .then((data) => setUserData(data))
       // .then((data) => console.log(data))
       .catch((err) => console.log(err))
   }, []);
+
+  const useRes = (res) => {
+    setRsvpReq({ ...rsvpReq, user: res.currentUser.user.email });
+    setEmail(res.currentUser.user.email);
+  };
+
+  const filterData = () => {
+    if (userData) {
+      const filtered = [];
+      for (let row of userData) {
+        if (row[0] === email) {
+          filtered.push(row);
+          return filtered[0];
+        };
+      };
+    };
+    return null;
+  };
 
   const changeRsvp = (req) => {
     const reqOptions = {
@@ -125,11 +144,11 @@ export default function RSVP() {
   return (
     <div id="rsvp-wrapper">
       {rsvpModal && <RsvpModal setRsvpModal={setRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} sendRsvp={sendRsvp} />}
-      {updateRsvpModal && <UpdateRsvpModal setUpdateRsvpModal={setUpdateRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} changeRsvp={changeRsvp}/>}
+      {updateRsvpModal && <UpdateRsvpModal setUpdateRsvpModal={setUpdateRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} changeRsvp={changeRsvp} />}
       <div id="rsvp-img-container">
         <div id="rsvp-invitation">
           <div id="envelope"></div>
-          {data ? UpdateInvitation() : Invitation()}
+          {filterData() ? UpdateInvitation() : Invitation()}
         </div>
       </div>
     </div>
