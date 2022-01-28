@@ -8,8 +8,8 @@ export default function RSVP() {
 
   // const currentUser = useSelector((state) => state.entities.user.user);
   const currentUserId = useSelector((state) => state.session.id);
-  const [userData, setUserData] = useState(null);
-  const [email, setEmail] = useState(null);
+  const [googleSheetsData, setGoogleSheetsData] = useState(null);
+  const [userEmail, setUserEmail] = useState(null);
   const [rsvpModal, setRsvpModal] = useState(false);
   const [updateRsvpModal, setUpdateRsvpModal] = useState(false);
 
@@ -27,25 +27,25 @@ export default function RSVP() {
     document.title = `RSVP | #mimirgettingmarried`;
 
     dispatch(getUser(currentUserId))
-      .then((res) => useRes(res))
+      .then((res) => updateUser(res))
 
     fetch(`http://localhost:3001/api/rsvp`)
       .then((res) => res.json())
-      .then((data) => setUserData(data))
+      .then((data) => setGoogleSheetsData(data))
       // .then((data) => console.log(data))
       .catch((err) => console.log(err))
   }, []);
 
-  const useRes = (res) => {
+  const updateUser = (res) => {
     setRsvpReq({ ...rsvpReq, user: res.currentUser.user.email });
-    setEmail(res.currentUser.user.email);
+    setUserEmail(res.currentUser.user.email);
   };
 
-  const filterData = () => {
-    if (userData) {
+  const filteredData = () => {
+    if (googleSheetsData) {
       const filtered = [];
-      for (let row of userData) {
-        if (row[0] === email) {
+      for (let row of googleSheetsData) {
+        if (row[0] === userEmail) {
           filtered.push(row);
           return filtered[0];
         };
@@ -54,15 +54,15 @@ export default function RSVP() {
     return null;
   };
 
-  const changeRsvp = (req) => {
-    const reqOptions = {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(req)
-    };
-    fetch(`http://localhost:3001/api/rsvp/${req.user}`, reqOptions)
-      .then(res => console.log('updated!'))
-  };
+  // const changeRsvp = (req) => {
+  //   const reqOptions = {
+  //     method: "PUT",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(req)
+  //   };
+  //   fetch(`http://localhost:3001/api/rsvp/${req.user}`, reqOptions)
+  //     .then(res => console.log('updated!'))
+  // };
 
   const sendRsvp = (req) => {
     const reqOptions = {
@@ -71,7 +71,9 @@ export default function RSVP() {
       body: JSON.stringify(req)
     };
     fetch("http://localhost:3001/api/rsvp", reqOptions)
-      .then(res => console.log('sent!'))
+      // .then(res => console.log('sent!'))
+      .then(() => setRsvpModal(false))
+    window.location.reload(false);
   };
 
   const updateRsvpReq = (val) => {
@@ -148,7 +150,7 @@ export default function RSVP() {
       <div id="rsvp-img-container">
         <div id="rsvp-invitation">
           <div id="envelope"></div>
-          {filterData() ? UpdateInvitation() : Invitation()}
+          {filteredData() ? UpdateInvitation() : Invitation()}
         </div>
       </div>
     </div>

@@ -9,7 +9,7 @@ export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRs
   const Diet = () => {
     return (
       <div className="question">
-        <p>Do you have any dietary restrictions or preferences?</p>
+        <p>Do you have a dietary preference?</p>
         <div className="inputs">
           <div className="check">
             <label className="radio" onClick={() => updateRsvpReq("vegan")}>
