@@ -15,6 +15,14 @@ TBA
 
 The CRUD paradigm is used to frame sign in and RSVPs. See below for a code example of RSVP.
 
+### RSVP
+
+Google sheets is used as a backend for RSVP replies and edits. 
+
+### Photo gallery
+
+Users can browse a photo gallery of the couple once they are logged in.
+
 ## Built with
 
 - Ruby on Rails
