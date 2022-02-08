@@ -1,9 +1,7 @@
 # #mimirgettingmarried 
 
 ## Live link
-TBA
-
-<!-- ![robinhodl-view](https://github.com/michelleroos/robinhodl_fullstack/blob/main/app/assets/images/gif-login.gif?raw=true) -->
+[mimirgettingmarried.herokuapp.com](https://mimirgettingmarried.herokuapp.com/)
 
 ## About the project
 
