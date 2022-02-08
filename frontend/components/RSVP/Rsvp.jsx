@@ -54,15 +54,15 @@ export default function RSVP() {
     return null;
   };
 
-  // const changeRsvp = (req) => {
-  //   const reqOptions = {
-  //     method: "PUT",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(req)
-  //   };
-  //   fetch(`http://localhost:3001/api/rsvp/${req.user}`, reqOptions)
-  //     .then(res => console.log('updated!'))
-  // };
+  const changeRsvp = (req) => {
+    const reqOptions = {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(req)
+    };
+    fetch(`http://localhost:3001/api/rsvp/${req.user}`, reqOptions)
+      .then(res => console.log('updated!'))
+  };
 
   const sendRsvp = (req) => {
     const reqOptions = {

@@ -45,3 +45,4 @@ Michelle Roos
 ## Acknowledgements
 - Google Sheets Api
 - Google Cloud Platform
+- gifcap.dev
