@@ -17,9 +17,13 @@ The CRUD paradigm is used to frame sign in and RSVPs. See below for a code examp
 
 ### RSVP
 
+![rsvp-gif](https://github.com/michelleroos/mimirgettingmarried/blob/main/app/assets/images/rsvp.gif?raw=true)
+
 Google sheets is used as a backend for RSVP replies and edits. 
 
 ### Photo gallery
+
+![photos-gif](https://github.com/michelleroos/mimirgettingmarried/blob/main/app/assets/images/photo-gallery.gif?raw=true)
 
 Users can browse a photo gallery of the couple once they are logged in.
 
