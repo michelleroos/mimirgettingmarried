@@ -4,7 +4,7 @@ import * as RSVPAPIUtil from "../util/rsvp_util";
 export const RECEIVE_RSVP = 'RECEIVE_RSVP';
 export const RECEIVE_RSVP_ERRORS = 'RECEIVE_RSVP_ERRORS';
 
-// ACTION CREATORS
+// ACTION CREATORSS
 const receiveRSVP = (info) => {
   return {
     type: RECEIVE_RSVP,
