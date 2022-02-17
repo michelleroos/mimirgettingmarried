@@ -29,7 +29,7 @@
   z-index: 2;
   // text-transform: uppercase;
 
-  #nav-logo {
+  #logo {
     margin-left: 2rem;
     width: 46px;
     text-align: center;
@@ -61,7 +61,7 @@
     }
   }
 
-  .menu-icon {
+  #menu-icon {
     display: none;
 
     .fa-bars {
@@ -69,13 +69,13 @@
     }
   }
 
-  .nav-menu {
+  #menu {
     display: grid;
-    grid-template-columns: repeat(3, auto); 
+    grid-template-columns: repeat(3, auto);
     grid-gap: 10px;
     text-align: center;
 
-    .nav-links {
+    #menu-links {
       padding: 0.5rem 1rem;
 
       &:hover {
@@ -85,7 +85,7 @@
     }
   }
 
-  .nav-session {
+  #log-out {
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-gap: 10px;
@@ -97,51 +97,48 @@
 @media screen and (max-width: 960px) {
   #navbar-container {
     position: relative;
-  }
 
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 500px;
-    position: absolute;
-    top: 80px; // should be 30
-    left: -100%;
-    opacity: 1;
-    transition: all 0.5s east;
-  }
+    #menu-icon {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(-100%, 60%);
+      font-size: 1.8rem;
+      cursor: pointer;
 
-  .nav-links-mobile {
-    display: none;
-  }
+      .fa-times {
+        color: pink;
+        font-size: 2rem;
+      }
+    }
 
-  .nav-menu.active {
-    background: white;
-    left: 0;
-    transition: all 0.5s ease;
-    z-index: 1;
-  }
+    #menu {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 500px;
+      position: absolute;
+      // top: 80px;
+      top: 70px;
+      left: -100%;
+      opacity: 1;
+      transition: all 0.5s east;
+    }
 
-  .nav-links {
-    text-align: center;
-  }
+    #active {
+      background: white;
+      left: 0;
+      transition: all 0.5s ease;
+      z-index: 1;
+    }
 
-  .nav-links:hover {
-    border-radius: 0;
-  }
+    #menu-links {
+      text-align: center;
 
-  .menu-icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-
-  .fa-times {
-    color: pink;
-    font-size: 2rem;
+      &:hover {
+        border-radius: 0;
+      }
+    }
   }
 }

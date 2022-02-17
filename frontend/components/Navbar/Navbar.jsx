@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import UploadForm from '../UploadForm/UploadForm';
-import { Button } from './Button';
-// import { MenuItems } from './MenuItems';
 
 export default function Navbar({ logOut }) {
 
@@ -15,43 +13,34 @@ export default function Navbar({ logOut }) {
     setClicked(!clicked);
   }
 
-  const logOutBtn = (
-    <ul className="nav-session">
-      <li className="nav-links-mobile"><Link to="/" onClick={logOut}>Log out</Link></li>
-      {/* <li className="nav-links-mobile"><Link to="/" onClick={dispatch(logOut())}>Log out</Link></li> */}
-    </ul>
-  )
-
   if (currentUserId) {
     return (
       <div id="navbar-container">
         {/* <UploadForm /> */}
 
-        <div id="nav-logo">
+        <div id="logo">
           <Link to="/">
             <p id="logo">A & M</p>
             <i className="fas fa-heart"></i>
           </Link>
         </div>
 
-        <div className="menu-icon" onClick={handleClick}>
+        <div id="menu-icon" onClick={handleClick}>
           <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
         </div>
 
-        <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
+        <ul id={clicked ? 'menu active' : 'menu'}>
           {MenuItems.map((item, index) => {
             return (
-              <li className="nav-links" key={index}>
+              <li id="menu-links" key={index}>
                 <Link to={item.toLowerCase()}>{item}</Link>
               </li>
             )
           })}
-          {clicked ? <li className="nav-links"><Link to="/" onClick={logOut}>Log out</Link></li> : <></>}
+          {clicked ? <li id="menu-links"><Link to="/" onClick={logOut}>Log out</Link></li> : null}
         </ul>
 
-        {clicked ? <></> : logOutBtn}
-
-        {/* <Button className="nav-links-mobile" onClick={logOut}>Log out</Button> */}
+        {clicked ? null : <div id="log-out"><Link to="/" onClick={logOut}>Log out</Link></div>}
       </div>
     )
   } else {
