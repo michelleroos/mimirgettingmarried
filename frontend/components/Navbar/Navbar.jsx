@@ -5,13 +5,9 @@ import UploadForm from '../UploadForm/UploadForm';
 
 export default function Navbar({ logOut }) {
 
-  const [clicked, setClicked] = useState(false);
   const currentUserId = useSelector((state) => state.session.id);
   const MenuItems = ['Rsvp', 'Schedule', 'Faq']
-
-  const handleClick = () => {
-    setClicked(!clicked);
-  }
+  const [sidebar, setSidebar] = useState(false);
 
   if (currentUserId) {
     return (
@@ -25,11 +21,11 @@ export default function Navbar({ logOut }) {
           </Link>
         </div>
 
-        <div id="menu-icon" onClick={handleClick}>
-          <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+        <div id="menu-icon" onClick={() => setSidebar(!sidebar)}>
+          <i className={sidebar ? 'fas fa-times' : 'fas fa-bars'}></i>
         </div>
 
-        <ul id={clicked ? 'menu active' : 'menu'}>
+        <ul id={sidebar ? 'sidebar active' : 'menu'}>
           {MenuItems.map((item, index) => {
             return (
               <li id="menu-links" key={index}>
@@ -37,10 +33,10 @@ export default function Navbar({ logOut }) {
               </li>
             )
           })}
-          {clicked ? <li id="menu-links"><Link to="/" onClick={logOut}>Log out</Link></li> : null}
+          {sidebar ? <li id="menu-links"><Link to="/" onClick={logOut}>Log out</Link></li> : null}
         </ul>
 
-        {clicked ? null : <div id="log-out"><Link to="/" onClick={logOut}>Log out</Link></div>}
+        {sidebar ? null : <div id="log-out"><Link to="/" onClick={logOut}>Log out</Link></div>}
       </div>
     )
   } else {
