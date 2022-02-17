@@ -83,10 +83,7 @@ app.post("/api/rsvp", async (req, res) => {
   res.send(writeRows);
 });
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log("Server listening ...")
-})
 
-// app.listen(PORT, () => {
-//   console.log(`Server listening on ${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Server listening on ${PORT}`);
+});

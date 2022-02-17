@@ -12,7 +12,8 @@ import Faq from "./FAQ/Faq";
 import Footer from "./Footer/Footer";
 import Location from "./Location/Location";
 import LoginFormContainer from "./Session/LoginFormContainer";
-import NavbarContainer from "./Navbar/NavbarContainer";
+// import NavbarContainer from "./Navbar/NavbarContainer";
+import Navbar from "./Navbar/Navbar";
 import RSVP from "./RSVP/Rsvp";
 import Schedule from "./Schedule/Schedule";
 import UploadForm from "./UploadForm/UploadForm";
@@ -26,7 +27,7 @@ export default function App() {
   return (
     <div className="app" >
 
-      <NavbarContainer />
+      <Navbar />
       <Route exact path="/" component={Welcome} />
       <ProtectedRoute path="/faq" component={Faq} />
       <ProtectedRoute path="/rsvp" component={RSVP} />
