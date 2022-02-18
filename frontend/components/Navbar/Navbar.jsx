@@ -14,7 +14,7 @@ export default function Navbar({ logOut }) {
       <div id="navbar-container">
         {/* <UploadForm /> */}
 
-        <div id="logo">
+        <div id="logo" onClick={() => setSidebar(false)}>
           <Link to="/">
             <p id="logo">A & M</p>
             <i className="fas fa-heart"></i>
@@ -28,7 +28,7 @@ export default function Navbar({ logOut }) {
         <ul className={sidebar ? 'menu active' : 'menu'}>
           {MenuItems.map((item, index) => {
             return (
-              <li id="menu-links" key={index} onClick={() => setSidebar(!sidebar)}>
+              <li id="menu-links" key={index} onClick={() => setSidebar(false)}>
                 <Link to={item.toLowerCase()}>{item}</Link>
               </li>
             )
