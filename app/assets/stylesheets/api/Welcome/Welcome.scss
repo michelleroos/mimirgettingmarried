@@ -3,8 +3,12 @@
   position: relative;
 
   #logged-in-img-grid {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
     column-count: 3;
-    column-width: 33%;
+    -webkit-column-width: 200px;
+    -moz-column-width: 200px;
+    column-width: 200px;
 
     .img-wrap {
       opacity: 0.8;
@@ -118,7 +122,6 @@
 }
 
 @media (max-width: 991px) {
-
   .img-grid {
     column-count: 2;
 

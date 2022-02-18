@@ -31,31 +31,31 @@
 
   #logo {
     margin-left: 2rem;
-    width: 46px;
-    text-align: center;
-
+    width: 50px;
+    
     a {
-      color: pink;
+      text-align: center;
+      
+      p,
+      i {
+        font-size: 15px;
+      }
 
       p {
-        font-size: 14.4px;
+        display: inline-block;
       }
 
-      i.fas.fa-heart {
+      i {
         display: none;
       }
-    }
 
-    &:hover {
-      a {
-        text-align: center;
-
-        #logo {
+      &:hover {
+        p {
           display: none;
         }
 
-        i.fas.fa-heart {
-          display: inline;
+        i {
+          display: inline-block;
         }
       }
     }
