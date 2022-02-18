@@ -25,7 +25,7 @@ export default function Navbar({ logOut }) {
           <i className={sidebar ? 'fas fa-times' : 'fas fa-bars'}></i>
         </div>
 
-        <ul id={sidebar ? 'sidebar active' : 'menu'}>
+        <ul className={sidebar ? 'menu active' : 'menu'}>
           {MenuItems.map((item, index) => {
             return (
               <li id="menu-links" key={index}>
