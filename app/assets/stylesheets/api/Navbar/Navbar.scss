@@ -123,21 +123,12 @@
       left: -100%;
       opacity: 1;
       transition: all 0.5s ease;
-      background: blue;
-
-      // #menu-links {
-      //   text-align: center;
-
-      //   &:hover {
-      //     border-radius: 0;
-      //   }
-      // }
+      background: white;
     }
 
     .active {
       left: 0;
       transition: all 0.5s ease;
-      // z-index: 1;
     }
 
     #log-out {

@@ -28,7 +28,7 @@ export default function Navbar({ logOut }) {
         <ul className={sidebar ? 'menu active' : 'menu'}>
           {MenuItems.map((item, index) => {
             return (
-              <li id="menu-links" key={index}>
+              <li id="menu-links" key={index} onClick={() => setSidebar(!sidebar)}>
                 <Link to={item.toLowerCase()}>{item}</Link>
               </li>
             )
