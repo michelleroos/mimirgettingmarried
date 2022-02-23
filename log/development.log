@@ -47293,3 +47293,14 @@ Processing by Api::UsersController#show as JSON
 Completed 200 OK in 39ms (Views: 16.1ms | ActiveRecord: 3.4ms)
 
 
+Started GET "/" for ::1 at 2022-02-23 13:17:36 -0500
+  [1m[35m (63.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/michelleroos/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.8ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "D4FuQQhoE4zgRDl8oeV2lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 43469ms (Views: 43191.9ms | ActiveRecord: 267.4ms)
+
+
