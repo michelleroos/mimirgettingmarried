@@ -47283,3 +47283,13 @@ Processing by Api::UsersController#show as JSON
 Completed 200 OK in 25ms (Views: 18.9ms | ActiveRecord: 1.8ms)
 
 
+Started GET "/api/users/10" for ::1 at 2022-02-23 12:05:37 -0500
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (4.5ms)
+Completed 200 OK in 39ms (Views: 16.1ms | ActiveRecord: 3.4ms)
+
+
