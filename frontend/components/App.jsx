@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
-import Faq from "./FAQ/Faq";
+import Faq from "./Faq/Faq";
 import Footer from "./Footer/Footer";
 import Location from "./Location/Location";
 import LoginFormContainer from "./Session/LoginFormContainer";
