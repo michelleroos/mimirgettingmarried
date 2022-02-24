@@ -9,6 +9,6 @@
 User.destroy_all
 
 michelle = User.create!(
-    email: "mm",
+    email: "test",
     password: "password"
 )
