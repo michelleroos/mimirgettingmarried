@@ -8,8 +8,8 @@ export default function ImageCarousel({ img, setImg, imgID }) {
 
   const carousel = (
     <div id="modal-bg" onClick={handleClick}>
-      <img src={img} alt={imgID} />
-      {/* <p>Here is a text description</p> */}
+        <img src={img} alt={imgID} />
+        {/* <p>Here is a text description</p> */}
     </div>
   )
 
