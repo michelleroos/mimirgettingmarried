@@ -60,7 +60,7 @@ export default function Schedule() {
               <p>16:00</p>
               <p className="hover">Villa Richter</p>
             </div>
-            <div className="schedule-details" id="saturday-receotion-modal" onClick={() => setReception(true)}>
+            <div className="schedule-details" id="saturday-reception-modal" onClick={() => setReception(true)}>
               <i class="fas fa-utensils"></i>
               <h3>Reception</h3>
               <p>18:00</p>
