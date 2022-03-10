@@ -25,8 +25,7 @@ export default function App() {
 
   const [selectedImg, setSelectedImg] = useState(null);
 
-  console.log(isMobile);
-  console.log(isBrowser);
+  console.log(window.visualViewport.width);
 
   return (
     <div className="app" >
