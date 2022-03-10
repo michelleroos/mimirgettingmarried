@@ -15,6 +15,14 @@
       text-align: justify;
     }
 
+    #session-errors {
+      ul {
+        li {
+          margin: 0 0 40px 0;
+        }
+      }
+    }
+
     label {
       display: block;
       width: 100%;
@@ -65,32 +73,6 @@
         }
       }
     }
-  }
-}
-
-button {
-  // font-size: 12px;
-  // color: white;
-  // background-color: rgb(0, 180, 5);
-  // border-radius: 4px;
-  // padding-top: 12px;
-  // padding-bottom: 12px;
-  // padding: 0px 36px;
-  // transition: all 0.1s ease 0s;
-  // height: 40px;
-  // min-width: 115px;
-
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  border: none;
-  background-color: pink;
-  color: white;
-  font-size: 9px;
-
-  i {
-    color: white;
-    font-size: 13px;
   }
 }
 

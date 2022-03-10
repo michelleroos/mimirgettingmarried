@@ -44,7 +44,7 @@ class SessionForm extends React.Component {
             Sign in using your email and the passcode which was provided to you by email or return <Link to="/">home</Link>.
           </h1>
 
-          <div className="session-errors">
+          <div id="session-errors">
             {this.renderErrors()}
           </div>
 
