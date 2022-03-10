@@ -5,6 +5,7 @@ import useFirestore from '../../hooks/useFirestore';
 import Image from './_Image';
 import UploadForm from '../UploadForm/UploadForm';
 import ImageCarousel from './ImageCarousel';
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 
 // export default function Welcome({ currentUser, pathname }) {
 export default function Welcome() {

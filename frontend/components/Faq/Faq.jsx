@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import faqData from './data';
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 
 export default function Faq() {
 
@@ -52,6 +53,12 @@ export default function Faq() {
   const Faq = () => (
     <div id="faq-wrapper">
       <div id="faq-container">
+        <BrowserView>
+          <h1>This is rendered only in browser</h1>
+        </BrowserView>
+        <MobileView>
+          <h1>This is rendered only on mobile</h1>
+        </MobileView>
 
         <div className="faq-item">
           <div className="question" onClick={() => setAll(expanded)}>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Route,
   Redirect,
@@ -7,6 +7,7 @@ import {
   HashRouter
 } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 
 import Faq from "./Faq/Faq";
 import Footer from "./Footer/Footer";
@@ -23,6 +24,9 @@ import Welcome from "./Welcome/Welcome";
 export default function App() {
 
   const [selectedImg, setSelectedImg] = useState(null);
+
+  console.log(isMobile);
+  console.log(isBrowser);
 
   return (
     <div className="app" >
