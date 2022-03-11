@@ -29,15 +29,7 @@
     }
   }
 
-  #modal-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 7000;
-    cursor: pointer;
+  .modal-bg {
 
     img {
       display: block;
@@ -63,6 +55,40 @@
       font-size: 18px;
     }
   }
+  // #modal-bg {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: rgba(0, 0, 0, 0.6);
+  //   z-index: 7000;
+  //   cursor: pointer;
+
+  //   img {
+  //     display: block;
+  //     max-width: 90%;
+  //     max-height: 90%;
+  //     box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+  //     border: 3px solid white;
+  //     cursor: auto;
+
+  //     // Center the modal
+  //     position: absolute;
+  //     left: 50%;
+  //     top: 50%;
+  //     transform: translate(-50%, -50%);
+  //   }
+
+  //   p {
+  //     // display: block;
+  //     background-color: white;
+  //     margin: 0px auto;
+  //     // margin: 10px;
+  //     color: black;
+  //     font-size: 18px;
+  //   }
+  // }
 
   #logged-out-img-container {
     display: flex;
