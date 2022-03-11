@@ -4,7 +4,7 @@ export default function Friday({ close }) {
 
   return (
     <div className="modal-bg" onClick={close}>
-      <div className="modal" id="friday-modal">
+      <div className="schedule-modal" id="friday-modal">
         <h2>Friday - July 22</h2>
         <h3>Friday evening's activity and location is TBD but we will likely arrange a meet-up in a Czech pub for anyone that is around.</h3>
         <h3>Vibe and dress code - casual.</h3>

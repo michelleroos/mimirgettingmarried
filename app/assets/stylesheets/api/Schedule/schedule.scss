@@ -114,12 +114,13 @@
       //     }
       //   }
       // }
-      .modal {
+      .schedule-modal {
         display: block;
         max-width: 90%;
         max-height: 90%;
         box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
-        border: 3px solid white;
+        background-color: white;
+        padding: 30px;
         cursor: auto;
 
         // Center the modal
@@ -142,8 +143,10 @@
         }
 
         img {
-          height: 200px;
-          width: auto;
+          // height: 200px;
+          // width: auto;
+          max-width: 100%;
+          height: auto;
           border-radius: 3px;
         }
 

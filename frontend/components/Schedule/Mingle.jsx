@@ -3,7 +3,7 @@ import React from 'react'
 export default function Mingle({ close }) {
   return (
     <div className="modal-bg" onClick={close}>
-      <div className="modal" id="saturday-mingle-modal">
+      <div className="schedule-modal" id="saturday-mingle-modal">
         <h2>Saturday - July 23</h2>
         <h2>Mingle</h2>
         <h3>Meet the other guests and enjoy some drinks and canapées at <a href="http://www.villarichter.cz/lang/en/" target="_blank">Villa Richter</a>'s fountain before the ceremony.</h3>

@@ -3,7 +3,7 @@ import React from 'react'
 export default function Ceremony({ close }) {
   return (
     <div className="modal-bg" onClick={close}>
-      <div className="modal" id="saturday-ceremony-modal">
+      <div className="schedule-modal" id="saturday-ceremony-modal">
         <h2>Saturday - July 23</h2>
         <h2>Ceremony</h2>
         <h3>Villa Richter is a classicist summerhouse from 1836 that is a part of the St Wenceslas Vineyard complex at Prague Castle. The complex offers a unique and undisturbed view of the panoramas of Old town, Lesser Town and the Villa Belvedere.</h3>

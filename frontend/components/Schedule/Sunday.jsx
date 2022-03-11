@@ -3,7 +3,7 @@ import React from 'react'
 export default function Sunday({ close }) {
   return (
     <div className="modal-bg" onClick={close}>
-      <div className="modal">
+      <div className="schedule-modal">
         <h2>Sunday - July 24</h2>
         <h2>Party at GLASS Bar</h2>
         <h3>On Sunday afternoon we will be hosting a party with a Berlin based surprise DJ on Sunday at <a href="https://www.glassbar.cz/">Glass Bar</a>.</h3>

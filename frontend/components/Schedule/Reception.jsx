@@ -3,7 +3,7 @@ import React from 'react'
 export default function Reception({ close }) {
   return (
     <div className="modal-bg" onClick={close}>
-      <div className="modal">
+      <div className="schedule-modal">
         <h2>Saturday - July 23</h2>
         <h2>Reception</h2>
         <h3>The Villa features restaurant Piano Nobile which has a sunny terrace overlooking the vineyard. The  menu at Piano Nobile is inspired by Czech and European cousine and uses seasonal and local ingredients.</h3>
