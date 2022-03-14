@@ -45,7 +45,6 @@ group :development, :test do
   gem 'factory_bot_rails' 
   gem 'rails-controller-testing' 
 
-
   gem 'better_errors'
   gem 'binding_of_caller'
 end
