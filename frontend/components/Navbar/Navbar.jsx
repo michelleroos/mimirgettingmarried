@@ -11,6 +11,11 @@ export default function Navbar() {
   const MenuItems = ['Rsvp', 'Schedule', 'Faq']
   const [sidebar, setSidebar] = useState(false);
 
+  const logOutUser = () => {
+    setSidebar(false);
+    dispatch(logOut());
+  }
+
   if (currentUserId) {
     return (
       <div id="navbar-container">
@@ -34,7 +39,7 @@ export default function Navbar() {
               </li>
             )
           })}
-          {sidebar ? <li id="menu-links"><Link to="/" onClick={() => dispatch(logOut())}>Log out</Link></li> : null}
+          {sidebar ? <li id="menu-links"><Link to="/" onClick={logOutUser}>Log out</Link></li> : null}
         </ul>
 
         {sidebar ? null : <div id="log-out"><Link to="/" onClick={() => dispatch(logOut())}>Log out</Link></div>}
