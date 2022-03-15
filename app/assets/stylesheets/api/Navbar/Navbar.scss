@@ -30,15 +30,17 @@
   // text-transform: uppercase;
 
   #logo {
-    margin-left: 2rem;
     width: 50px;
     
     a {
       text-align: center;
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       
       p,
       i {
+        display: inline;
         font-size: 15px;
         color: pink;
       }
@@ -52,7 +54,7 @@
       }
 
       &:hover i {
-        display: inline-block;
+        display: inline;
       }
     }
   }
