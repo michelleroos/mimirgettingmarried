@@ -35,29 +35,25 @@
     
     a {
       text-align: center;
+      display: block;
       
       p,
       i {
         font-size: 15px;
+        color: pink;
       }
 
-      // p {
-      //   display: inline-block;
-      // }
+      i {
+        display: none;
+      }
 
-      // i {
-      //   display: none;
-      // }
+      &:hover p {
+        display: none;
+      }
 
-      // &:hover {
-      //   p {
-      //     display: none;
-      //   }
-
-      //   i {
-      //     display: inline-block;
-      //   }
-      // }
+      &:hover i {
+        display: inline-block;
+      }
     }
   }
 

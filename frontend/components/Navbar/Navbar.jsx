@@ -17,8 +17,8 @@ export default function Navbar() {
         {/* <UploadForm /> */}
 
         <div id="logo" onClick={() => setSidebar(false)}>
-          <Link to="/" onMouseEnter={() => setHover(!hover)} onMouseLeave={() => setHover(!hover)}>
-            {hover ? <p id="logo">A & M</p> : <i className="fas fa-heart"></i>}
+          <Link to="/">
+            <p id="logo">A & M</p><i className="fas fa-heart"></i>
           </Link>
         </div>
 
