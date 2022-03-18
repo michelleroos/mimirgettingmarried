@@ -52,7 +52,7 @@ export default function Faq() {
   const Faq = () => (
     <div id="faq-wrapper">
       <div id="faq-container">
-        <img src="https://llandscapes-10674.kxcdn.com/wp-content/uploads/2019/07/lighting.jpg" />
+        <h1>Frequently asked questions</h1>
 
         <div className="faq-item">
           <div className="question" onClick={() => setAll(expanded)}>

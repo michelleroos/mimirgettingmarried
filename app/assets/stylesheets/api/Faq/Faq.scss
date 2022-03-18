@@ -9,11 +9,10 @@
   #faq-container {
     width: 60%;
 
-    img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 100%;
+    h1 {
+      font-family: "Poppins", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
     }
 
     .faq-item {
@@ -33,6 +32,12 @@
 
         i {
           font-size: 13px;
+          font-weight: bold;
+        }
+
+        .fa-compress-alt, .fa-expand-alt {
+          font-size: 12px;
+          color: #898989;
         }
       }
 
