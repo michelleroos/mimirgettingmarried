@@ -150,7 +150,7 @@ export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRs
               </div>
             </div>
           </div>
-          <button id="rsvp-submit-btn" onClick={() => sendRsvp(rsvpReq)}>
+          <button className="rsvp-submit-btn" onClick={() => sendRsvp(rsvpReq)}>
             <p>Send RSVP</p>
             <i className="far fa-envelope"></i>
           </button>

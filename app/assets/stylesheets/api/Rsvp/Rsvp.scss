@@ -110,7 +110,7 @@
         }
       }
 
-      #rsvp-submit-btn {
+      .rsvp-submit-btn {
         background-color: transparent;
         border: 1px solid pink;
         border-radius: 30px;
@@ -144,6 +144,10 @@
             font-weight: bold;
           }
         }
+      }
+
+      #update-rsvp-btn {
+        width: 170px;
       }
     }
   }

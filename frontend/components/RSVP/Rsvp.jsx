@@ -146,7 +146,9 @@ export default function RSVP() {
   return (
     <div id="rsvp-wrapper">
       {rsvpModal && <RsvpModal setRsvpModal={setRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} sendRsvp={sendRsvp} setRsvpReq={setRsvpReq} />}
-      {updateRsvpModal && <UpdateRsvpModal setUpdateRsvpModal={setUpdateRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} changeRsvp={changeRsvp} />}
+
+      {updateRsvpModal && <UpdateRsvpModal setUpdateRsvpModal={setUpdateRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} changeRsvp={changeRsvp} setRsvpReq={setRsvpReq}/>}
+      
       <div id="rsvp-img-container">
         <div id="rsvp-invitation">
           <div id="envelope"></div>
