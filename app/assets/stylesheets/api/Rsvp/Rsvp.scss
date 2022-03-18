@@ -249,3 +249,9 @@
     }
   }
 }
+
+@media screen and (max-width: 960px) {
+  #rsvp-img-container {
+    display: none;
+  }
+}

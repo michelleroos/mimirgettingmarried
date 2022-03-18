@@ -116,6 +116,17 @@
         //   }
         // }
       }
+
+      #sunday-modal {
+        #schedule-img-container {
+          display: flex;
+
+          img {
+            height: 110px;
+            margin-right: 10px;
+          }
+        }
+      }
     }
   }
 }
