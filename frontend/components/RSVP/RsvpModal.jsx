@@ -1,9 +1,18 @@
 import React from 'react';
 
-export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRsvp }) {
+export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRsvp, setRsvpReq }) {
 
   const closeModal = (e) => {
-    if (e.target.id === 'rsvp-modal-bg') setRsvpModal(false);
+    if (e.target.id === 'rsvp-modal-bg') {
+      setRsvpModal(false);
+      setRsvpReq({
+        ...rsvpReq, saturday: null,
+        diet: null,
+        otherDiet: null,
+        childrenSaturday: null,
+        childrenSaturdayNumber: null,
+        sunday: null, });
+    }
   };
 
   const Diet = () => {
@@ -115,8 +124,11 @@ export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRs
           </div>
 
           {(rsvpReq.saturday === 'yes' || rsvpReq.saturday === 'maybe') && Diet()}
+
           {((rsvpReq.diet === 'other') && (rsvpReq.saturday === 'yes' || rsvpReq.saturday === 'maybe')) && OtherDiet()}
+
           {(rsvpReq.saturday === 'yes' || rsvpReq.saturday === 'maybe') && SaturdayChildren()}
+
           {((rsvpReq.childrenSaturday === 'yes' || rsvpReq.childrenSaturday === 'maybe') && (rsvpReq.saturday === 'yes' || rsvpReq.saturday === 'maybe')) && HowManyChildren()}
 
           <div className="question">

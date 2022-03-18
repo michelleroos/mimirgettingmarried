@@ -80,7 +80,7 @@ export default function RSVP() {
     if (val === "sat-yes") {
       setRsvpReq({ ...rsvpReq, saturday: "yes" });
     } else if (val === "sat-no") {
-      setRsvpReq({ ...rsvpReq, saturday: "no" });
+      setRsvpReq({ ...rsvpReq, saturday: "no", diet: null, childrenSaturday: null });
     } else if (val === "sat-maybe") {
       setRsvpReq({ ...rsvpReq, saturday: "maybe" });
     } else if (val === "sat-children-yes") {
@@ -145,7 +145,7 @@ export default function RSVP() {
 
   return (
     <div id="rsvp-wrapper">
-      {rsvpModal && <RsvpModal setRsvpModal={setRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} sendRsvp={sendRsvp} />}
+      {rsvpModal && <RsvpModal setRsvpModal={setRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} sendRsvp={sendRsvp} setRsvpReq={setRsvpReq} />}
       {updateRsvpModal && <UpdateRsvpModal setUpdateRsvpModal={setUpdateRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} changeRsvp={changeRsvp} />}
       <div id="rsvp-img-container">
         <div id="rsvp-invitation">
