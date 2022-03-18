@@ -4,8 +4,8 @@ export default function Sunday({ close }) {
   return (
     <div className="modal-bg" onClick={close}>
       <div className="schedule-modal">
-        <h2>Sunday - July 24</h2>
-        <h2>Party at GLASS Bar</h2>
+        {/* <h2>Sunday - July 24</h2> */}
+        <h2>Sunday</h2>
         <h3>On Sunday afternoon we will be hosting a party with a Berlin based surprise DJ on Sunday at <a href="https://www.glassbar.cz/">Glass Bar</a>.</h3>
         <div className="schedule-img-container">
           <img src="https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/peg3772.jpeg?alt=media&token=c204e58b-6ce0-4f34-97f3-92220aa54371" alt="glass-bar" />

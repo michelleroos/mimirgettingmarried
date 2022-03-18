@@ -4,7 +4,7 @@ export default function Mingle({ close }) {
   return (
     <div className="modal-bg" onClick={close}>
       <div className="schedule-modal" id="saturday-mingle-modal">
-        <h2>Saturday - July 23</h2>
+        {/* <h2>Saturday - July 23</h2> */}
         <h2>Mingle</h2>
         <h3>Meet the other guests and enjoy some drinks and canapées at <a href="http://www.villarichter.cz/lang/en/" target="_blank">Villa Richter</a>'s fountain before the ceremony.</h3>
         <img src="https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/039-1.jpeg?alt=media&token=7ef049c5-3bbb-4b7e-95d7-3fc062bc6896" alt="saturday-mingle" />

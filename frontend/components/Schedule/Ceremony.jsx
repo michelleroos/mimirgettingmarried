@@ -4,7 +4,7 @@ export default function Ceremony({ close }) {
   return (
     <div className="modal-bg" onClick={close}>
       <div className="schedule-modal" id="saturday-ceremony-modal">
-        <h2>Saturday - July 23</h2>
+        {/* <h2>Saturday - July 23</h2> */}
         <h2>Ceremony</h2>
         <h3>Villa Richter is a classicist summerhouse from 1836 that is a part of the St Wenceslas Vineyard complex at Prague Castle. The complex offers a unique and undisturbed view of the panoramas of Old town, Lesser Town and the Villa Belvedere.</h3>
         <img src="https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/SabrinaJan-057-2-1400x1050.jpeg?alt=media&token=4e03503e-5c38-4e60-915a-6051e609e94e" alt="saturday-ceremony" />

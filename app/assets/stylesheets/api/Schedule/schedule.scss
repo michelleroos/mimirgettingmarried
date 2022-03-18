@@ -1,15 +1,12 @@
 #schedule-container-outer {
   height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
   #schedule-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     .day-schedule {
       display: flex;
@@ -64,10 +61,7 @@
       letter-spacing: 3px;
     }
 
-    position: relative;
-
     .modal-bg {
-
       .schedule-modal {
         display: block;
         max-width: 70%;
@@ -131,7 +125,13 @@
     #schedule-container {
       .modal-bg {
         .schedule-modal {
+          width: 70%;
+          height: 80%;
+          
           img {
+            display: none;
+          }
+          p {
             display: none;
           }
         }
