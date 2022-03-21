@@ -5,11 +5,10 @@ import UpdateRsvpModal from './UpdateRsvpModal';
 
 export default function RSVP() {
   const dispatch = useDispatch();
-
-  // const currentUser = useSelector((state) => state.entities.user.user);
   const currentUserId = useSelector((state) => state.session.id);
   const [googleSheetsData, setGoogleSheetsData] = useState(null);
   const [userEmail, setUserEmail] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
   const [rsvpModal, setRsvpModal] = useState(false);
   const [updateRsvpModal, setUpdateRsvpModal] = useState(false);
 
@@ -114,6 +113,34 @@ export default function RSVP() {
     };
   };
 
+  const closeModal = (e) => {
+    if (e.target.classList.contains('modal-bg')) {
+      setRsvpModal(false);
+      setUpdateRsvpModal(false);
+      setModalOpen(false)
+      setRsvpReq({
+        ...rsvpReq, saturday: null,
+        diet: null,
+        otherDiet: null,
+        childrenSaturday: null,
+        childrenSaturdayNumber: null,
+        sunday: null,
+      });
+    }
+  };
+
+  const openInvitation = () => {
+    setModalOpen(true);
+    setRsvpModal(true);
+    setUpdateRsvpModal(false);
+  }
+
+  const openUpdateInvitation = () => {
+    setModalOpen(true);
+    setUpdateRsvpModal(true);
+    setRsvpModal(false);
+  }
+
   const Invitation = () => {
     return (
       <div id="rsvp-note">
@@ -121,7 +148,8 @@ export default function RSVP() {
         <h3>We're delighted to invite you to our wedding!</h3>
         <h3>Please RSVP by June 23rd.</h3>
         <div id="rsvp-btn-wrap">
-          <button id="rsvp-submit-btn" onClick={() => setRsvpModal(true)}>
+          <button id="rsvp-submit-btn" onClick={openInvitation}>
+            {/* <button id="rsvp-submit-btn" onClick={(e) => setRsvpModal(true)}> */}
             <p>RSVP</p>
             <i className="far fa-envelope"></i>
           </button>
@@ -135,20 +163,32 @@ export default function RSVP() {
       <div id="rsvp-update">
         <h2>Thank you for sending your RSVP -</h2>
         <h3>Change of plans? Please update your reply.</h3>
-        <button id="rsvp-submit-btn" onClick={() => setUpdateRsvpModal(true)}>
-          <p>RSVP</p>
-          <i className="far fa-envelope"></i>
-        </button>
+        <div id="rsvp-btn-wrap">
+          <button id="rsvp-submit-btn" onClick={openUpdateInvitation}>
+            {/* <button id="rsvp-submit-btn" onClick={(e) => setUpdateRsvpModal(true)}> */}
+            <p>RSVP</p>
+            <i className="far fa-envelope"></i>
+          </button>
+        </div>
       </div>
     )
   }
 
-  return (
-    <div id="rsvp-wrapper">
+  const Modal = (
+    <div className="modal-bg" onClick={closeModal}>
+
       {rsvpModal && <RsvpModal setRsvpModal={setRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} sendRsvp={sendRsvp} setRsvpReq={setRsvpReq} />}
 
-      {updateRsvpModal && <UpdateRsvpModal setUpdateRsvpModal={setUpdateRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} changeRsvp={changeRsvp} setRsvpReq={setRsvpReq}/>}
-      
+        {updateRsvpModal && <UpdateRsvpModal setUpdateRsvpModal={setUpdateRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} changeRsvp={changeRsvp} setRsvpReq={setRsvpReq} />}
+
+    </div>
+  )
+
+  return (
+    <div id="rsvp-wrapper">
+
+      {modalOpen ? Modal : null}
+
       <div id="rsvp-img-container">
         <div id="rsvp-invitation">
           <div id="envelope"></div>
@@ -157,7 +197,7 @@ export default function RSVP() {
       </div>
 
       <div id="rsvp-mobile-container">
-          {filteredData() ? UpdateInvitation() : Invitation()}
+        {filteredData() ? UpdateInvitation() : Invitation()}
       </div>
     </div>
   )

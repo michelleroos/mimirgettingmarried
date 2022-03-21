@@ -7,7 +7,6 @@ export default function Navbar() {
 
   const currentUserId = useSelector((state) => state.session.id);
   const dispatch = useDispatch();
-  const [hover, setHover] = useState(false);
   const MenuItems = ['Rsvp', 'Schedule', 'Faq']
   const [sidebar, setSidebar] = useState(false);
 

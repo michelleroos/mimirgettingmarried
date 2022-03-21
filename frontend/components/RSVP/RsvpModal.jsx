@@ -2,18 +2,18 @@ import React from 'react';
 
 export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRsvp, setRsvpReq }) {
 
-  const closeModal = (e) => {
-    if (e.target.id === 'rsvp-modal-bg') {
-      setRsvpModal(false);
-      setRsvpReq({
-        ...rsvpReq, saturday: null,
-        diet: null,
-        otherDiet: null,
-        childrenSaturday: null,
-        childrenSaturdayNumber: null,
-        sunday: null, });
-    }
-  };
+  // const closeModal = (e) => {
+  //   if (e.target.id === 'rsvp-modal-bg') {
+  //     setRsvpModal(false);
+  //     setRsvpReq({
+  //       ...rsvpReq, saturday: null,
+  //       diet: null,
+  //       otherDiet: null,
+  //       childrenSaturday: null,
+  //       childrenSaturdayNumber: null,
+  //       sunday: null, });
+  //   }
+  // };
 
   const Diet = () => {
     return (
@@ -101,7 +101,8 @@ export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRs
 
   const Modal = () => {
     return (
-      <div id="rsvp-modal-bg" onClick={closeModal}>
+      // <div id="rsvp-modal-bg" onClick={closeModal}>
+      // <div className="modal-bg" onClick={closeModal}>
         <div id="rsvp-modal">
           <div className="question">
             <p>Will you attend our wedding on the 23rd of July?</p>
@@ -155,7 +156,7 @@ export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRs
             <i className="far fa-envelope"></i>
           </button>
         </div>
-      </div>
+      // // </div>
     );
   };
 
