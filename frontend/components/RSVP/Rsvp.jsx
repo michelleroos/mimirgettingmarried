@@ -156,9 +156,9 @@ export default function RSVP() {
         </div>
       </div>
 
-      {/* <div id="rsvp-mobile-container">
+      <div id="rsvp-mobile-container">
           {filteredData() ? UpdateInvitation() : Invitation()}
-      </div> */}
+      </div>
     </div>
   )
 };
