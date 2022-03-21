@@ -129,11 +129,11 @@
     .menu {
       display: flex;
       flex-direction: column;
-      width: 100%;
+      width: 108%;
       height: calc(100vh - 100px);
       position: absolute;
       top: 69px;
-      left: -100%;
+      left: -110%;
       opacity: 1;
       transition: all 0.5s ease;
       background: white;
