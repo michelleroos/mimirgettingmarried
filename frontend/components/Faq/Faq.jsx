@@ -20,7 +20,13 @@ export default function Faq() {
     9: false,
     10: false,
     11: false,
-    12: false
+    12: false,
+    13: false,
+    14: false,
+    15: false,
+    16: false,
+    17: false,
+    18: false,
   });
 
   const updateClicked = (num) => {
@@ -45,7 +51,13 @@ export default function Faq() {
       9: !expandedStatus,
       10: !expandedStatus,
       11: !expandedStatus,
-      12: !expandedStatus
+      12: !expandedStatus,
+      13: !expandedStatus,
+      14: !expandedStatus,
+      15: !expandedStatus,
+      16: !expandedStatus,
+      17: !expandedStatus,
+      18: !expandedStatus,
     });
   };
 
