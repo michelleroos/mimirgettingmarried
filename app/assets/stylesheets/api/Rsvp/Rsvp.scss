@@ -235,13 +235,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(to bottom, white 50%, palegoldenrod 50%);
+    width: 100%;
 
     #rsvp-img-container {
       display: none;
     }
 
-    background: linear-gradient(to bottom, white 50%, palegoldenrod 50%);
-    width: 100%;
+    .modal-bg {
+      
+      #rsvp-modal {
+        width: 90%;
+        height: auto;
+        overflow: scroll;
+        padding: 15px;
+      }
+    }
 
     #rsvp-mobile-container {
       display: flex;
