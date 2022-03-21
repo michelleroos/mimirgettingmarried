@@ -105,7 +105,7 @@
             &:focus {
               outline: none;
               border: none;
-              border-bottom: 1px solid pink;
+              border-bottom: 1px solid #FFDB58;
             }
           }
         }
@@ -235,7 +235,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, white 50%, palegoldenrod 50%);
+    background: linear-gradient(to bottom, white 50%, #F2E2E5 50%);
     width: 100%;
 
     #rsvp-img-container {
