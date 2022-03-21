@@ -74,7 +74,7 @@
     grid-gap: 10px;
     text-align: center;
 
-    #menu-links {
+    .menu-links {
       padding: 0.5rem 1rem;
 
       &:hover {
@@ -96,7 +96,8 @@
 @media screen and (max-width: 960px) {
   #navbar-container {
     position: relative;
-    margin: 10px 25px 0 50px;
+    // margin: 10px 25px 0 50px;
+    margin: 10px 25px 0 0;
 
     #logo {
       width: 70px;
@@ -127,18 +128,22 @@
     .menu {
       display: flex;
       flex-direction: column;
-      width: 110%;
+      width: 100%;
       height: calc(100vh - 100px);
       position: absolute;
       top: 69px;
-      left: -120%;
+      left: -100%;
       opacity: 1;
       transition: all 0.5s ease;
       background: white;
+
+      .menu-links {
+        font-size: 24px;
+      }
     }
 
     .active {
-      left: -6%;
+      left: 0%;
       transition: all 0.5s ease;
     }
 

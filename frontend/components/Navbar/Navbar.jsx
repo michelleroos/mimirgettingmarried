@@ -34,12 +34,12 @@ export default function Navbar() {
         <ul className={sidebar ? 'menu active' : 'menu'}>
           {MenuItems.map((item, index) => {
             return (
-              <li id="menu-links" key={index} onClick={() => setSidebar(false)}>
+              <li className="menu-links" key={index} onClick={() => setSidebar(false)}>
                 <Link to={item.toLowerCase()}>{item}</Link>
               </li>
             )
           })}
-          {sidebar ? <li id="menu-links"><Link to="/" onClick={logOutUser}>Log out</Link></li> : null}
+          {sidebar ? <li className="menu-links"><Link to="/" onClick={logOutUser}>Log out</Link></li> : null}
         </ul>
 
         {sidebar ? null : <div id="log-out"><Link to="/" onClick={() => dispatch(logOut())}>Log out</Link></div>}
