@@ -30,7 +30,6 @@
   }
 
   .modal-bg {
-
     img {
       display: block;
       max-width: 90%;
@@ -55,7 +54,6 @@
       font-size: 18px;
     }
   }
-
 
   #logged-out-img-container {
     display: flex;
@@ -121,10 +119,53 @@
 }
 
 @media screen and (max-width: 960px) {
-  .img-grid {
-    column-count: 2;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
+  #welcome-container {
+    .img-grid {
+      column-count: 2;
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+    }
+
+    #logged-out-img-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
+
+      &::after {
+        content: "";
+        background-image: url("https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/DSC03602.jpeg?alt=media&token=f0d45df1-b100-4847-9787-b6353aa04098");
+        opacity: 0.6;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        z-index: -1;
+      }
+
+      a {
+        #log-in-btn {
+          height: 45px;
+          width: 120px;
+          min-width: 100px;
+
+          p {
+            font-size: 20px;
+            margin: 0 5px 0 0;
+          }
+
+          i {
+            font-size: 15px;
+            color: pink;
+          }
+        }
+      }
+    }
   }
 }
 

@@ -21,8 +21,11 @@ export default function Navbar() {
         {/* <UploadForm /> */}
 
         <div id="logo" onClick={() => setSidebar(false)}>
-          <Link to="/">
+          <Link to="/" id="initials">
             <p id="logo">A & M</p><i className="fas fa-heart"></i>
+          </Link>
+          <Link to="/" id="heart">
+            <i className="fas fa-heart"></i>
           </Link>
         </div>
 

@@ -29,7 +29,8 @@
       font-size: 16px;
 
       input {
-        font-size: 16px;
+        // font-size: 16px;
+        font-size: 20px;
         display: block;
         width: 100%;
         border: none;
@@ -44,7 +45,8 @@
         &:focus {
           outline: none;
           border: none;
-          border-bottom: 1px solid #FFDB58;
+          // border-bottom: 1px solid #FFDB58;
+          border-bottom: 1px solid pink;
         }
       }
     }

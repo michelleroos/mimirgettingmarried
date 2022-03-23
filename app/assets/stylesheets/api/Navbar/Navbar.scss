@@ -58,6 +58,10 @@
         display: inline;
       }
     }
+
+    #heart {
+      display: none;
+    }
   }
 
   #menu-icon {
@@ -94,6 +98,13 @@
 }
 
 @media screen and (max-width: 960px) {
+
+  #logged-out-nav {
+    p {
+      color: pink;
+      font-size: 1rem;
+    }
+  }
   #navbar-container {
     position: relative;
     // margin: 10px 25px 0 50px;
@@ -108,6 +119,14 @@
         p, i {
           font-size: 24px;
         }
+      }
+
+      #initials {
+        display: none;
+      }
+
+      #heart {
+        display: inline;
       }
     }
 
