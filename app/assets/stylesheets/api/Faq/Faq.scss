@@ -7,7 +7,7 @@
   height: auto;
 
   #faq-container {
-    width: 60%;
+    max-width: 50%;
 
     h1 {
       font-family: "Poppins", sans-serif;
@@ -28,10 +28,11 @@
 
         h5 {
           margin: 20px 20px 10px 0;
+          font-size: 20px;
         }
 
         i {
-          font-size: 13px;
+          font-size: 18px;
           font-weight: bold;
         }
 
@@ -44,6 +45,7 @@
       .answer {
         p {
           margin: 0 0 0 10px;
+          font-size: 20px;
         }
       }
     }
