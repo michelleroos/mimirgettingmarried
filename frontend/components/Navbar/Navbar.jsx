@@ -50,7 +50,7 @@ export default function Navbar() {
   } else {
     return (
       <div id="logged-out-nav">
-        <p>JULY 23 2022 - PRAGUE</p>
+        {/* <p>JULY 23 2022 - PRAGUE</p> */}
       </div>
     )
   }

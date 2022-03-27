@@ -13,6 +13,7 @@
     h1 {
       margin: 0 0 40px 0;
       text-align: justify;
+      letter-spacing: 1.2px;
     }
 
     #session-errors {
@@ -45,8 +46,7 @@
         &:focus {
           outline: none;
           border: none;
-          // border-bottom: 1px solid #FFDB58;
-          border-bottom: 1px solid pink;
+          border-bottom: 1px solid #fbcce7;
         }
       }
     }
@@ -57,16 +57,16 @@
 
       #arrow-btn {
         background-color: white;
-        border: 1px solid pink;
-        color: pink;
+        border: 1px solid #A7BEB6;;
+        color: #A7BEB6;
 
         i {
-          color: pink;
+          color: #A7BEB6;
         }
 
         &:hover {
           transition: all 0.3s ease 0s;
-          background-color: pink;
+          background-color: #A7BEB6;
           color: white;
 
           i {

@@ -10,8 +10,10 @@
   width: 100%;
 
   p {
-    color: rgb(160, 210, 198);
-    font-size: 12px;
+    letter-spacing: 1.2px;
+    // color: #fbcce7;
+    color: #a7beb6;
+    font-size: 1rem;
     text-align: center;
   }
 }
@@ -31,23 +33,25 @@
   // text-transform: uppercase;
 
   #logo {
-    width: 50px;
-    
+    width: 60px;
+
     a {
       text-align: center;
       display: flex;
       justify-content: center;
       align-items: center;
-      
-      p,
-      i {
-        display: inline;
-        font-size: 15px;
-        color: pink;
+      font-size: 1.2rem;
+
+      p {
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
       }
 
       i {
+        display: inline;
         display: none;
+        color: #fbcce7;
       }
 
       &:hover p {
@@ -81,9 +85,14 @@
     .menu-links {
       padding: 0.5rem 1rem;
 
-      &:hover {
-        font-weight: bold;
-        transition: all 0.2s ease-out;
+      a {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+
+        &:hover {
+          transition: all 0.2s ease-out;
+        }
       }
     }
   }
@@ -94,15 +103,16 @@
     grid-gap: 10px;
     text-align: center;
     margin-right: 2rem;
+    font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
   }
 }
 
 @media screen and (max-width: 960px) {
-
   #logged-out-nav {
     p {
-      color: pink;
-      font-size: 1rem;
     }
   }
   #navbar-container {
@@ -115,8 +125,8 @@
       width: 70px;
 
       a {
-
-        p, i {
+        p,
+        i {
           font-size: 24px;
         }
       }
