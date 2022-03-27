@@ -101,8 +101,6 @@ export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRs
 
   const Modal = () => {
     return (
-      // <div id="rsvp-modal-bg" onClick={closeModal}>
-      // <div className="modal-bg" onClick={closeModal}>
         <div id="rsvp-modal">
           <div className="question">
             <p>Will you attend our wedding on the 23rd of July?</p>
@@ -156,7 +154,6 @@ export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRs
             <i className="far fa-envelope"></i>
           </button>
         </div>
-      // // </div>
     );
   };
 

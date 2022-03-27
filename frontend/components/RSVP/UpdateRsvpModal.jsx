@@ -2,20 +2,6 @@ import React from 'react';
 
 export default function UpdateRsvpModal({ rsvpReq, setUpdateRsvpModal, updateRsvpReq, changeRsvp, setRsvpReq }) {
 
-  // const closeModal = (e) => {
-  //   if (e.target.id === 'rsvp-modal-bg') {
-  //     setUpdateRsvpModal(false);
-  //     setRsvpReq({
-  //       ...rsvpReq, saturday: null,
-  //       diet: null,
-  //       otherDiet: null,
-  //       childrenSaturday: null,
-  //       childrenSaturdayNumber: null,
-  //       sunday: null,
-  //     });
-  //   }
-  // };
-
   const Diet = () => {
     return (
       <div className="question">
@@ -102,8 +88,6 @@ export default function UpdateRsvpModal({ rsvpReq, setUpdateRsvpModal, updateRsv
 
   const Modal = () => {
     return (
-      // <div id="rsvp-modal-bg" onClick={closeModal}>
-      // <div className="modal-bg" onClick={closeModal}>
         <div id="rsvp-modal">
           <div className="question">
             <p>Will you attend our wedding on the 23rd of July?</p>
@@ -157,7 +141,6 @@ export default function UpdateRsvpModal({ rsvpReq, setUpdateRsvpModal, updateRsv
             <i className="far fa-envelope"></i>
           </button>
         </div>
-      // </div>
     );
   };
 

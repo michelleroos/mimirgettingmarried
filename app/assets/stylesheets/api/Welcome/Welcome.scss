@@ -89,30 +89,23 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
 
         p {
           font-size: 15px;
           margin: 0 5px 0 0;
-          color: #A7BEB6;
         }
-
-        i {
-          color: #A7BEB6;
-        }
-        box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
 
         &:hover {
           transition: all 0.3s ease 0s;
           background-color: #A7BEB6;
 
           p {
-            font-weight: bold;
             color: white;
           }
 
           i {
             color: white;
-            font-weight: bold;
           }
         }
       }
