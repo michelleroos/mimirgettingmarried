@@ -136,7 +136,7 @@ export default function UpdateRsvpModal({ rsvpReq, setUpdateRsvpModal, updateRsv
               </div>
             </div>
           </div>
-          <button className="rsvp-submit-btn" id="update-rsvp-btn"onClick={() => changeRsvp(rsvpReq)}>
+          <button id="rsvp-submit-btn" id="update-rsvp-btn"onClick={() => changeRsvp(rsvpReq)}>
             <p>Update RSVP</p>
             <i className="far fa-envelope"></i>
           </button>

@@ -61,7 +61,7 @@
   
     #rsvp-submit-btn {
       background-color: transparent;
-      border: 1px solid pink;
+      border: 1px solid #a7beb6;
       border-radius: 30px;
       height: 40px;
       width: 120px;
@@ -75,8 +75,12 @@
       p,
       i {
         font-size: 15px;
-        margin: 0 5px 0 0;
+        letter-spacing: 1.2px;
         color: #a7beb6;
+      }
+
+      i {
+        margin: 0 0 0 5px;
       }
   
       &:hover {
@@ -84,13 +88,11 @@
         background-color: #a7beb6;
   
         p {
-          font-weight: bold;
           color: white;
         }
   
         i {
           color: white;
-          font-weight: bold;
         }
       }
     }
