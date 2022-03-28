@@ -148,7 +148,7 @@ export default function RSVP() {
         <h3>We're delighted to invite you to our wedding!</h3>
         <h3>Please RSVP by June 23rd.</h3>
         <div id="rsvp-btn-wrap">
-          <button id="rsvp-submit-btn" onClick={openInvitation}>
+          <button className="rsvp-submit-btn" onClick={openInvitation}>
             {/* <button id="rsvp-submit-btn" onClick={(e) => setRsvpModal(true)}> */}
             <p>RSVP</p>
             <i className="far fa-envelope"></i>
@@ -164,7 +164,7 @@ export default function RSVP() {
         <h2>Thank you for sending your RSVP -</h2>
         <h3>Change of plans? Please update your reply.</h3>
         <div id="rsvp-btn-wrap">
-          <button id="rsvp-submit-btn" onClick={openUpdateInvitation}>
+          <button className="rsvp-submit-btn" onClick={openUpdateInvitation}>
             {/* <button id="rsvp-submit-btn" onClick={(e) => setUpdateRsvpModal(true)}> */}
             <p>RSVP</p>
             <i className="far fa-envelope"></i>

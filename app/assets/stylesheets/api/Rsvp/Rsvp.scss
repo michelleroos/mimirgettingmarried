@@ -62,7 +62,7 @@
                   width: 100%;
                   height: 100%;
                   display: block;
-                  background: pink;
+                  background: #fbcce7;
                   border-radius: 50%;
                   transform: scale(0);
                   transition: transform 0.15s;
@@ -97,43 +97,7 @@
         }
       }
 
-      // .rsvp-submit-btn {
-      //   background-color: transparent;
-      //   border: 1px solid pink;
-      //   border-radius: 30px;
-      //   height: 40px;
-      //   width: 140px;
-      //   min-width: 100px;
-      //   color: pink;
-      //   display: flex;
-      //   align-items: center;
-      //   justify-content: center;
-      //   transition: transform 0.15s;
-
-      //   p,
-      //   i {
-      //     font-size: 15px;
-      //     margin: 0 5px 0 0;
-      //     color: pink;
-      //   }
-
-      //   &:hover {
-      //     transition: all 0.1s ease 0s;
-      //     background-color: pink;
-
-      //     p {
-      //       font-weight: bold;
-      //       color: white;
-      //     }
-
-      //     i {
-      //       color: white;
-      //       font-weight: bold;
-      //     }
-      //   }
-      // }
-
-      #update-rsvp-btn {
+      #update-rsvp-btn, #rsvp-submit-btn {
         width: 150px;
       }
     }
