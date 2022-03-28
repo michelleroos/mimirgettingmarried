@@ -2,19 +2,6 @@ import React from 'react';
 
 export default function RsvpModal({ rsvpReq, setRsvpModal, updateRsvpReq, sendRsvp, setRsvpReq }) {
 
-  // const closeModal = (e) => {
-  //   if (e.target.id === 'rsvp-modal-bg') {
-  //     setRsvpModal(false);
-  //     setRsvpReq({
-  //       ...rsvpReq, saturday: null,
-  //       diet: null,
-  //       otherDiet: null,
-  //       childrenSaturday: null,
-  //       childrenSaturdayNumber: null,
-  //       sunday: null, });
-  //   }
-  // };
-
   const Diet = () => {
     return (
       <div className="question">

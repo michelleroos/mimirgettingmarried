@@ -2,7 +2,6 @@
   position: relative;
 
   .modal-bg {
-
     #rsvp-modal {
       padding: 50px;
       border-radius: 3px;
@@ -44,6 +43,7 @@
               align-items: center;
               cursor: pointer;
               margin-right: 10px;
+              font-weight: 100;
 
               .radio-input {
                 display: none;
@@ -97,7 +97,8 @@
         }
       }
 
-      #update-rsvp-btn, #rsvp-submit-btn {
+      #update-rsvp-btn,
+      #rsvp-submit-btn {
         width: 150px;
       }
     }
@@ -189,7 +190,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, white 50%, #F2E2E5 50%);
+    background: linear-gradient(to bottom, white 50%, #f2e2e5 50%);
     width: 100%;
 
     #rsvp-img-container {
@@ -197,7 +198,6 @@
     }
 
     .modal-bg {
-      
       #rsvp-modal {
         width: 90%;
         height: auto;
@@ -223,13 +223,20 @@
 
         h2,
         h3 {
-          margin-bottom: 20px;
+          font-family: "Poppins", sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          margin-bottom: 5px;
         }
 
         #rsvp-btn-wrap {
           display: flex;
           justify-content: center;
           align-items: center;
+
+          .rsvp-submit-btn {
+            margin-top: 10px;
+          }
         }
       }
     }
