@@ -11,7 +11,6 @@
 
   p {
     letter-spacing: 1.2px;
-    // color: #fbcce7;
     color: #a7beb6;
     font-size: 1rem;
     text-align: center;
@@ -25,12 +24,10 @@
   align-items: center;
   background-color: white;
   height: 70px;
-  font-size: 0.9rem;
   margin-left: 35px;
   position: sticky;
   top: 0;
   z-index: 2;
-  // text-transform: uppercase;
 
   #logo {
     width: 60px;
@@ -40,18 +37,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 1.2rem;
 
       p {
-        font-family: "Montserrat", sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 1.2px;
+        font-size: 1.2rem;
       }
 
       i {
         display: inline;
-        display: none;
         color: #fbcce7;
+        display: none;
       }
 
       &:hover p {
@@ -72,7 +66,7 @@
     display: none;
 
     .fa-bars {
-      color: pink;
+      color: #a7beb6;
     }
   }
 
@@ -117,19 +111,11 @@
   }
   #navbar-container {
     position: relative;
-    // margin: 10px 25px 0 50px;
     margin: 10px 25px 0 0;
     padding: 0 0 0 45px;
 
     #logo {
       width: 70px;
-
-      a {
-        p,
-        i {
-          font-size: 24px;
-        }
-      }
 
       #initials {
         display: none;
@@ -150,7 +136,7 @@
       cursor: pointer;
 
       .fa-times {
-        color: pink;
+        color: #a7beb6;
         font-size: 2rem;
       }
     }
@@ -168,7 +154,10 @@
       background: white;
 
       .menu-links {
-        font-size: 24px;
+        a {
+          font-weight: 700;
+          font-size: 1.5rem;
+        }
       }
     }
 
