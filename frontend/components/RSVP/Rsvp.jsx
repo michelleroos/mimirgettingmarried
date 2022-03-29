@@ -70,7 +70,6 @@ export default function RSVP() {
       body: JSON.stringify(req)
     };
     fetch("http://localhost:3001/api/rsvp", reqOptions)
-      // .then(res => console.log('sent!'))
       .then(() => setRsvpModal(false))
     window.location.reload(false);
   };
@@ -141,15 +140,27 @@ export default function RSVP() {
     setRsvpModal(false);
   }
 
+  const Modal = () => {
+    return (
+      <div className="modal-bg" onClick={closeModal}>
+
+        {rsvpModal && <RsvpModal setRsvpModal={setRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} sendRsvp={sendRsvp} setRsvpReq={setRsvpReq} />}
+
+        {updateRsvpModal && <UpdateRsvpModal setUpdateRsvpModal={setUpdateRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} changeRsvp={changeRsvp} setRsvpReq={setRsvpReq} />}
+
+      </div>
+    )
+  }
+
   const Invitation = () => {
     return (
       <div id="rsvp-note">
         <h2>Dear family & friends - </h2>
-        <h3>We're delighted to invite you to our wedding!</h3>
+        <h3>We're delighted to invite you to our wedding.</h3>
+        <h3>When? July 23. Where? Prague.</h3>
         <h3>Please RSVP by June 23rd.</h3>
         <div id="rsvp-btn-wrap">
           <button className="rsvp-submit-btn" onClick={openInvitation}>
-            {/* <button id="rsvp-submit-btn" onClick={(e) => setRsvpModal(true)}> */}
             <p>RSVP</p>
             <i className="far fa-envelope"></i>
           </button>
@@ -173,31 +184,25 @@ export default function RSVP() {
     )
   }
 
-  const Modal = (
-    <div className="modal-bg" onClick={closeModal}>
-
-      {rsvpModal && <RsvpModal setRsvpModal={setRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} sendRsvp={sendRsvp} setRsvpReq={setRsvpReq} />}
-
-        {updateRsvpModal && <UpdateRsvpModal setUpdateRsvpModal={setUpdateRsvpModal} updateRsvpReq={updateRsvpReq} rsvpReq={rsvpReq} changeRsvp={changeRsvp} setRsvpReq={setRsvpReq} />}
-
-    </div>
-  )
-
   return (
-    <div id="rsvp-wrapper">
+    <div id="rsvp-container">
 
-      {modalOpen ? Modal : null}
+      {modalOpen ? Modal() : null}
 
-      <div id="rsvp-img-container">
+      <div id="rsvp-bg">
+        {filteredData() ? UpdateInvitation() : Invitation()}
+      </div>
+
+      {/* <div id="rsvp-img-container">
         <div id="rsvp-invitation">
           <div id="envelope"></div>
           {filteredData() ? UpdateInvitation() : Invitation()}
         </div>
-      </div>
+      </div> */}
 
-      <div id="rsvp-mobile-container">
+      {/* <div id="rsvp-mobile-container">
         {filteredData() ? UpdateInvitation() : Invitation()}
-      </div>
+      </div> */}
     </div>
   )
 };
