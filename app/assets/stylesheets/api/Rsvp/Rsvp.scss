@@ -144,137 +144,15 @@
       }
     }
   }
-
-  // #rsvp-img-container {
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   height: calc(100vh - 100px);
-  //   position: relative;
-
-  //   h3,
-  //   h2 {
-  //     font-family: "Poppins", sans-serif;
-  //     text-transform: uppercase;
-  //     letter-spacing: 3px;
-  //     margin: 0 0 10px 0;
-  //   }
-
-  //   &::after {
-  //     content: "";
-  //     background-image: url("https://firebasestorage.googleapis.com/v0/b/gallery-23854.appspot.com/o/IMG_20200920_183756.jpeg?alt=media&token=2ea8a703-c0a3-4b7e-b550-ddbc19d98ef8");
-  //     opacity: 0.6;
-  //     background-size: cover;
-  //     background-repeat: no-repeat;
-  //     background-position: center center;
-  //     position: absolute;
-  //     top: 0px;
-  //     right: 0px;
-  //     bottom: 0px;
-  //     left: 0px;
-  //     z-index: -1;
-  //   }
-
-  //   #rsvp-invitation {
-  //     position: relative;
-  //     width: 400px;
-  //     height: 300px;
-
-  //     #envelope {
-  //       width: 500px;
-  //       height: 300px;
-  //       background-color: black;
-  //       border-width: 150px;
-  //       border-style: solid;
-  //       border-color: rgb(255, 245, 247) rgb(255, 225, 230) rgb(255, 212, 220) rgb(255, 225, 230);
-  //       border-radius: 5px;
-  //       position: absolute;
-  //       top: 0;
-  //       left: 0;
-  //       box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
-  //     }
-
-  //     #rsvp-note,
-  //     #rsvp-update {
-  //       background-color: white;
-  //       box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
-  //       width: 500px;
-  //       height: 300px;
-  //       border-radius: 10px;
-  //       padding: 30px;
-  //       position: absolute;
-  //       top: 40px;
-  //       left: 40px;
-
-  //       #rsvp-btn-wrap {
-  //         display: flex;
-  //         justify-content: center;
-  //         align-items: center;
-
-  //         .rsvp-submit-btn {
-  //           margin: 10px 0 0 0;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
 }
 
-// @media screen and (max-width: 960px) {
-//   #rsvp-container {
-//     height: calc(100vh - 100px);
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     background: linear-gradient(to bottom, white 50%, #f2e2e5 50%);
-//     width: 100%;
-
-//     #rsvp-img-container {
-//       display: none;
-//     }
-
-//     .modal-bg {
-//       #rsvp-modal {
-//         width: 90%;
-//         height: auto;
-//         overflow: scroll;
-//         padding: 15px;
-//       }
-//     }
-
-//     #rsvp-mobile-container {
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       width: 90%;
-//       height: auto;
-
-//       #rsvp-note,
-//       #rsvp-update {
-//         width: auto;
-//         border-radius: 6px;
-//         box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
-//         padding: 30px;
-//         background-color: white;
-
-//         h2,
-//         h3 {
-//           font-family: "Poppins", sans-serif;
-//           text-transform: uppercase;
-//           letter-spacing: 3px;
-//           margin-bottom: 5px;
-//         }
-
-//         #rsvp-btn-wrap {
-//           display: flex;
-//           justify-content: center;
-//           align-items: center;
-
-//           .rsvp-submit-btn {
-//             margin-top: 10px;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
+@media screen and (max-width: 960px) {
+  #rsvp-container {
+    .modal-bg {
+      #rsvp-modal {
+        padding: 20px;
+        width: 90%;
+      }
+    }
+  }
+}
