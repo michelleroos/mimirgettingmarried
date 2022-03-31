@@ -57,17 +57,8 @@
           }
         }
 
-        #friday-modal,
-        #saturday-mingle-modal,
-        #saturday-ceremony-modal,
-        #saturday-reception-modal,
         #sunday-modal {
-          // &:hover {
-          //   i {
-          //     color: #fbcce7;
-          //     cursor: default;
-          //   }
-          // }
+          cursor: default;
         }
       }
     }
@@ -107,6 +98,7 @@
           line-height: 1.5;
           margin: 10px 0 30px 0;
           text-align: center;
+          font-weight: 100;
         }
 
         img {
