@@ -7,18 +7,40 @@
     align-items: center;
     justify-content: center;
     position: relative;
-
+    i {
+      font-size: 24px;
+      color: #f4dd8b;
+    }
+    
+    h2 {
+      font-family: "Poppins", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    
+    .more-info {
+      background-color: #a7beb6;
+      width: 50px;
+      height: 20px;
+      border-radius: 5px;
+      box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.2);
+      margin-top: 10px;
+    }
+    
     .day-schedule {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: 15px 0;
-
+      
       .detailed-schedule-container {
+        background-color: white;
         display: flex;
+        // border-radius: 5px;
+        // box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.2);
 
         .schedule-details {
-          // cursor: pointer;
+          cursor: pointer;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -30,13 +52,8 @@
             margin: 5px;
           }
 
-          .hover {
-            color: pink;
-            cursor: pointer;
-
-            &:hover {
-              text-decoration: underline;
-            }
+          h3 {
+            font-weight: 300;
           }
         }
 
@@ -45,20 +62,14 @@
         #saturday-ceremony-modal,
         #saturday-reception-modal,
         #sunday-modal {
-          cursor: pointer;
+          // &:hover {
+          //   i {
+          //     color: #fbcce7;
+          //     cursor: default;
+          //   }
+          // }
         }
       }
-    }
-
-    i {
-      font-size: 24px;
-      color: #f4dd8b;
-    }
-
-    h2 {
-      font-family: "Poppins", sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 3px;
     }
 
     .modal-bg {
@@ -103,33 +114,23 @@
           width: auto;
           border-radius: 3px;
         }
-        
+
         #friday {
           box-shadow: -1rem -1rem rgb(255, 238, 247);
           // box-shadow: -1rem -1rem rgb(255, 242, 244);
         }
-        
+
         #mingle {
           box-shadow: -1rem -1rem #fff2c5;
         }
-        
+
         #ceremony {
           box-shadow: -1rem -1rem rgb(255, 233, 237);
         }
-        
+
         #reception {
           box-shadow: -1rem -1rem rgb(233, 249, 255);
         }
-
-        // .schedule-img-container {
-        //   display: flex;
-
-        //   img {
-        //     height: 120px;
-        //     border-radius: 3px;
-        //     margin: 0 10px 0 0;
-        //   }
-        // }
       }
 
       #sunday-modal {
@@ -153,7 +154,7 @@
         .schedule-modal {
           width: 70%;
           height: 80%;
-          
+
           img {
             display: none;
           }
