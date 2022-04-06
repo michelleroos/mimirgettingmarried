@@ -1,15 +1,11 @@
 const data = [
   {
     q: "What should I wear?",
-    a: "The most important thing for us is that you’re comfortable! But expect the vibe to be a festive/cocktail/semi-formal fusion.Women will probably wear dresses or jumpsuits and men suits. The theme on Sunday is Studio 54."
-  },
-  {
-    q: "Do I have to come to the Sunday party?",
-    a: "The most important thing for us is that you can join us on Saturday for our ceremony. However, if you like spicier parties and[insert something here to signal what type of party it will be] then we’d love to see you Sunday too!"
+    a: "The most important thing for us is that you’re comfortable! But expect the vibe to be a festive/cocktail/semi-formal fusion. The wedding party will wear sage/eucalyptus dresses and tan suits."
   },
   {
     q: "What will the weather be like?",
-    a: "July is the warmest month of the year in Prague with an average high-temperature of 24°C (75.2°F) and an average low-temperature of 11.9°C (53.4°F). Of course, due to global warming in the last few years the temperatures have been higher. You might want to bring a hand fan in case it’s very hot in the day, and a light jacket for the night."
+    a: "July is the warmest month of the year in Prague with an average high-temperature of 24°C (75.2°F) and an average low-temperature of 11.9°C (53.4°F). Of course, in the last few years Europe has been significantly hotter in the summers. You might want to bring a hand fan in case it’s very hot in the day, and a light jacket for the night."
   },
   {
     q: "Will the ceremony/mingle/reception be in the same place?",
@@ -21,7 +17,7 @@ const data = [
   },
   {
     q: "How do I get to the venue and around Prague?",
-    a: "The venue is located in the city center so you can either walk, use the public transport or take a taxi. Please note that the wedding venue is perched on an elevation so there’s an incline walk to get there. If you are wearing heels or have reduced mobility, you might consider taking a taxi."
+    a: "The venue is located in the city center so you can either walk, use the public transport or take a taxi. Please note there is an incline walk to get to the wedding if you choose to walk. If you are wearing heels or have reduced mobility, you might consider taking a taxi."
   },
   {
     q: "Is the venue accessible for people with restricted mobility?",
@@ -33,11 +29,11 @@ const data = [
   },
   {
     q: "What time should I arrive?",
-    a: "TBD but probably around 3pm."
+    a: "TBC shortly but probably around 3pm."
   },
   {
     q: "Are kids welcome?",
-    a: "Your young children are welcome at the wedding on Saturday, but Sunday is strictly +18 years."
+    a: "Your young children are welcome."
   },
   {
     q: "Can I bring a +1?",
@@ -53,7 +49,7 @@ const data = [
   },
   {
     q: "Where do you recommend that I book my stay?",
-    a: "We recommend that you stay in Prague 1, which is the city center."
+    a: "We recommend that you stay in Prague 1, which is the city center. There are plenty of options on Airbnb and Hotels/Booking."
   },
   {
     q: "When is the RSVP deadline?",
@@ -62,14 +58,6 @@ const data = [
   {
     q: "What should I do if I no longer can make it?",
     a: "Please just let us know asap so that we can plan accordingly."
-  },
-  {
-    q: "Do you have a wedding registry?",
-    a: "We don’t, but we’d love it if you can contribute to our GoFundMe which we will donate to X."
-  },
-  {
-    q: "What are your thoughts on the war in Ukraine?",
-    a: "Amir"
   },
   {
     q: "I have another question!",

@@ -15,6 +15,7 @@ const auth = new google.auth.GoogleAuth({
 });
 
 const spreadsheetId = "1-R0vjBCOD5hcipk9AQbVUwQAH_0dFvQB2qs5gxsxWg0";
+// const spreadsheetId = "17bXAJELWjXIRmcJ-RPeg5_W4wszqZI3QxvE_ZIL3L6A";
 const range = "rsvp";
 
 app.get("/api/rsvp", async (req, res) => { // api endpoint returns a CB. We decide what to do w res thru CB
