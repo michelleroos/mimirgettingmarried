@@ -36,17 +36,16 @@ export default function Schedule() {
         {reception && <Reception close={close} />}
         {sunday && <Sunday close={close} />}
 
-        <div className="day-schedule">
+        {/* <div className="day-schedule">
           <h2>Friday - 22 July</h2>
           <div className="detailed-schedule-container">
             <div className="schedule-details" id="friday-modal" onClick={() => setFriday(true)}>
               <i className="fas fa-beer"></i>
               <h3>Meet & greet</h3>
               <button className="more-info">More info</button>
-              {/* <p className="hover">TBD</p> */}
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="day-schedule">
           <h2>Saturday - 23 July</h2>
@@ -56,21 +55,18 @@ export default function Schedule() {
               <h3>Mingle</h3>
               <p>15:00</p>
               <button className="more-info">More info</button>
-              {/* <p className="hover">Villa Richter Fountain</p> */}
             </div>
             <div className="schedule-details" id="saturday-ceremony-modal" onClick={() => setCeremony(true)}>
               <i className="fas fa-heart"></i>
               <h3>Ceremony</h3>
               <p>16:00</p>
               <button className="more-info">More info</button>
-              {/* <p className="hover">Villa Richter</p> */}
             </div>
             <div className="schedule-details" id="saturday-reception-modal" onClick={() => setReception(true)}>
               <i className="fas fa-utensils"></i>
               <h3>Reception</h3>
               <p>18:00</p>
               <button className="more-info">More info</button>
-              {/* <p className="hover">Villa Richter</p> */}
             </div>
             <div className="schedule-details">
               <i className="fas fa-guitar"></i>
@@ -85,7 +81,7 @@ export default function Schedule() {
           </div>
         </div>
         
-        <div className="day-schedule">
+        {/* <div className="day-schedule">
           <h2>Sunday - 24 July</h2>
           <div className="detailed-schedule-container">
             <div className="schedule-details" id="sunday-modal" onClick={() => setSunday(true)}>
@@ -93,10 +89,9 @@ export default function Schedule() {
               <h3>Party continues</h3>
               <p>17:00 until late</p>
               <button className="more-info">More info</button>
-              {/* <p className="hover">GLASS Bar</p> */}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
