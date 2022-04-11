@@ -193,16 +193,6 @@ export default function RSVP() {
         {filteredData() ? UpdateInvitation() : Invitation()}
       </div>
 
-      {/* <div id="rsvp-img-container">
-        <div id="rsvp-invitation">
-          <div id="envelope"></div>
-          {filteredData() ? UpdateInvitation() : Invitation()}
-        </div>
-      </div> */}
-
-      {/* <div id="rsvp-mobile-container">
-        {filteredData() ? UpdateInvitation() : Invitation()}
-      </div> */}
     </div>
   )
 };
