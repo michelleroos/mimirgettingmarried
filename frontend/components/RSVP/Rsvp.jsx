@@ -59,7 +59,8 @@ export default function RSVP() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req)
     };
-    fetch(`http://localhost:3001/api/rsvp/${req.user}`, reqOptions)
+    // fetch(`http://localhost:3001/api/rsvp/${req.user}`, reqOptions)
+    fetch(`https://mimirgettingmarried.herokuapp.com/#/rsvp/${req.user}`, reqOptions)
       .then(res => console.log('updated!'))
   };
 
@@ -69,7 +70,8 @@ export default function RSVP() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req)
     };
-    fetch("http://localhost:3001/api/rsvp", reqOptions)
+    // fetch("http://localhost:3001/api/rsvp", reqOptions)
+    fetch("https://mimirgettingmarried.herokuapp.com/#/rsvp", reqOptions)
       .then(() => setRsvpModal(false))
     window.location.reload(false);
   };
