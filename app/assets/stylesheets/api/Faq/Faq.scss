@@ -7,13 +7,21 @@
   height: auto;
 
   #faq-container {
-    width: 80%;
+    width: 70%;
 
-    h1 {
-      font-family: "Poppins", sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 3px;
+    #faq-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      h2 {
+        font-family: "Poppins", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin: 20px 0;
+      }
     }
+
 
     .faq-item {
       .faq-hide {
@@ -28,7 +36,7 @@
 
         h5 {
           margin: 20px 20px 10px 0;
-          font-size: 20px;
+          font-size: 18px;
           font-weight: 300;
         }
         
@@ -45,8 +53,7 @@
 
       .answer {
         p {
-          margin: 0 0 0 10px;
-          font-size: 20px;
+          font-size: 18px;
         }
       }
     }

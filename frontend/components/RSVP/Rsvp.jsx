@@ -29,6 +29,7 @@ export default function RSVP() {
       .then((res) => updateUser(res))
 
     fetch(`http://localhost:3001/api/rsvp`)
+    // fetch(`/api/rsvp`)
       .then((res) => res.json())
       .then((data) => setGoogleSheetsData(data))
       // .then((data) => console.log(data))
@@ -70,8 +71,8 @@ export default function RSVP() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req)
     };
-    // fetch("http://localhost:3001/api/rsvp", reqOptions)
-    fetch("https://mimirgettingmarried.herokuapp.com/#/rsvp", reqOptions)
+    // fetch("/api/rsvp", reqOptions)
+    fetch("http://localhost:3001/api/rsvp", reqOptions)
       .then(() => setRsvpModal(false))
     window.location.reload(false);
   };

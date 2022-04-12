@@ -64,7 +64,9 @@ export default function Faq() {
   const Faq = () => (
     <div id="faq-wrapper">
       <div id="faq-container">
-        <h1>Frequently asked questions</h1>
+        <div id="faq-header">
+          <h2>Frequently asked questions</h2>
+        </div>
 
         <div className="faq-item">
           <div className="question" onClick={() => setAll(expanded)}>

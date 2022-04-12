@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// ruby gem
 const auth = new google.auth.GoogleAuth({
   keyFile: "./config/credentials.json",
   scopes: 'https://www.googleapis.com/auth/spreadsheets',
@@ -62,6 +63,7 @@ app.get("/api/rsvp", async (req, res) => { // api endpoint returns a CB. We deci
 // }
 
 app.post("/api/rsvp", async (req, res) => {
+  console.log('hi, im posting');
 
   // create client instance for auth
   const client = await auth.getClient();
