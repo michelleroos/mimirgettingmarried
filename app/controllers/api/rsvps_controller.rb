@@ -41,21 +41,37 @@ service = Google::Apis::SheetsV4::SheetsService.new
 service.client_options.application_name = APPLICATION_NAME
 service.authorization = authorize
 
-# Prints the names and majors of students in a sample spreadsheet:
-# https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
-spreadsheet_id = "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms"
-range = "Class Data!A2:E"
-response = service.get_spreadsheet_values spreadsheet_id, range
-puts "Name, Major:"
-puts "No data found." if response.values.empty?
-response.values.each do |row|
-  # Print columns A and E, which correspond to indices 0 and 4.
-  puts "#{row[0]}, #{row[4]}"
-end
+# The ID of the spreadsheet to update.
+spreadsheet_id = '17bXAJELWjXIRmcJ-RPeg5_W4wszqZI3QxvE_ZIL3L6A'
+
+# The A1 notation of a range to search for a logical table of data.
+# Values will be appended after the last row of the table.
+range = 'rsvp'
 
 class Api::RsvpsController < ApplicationController
 
   def create
+    # # Prints the names and majors of students in a sample spreadsheet:
+    # # https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+    # spreadsheet_id = "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms"
+    # range = "Class Data!A2:E"
+    # response = service.get_spreadsheet_values spreadsheet_id, range
+    # puts "Name, Major:"
+    # puts "No data found." if response.values.empty?
+    # response.values.each do |row|
+    #   # Print columns A and E, which correspond to indices 0 and 4.
+    #   puts "#{row[0]}, #{row[4]}"
+    # end
+
+
+    # TODO: Assign values to desired members of `request_body`:
+    request_body = Google::Apis::SheetsV4::ValueRange.new
+
+    response = service.append_spreadsheet_value(spreadsheet_id, range, request_body)
+
+    # TODO: Change code below to process the `response` object:
+    puts response.to_json
+
   end
 
   def show
@@ -67,6 +83,7 @@ class Api::RsvpsController < ApplicationController
   private
 
   def rsvp_params
+    params.require().permit(:user, :saturday, :diet, :otherDiet, :childrenSaturday, :childrenSaturdayNumber, :sunday)
   end
 
 end
