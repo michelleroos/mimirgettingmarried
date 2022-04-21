@@ -65,17 +65,29 @@ export default function RSVP() {
       .then(res => console.log('updated!'))
   };
 
-  const sendRsvp = (req) => {
+  const sendRsvp = (rsvpReq) => {
     const reqOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(req)
+      body: JSON.stringify(rsvpReq)
     };
-    // fetch("/api/rsvp", reqOptions)
-    fetch("http://localhost:3001/api/rsvp", reqOptions)
-      .then(() => setRsvpModal(false))
-    window.location.reload(false);
+    fetch("/api/rsvps", reqOptions)
+      .then((data) => console.log(data))
+      .catch(() => 'error')
+    setRsvpModal(false);
   };
+
+  // const sendRsvp = (rsvpReq) => {
+  //   const reqOptions = {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(rsvpReq)
+  //   };
+  //   fetch("http://localhost:3001/api/rsvp", reqOptions)
+  //     .catch((err) => 'error')
+  //   setRsvpModal(false);
+  //   window.location.reload(false);
+  // };
 
   const updateRsvpReq = (val) => {
     if (val === "sat-yes") {
