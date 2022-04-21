@@ -31,3 +31,4 @@ config/keys_dev.js
 credentials.json
 .env
 config.json
+credentials.json
