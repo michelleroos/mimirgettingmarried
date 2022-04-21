@@ -29,3 +29,5 @@ bundle.js.map
 /config/master.key
 config/keys_dev.js
 credentials.json
+.env
+config.json
