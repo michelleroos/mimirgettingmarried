@@ -73,7 +73,7 @@ export default function RSVP() {
     };
     fetch("/api/rsvps", reqOptions)
       .then((data) => console.log(data))
-      .catch(() => 'error')
+      .catch((error) => console.log(error));
     setRsvpModal(false);
   };
 

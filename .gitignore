@@ -32,3 +32,4 @@ credentials.json
 .env
 config.json
 credentials.json
+/app/controllers/api/credentials.json
