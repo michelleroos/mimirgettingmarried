@@ -9,7 +9,6 @@
     -webkit-column-width: 200px;
     -moz-column-width: 200px;
     column-width: 200px;
-    margin-left: 17px;
 
     .img-wrap {
       opacity: 0.8;
@@ -114,6 +113,10 @@
 
 @media screen and (max-width: 960px) {
   #welcome-container {
+
+    #logged-in-img-grid {
+      margin-left: 15px;
+    }
     .img-grid {
       column-count: 2;
       -webkit-column-count: 2;

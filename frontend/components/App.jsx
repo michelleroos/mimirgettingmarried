@@ -30,10 +30,14 @@ export default function App() {
     <div className="app">
       <Navbar />
       <Route exact path="/" component={Welcome} />
-      <ProtectedRoute path="/faq" component={Faq} />
+      <Route path="/faq" component={Faq} />
+      <Route path="/rsvp" component={RSVP} />
+      <Route path="/weddingparty" component={WeddingParty} />
+      <Route path="/schedule" component={Schedule} />
+      {/* <ProtectedRoute path="/faq" component={Faq} />
       <ProtectedRoute path="/rsvp" component={RSVP} />
       <ProtectedRoute path="/weddingparty" component={WeddingParty} />
-      <ProtectedRoute path="/schedule" component={Schedule} />
+      <ProtectedRoute path="/schedule" component={Schedule} /> */}
       <AuthRoute path="/login" component={LoginFormContainer} />
       <Footer />
     </div>

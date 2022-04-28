@@ -15,7 +15,7 @@ export default function Navbar() {
     dispatch(logOut());
   }
 
-  if (currentUserId) {
+  // if (currentUserId) {
     return (
       <div id="navbar-container">
         {/* <UploadForm /> */}
@@ -38,18 +38,18 @@ export default function Navbar() {
               </li>
             )
           })}
-          {sidebar ? <li className="menu-links"><Link to="/" onClick={logOutUser}>Log out</Link></li> : null}
+          {/* {sidebar ? <li className="menu-links"><Link to="/" onClick={logOutUser}>Log out</Link></li> : null} */}
         </ul>
 
-        {sidebar ? null : <div id="log-out"><Link to="/" onClick={() => dispatch(logOut())}>Log out</Link></div>}
+        {/* {sidebar ? null : <div id="log-out"><Link to="/" onClick={() => dispatch(logOut())}>Log out</Link></div>} */}
       </div>
     )
-  } else {
-    return (
-      <div id="logged-out-nav">
-        <p>JULY 23 2022 - PRAGUE</p>
-      </div>
-    )
-  }
+  // } else {
+  //   return (
+  //     <div id="logged-out-nav">
+  //       <p>JULY 23 2022 - PRAGUE</p>
+  //     </div>
+  //   )
+  // }
 
 };

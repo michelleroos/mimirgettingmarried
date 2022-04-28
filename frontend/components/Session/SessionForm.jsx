@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
 
           <h1 className="session-title">
-            Sign in using your email and the passcode which was provided to you by email or return <Link to="/">home</Link>.
+            Sign in using the passcode which was provided to you by email or return <Link to="/">home</Link>.
           </h1>
 
           <div id="session-errors">
