@@ -3,16 +3,16 @@ require "googleauth"
 require "googleauth/stores/file_token_store"
 require "fileutils"
 
-
-# OOB_URI = "urn:ietf:wg:oauth:2.0:oob".freeze
+# Get authorization
 OOB_URI = "urn:ietf:wg:oauth:2.0:oob".freeze
-APPLICATION_NAME = "Google Sheets API Ruby Quickstart".freeze
-CREDENTIALS_PATH = "../../../config/credentials.json".freeze
+# OOB_URI = "http://127.0.0.1".freeze
+APPLICATION_NAME = "mimirgettingmarried".freeze
+CREDENTIALS_PATH = "/Users/michelleroos/Desktop/mimirgettingmarried/mimirgettingmarried/config/credentials.json".freeze
 # The file token.yaml stores the user's access and refresh tokens, and is
 # created automatically when the authorization flow completes for the first
 # time.
 TOKEN_PATH = "token.yaml".freeze
-SCOPE = Google::Apis::SheetsV4::AUTH_SPREADSHEETS_READONLY
+SCOPE = Google::Apis::SheetsV4::AUTH_SPREADSHEETS
 
 # Ensure valid credentials, either by restoring from the saved credentials
 # files or intitiating an OAuth2 authorization. If authorization is required,
@@ -23,6 +23,7 @@ def authorize
   client_id = Google::Auth::ClientId.from_file CREDENTIALS_PATH
   token_store = Google::Auth::Stores::FileTokenStore.new file: TOKEN_PATH
   authorizer = Google::Auth::UserAuthorizer.new client_id, SCOPE, token_store
+
   user_id = "default"
   credentials = authorizer.get_credentials user_id
   if credentials.nil?
@@ -42,17 +43,13 @@ service = Google::Apis::SheetsV4::SheetsService.new
 service.client_options.application_name = APPLICATION_NAME
 service.authorization = authorize
 
-# The ID of the spreadsheet to update.
 spreadsheet_id = '17bXAJELWjXIRmcJ-RPeg5_W4wszqZI3QxvE_ZIL3L6A'
-
-# The A1 notation of a range to search for a logical table of data.
-# Values will be appended after the last row of the table.
 range = 'rsvp'
 
 class Api::RsvpsController < ApplicationController
 
   def create # append
-
+    puts('hello')
     values = [
       'hi', 'hello'
     ]
@@ -84,15 +81,6 @@ class Api::RsvpsController < ApplicationController
     result = service.batch_get_spreadsheet_values(spreadsheet_id)
     # result = service.batch_get_spreadsheet_values(spreadsheet_id, ranges: range_names)
     puts "#{result.value_ranges.length} ranges retrieved."
-  end
-
-  def update
-  end
-
-  private
-
-  def rsvp_params
-    params.require().permit(:user, :saturday, :diet, :otherDiet, :childrenSaturday, :childrenSaturdayNumber, :sunday)
   end
 
 end

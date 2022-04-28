@@ -63008,3 +63008,698 @@ Errno::ENOENT - No such file or directory @ rb_sysopen - ../../../config/credent
   app/controllers/api/rsvps_controller.rb:23:in `authorize'
   app/controllers/api/rsvps_controller.rb:43:in `<top (required)>'
 
+Started GET "/" for ::1 at 2022-04-27 23:17:24 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 131ms (Views: 103.8ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-27 23:17:26 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 29ms (Views: 13.4ms | ActiveRecord: 11.7ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-27 23:17:30 +0200
+
+Errno::ENOENT - No such file or directory @ rb_sysopen - ../../../config/credentials.json:
+  app/controllers/api/rsvps_controller.rb:22:in `authorize'
+  app/controllers/api/rsvps_controller.rb:42:in `<top (required)>'
+
+Started GET "/" for ::1 at 2022-04-27 23:26:04 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 104ms (Views: 97.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-27 23:26:06 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (14.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 66ms (Views: 24.1ms | ActiveRecord: 14.6ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-27 23:27:30 +0200
+
+Errno::ENOENT - No such file or directory @ rb_sysopen - ../../../config/credentials.json:
+  app/controllers/api/rsvps_controller.rb:22:in `authorize'
+  app/controllers/api/rsvps_controller.rb:42:in `<top (required)>'
+
+Started GET "/" for ::1 at 2022-04-27 23:29:51 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 155ms (Views: 126.8ms | ActiveRecord: 19.0ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-27 23:29:53 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (9.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 29ms (Views: 18.1ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-27 23:30:00 +0200
+
+RuntimeError - Expected top level property 'installed' or 'web' to be present.:
+  app/controllers/api/rsvps_controller.rb:21:in `authorize'
+  app/controllers/api/rsvps_controller.rb:41:in `<top (required)>'
+
+Started GET "/" for ::1 at 2022-04-27 23:39:38 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 113ms (Views: 94.3ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-27 23:39:39 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (13.2ms)
+Completed 200 OK in 67ms (Views: 61.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-27 23:39:41 +0200
+
+RuntimeError - Expected top level property 'installed' or 'web' to be present.:
+  app/controllers/api/rsvps_controller.rb:22:in `authorize'
+  app/controllers/api/rsvps_controller.rb:42:in `<top (required)>'
+
+Started GET "/" for ::1 at 2022-04-27 23:39:54 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 119ms (Views: 107.7ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-27 23:39:56 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.8ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2022-04-27 23:43:11 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 111ms (Views: 86.4ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-27 23:43:12 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 21ms (Views: 14.6ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-27 23:43:14 +0200
+
+RuntimeError - Expected top level property 'installed' or 'web' to be present.:
+  app/controllers/api/rsvps_controller.rb:23:in `authorize'
+  app/controllers/api/rsvps_controller.rb:43:in `<top (required)>'
+
+Started GET "/" for ::1 at 2022-04-27 23:47:22 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 349ms (Views: 229.8ms | ActiveRecord: 112.5ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-27 23:47:24 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.6ms)
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-27 23:47:26 +0200
+
+RuntimeError - Expected top level property 'installed' or 'web' to be present.:
+  app/controllers/api/rsvps_controller.rb:24:in `authorize'
+  app/controllers/api/rsvps_controller.rb:44:in `<top (required)>'
+
+Started GET "/" for ::1 at 2022-04-27 23:50:40 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (33.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 135ms (Views: 95.3ms | ActiveRecord: 33.8ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-27 23:50:41 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (50.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 75ms (Views: 18.7ms | ActiveRecord: 50.8ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-27 23:50:43 +0200
+Started GET "/" for ::1 at 2022-04-27 23:59:48 +0200
+
+Signet::AuthorizationError - Authorization failed.  Server message:
+{
+  "error": "invalid_grant",
+  "error_description": "Malformed auth code."
+}:
+  app/controllers/api/rsvps_controller.rb:34:in `authorize'
+  app/controllers/api/rsvps_controller.rb:44:in `<top (required)>'
+
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 104ms (Views: 97.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-27 23:59:50 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (2.4ms)
+Completed 200 OK in 28ms (Views: 22.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2022-04-27 23:59:51 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 68ms (Views: 62.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-27 23:59:52 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.8ms)
+Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-27 23:59:54 +0200
+
+Signet::AuthorizationError - Authorization failed.  Server message:
+{
+  "error": "invalid_grant",
+  "error_description": "Malformed auth code."
+}:
+  app/controllers/api/rsvps_controller.rb:34:in `authorize'
+  app/controllers/api/rsvps_controller.rb:44:in `<top (required)>'
+
+Started GET "/" for ::1 at 2022-04-28 00:02:14 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 113ms (Views: 94.2ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 00:02:15 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 23ms (Views: 17.7ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-28 00:02:18 +0200
+
+Signet::AuthorizationError - Authorization failed.  Server message:
+{
+  "error": "invalid_grant",
+  "error_description": "Malformed auth code."
+}:
+  app/controllers/api/rsvps_controller.rb:35:in `authorize'
+  app/controllers/api/rsvps_controller.rb:45:in `<top (required)>'
+
+Started GET "/" for ::1 at 2022-04-28 00:03:54 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 99ms (Views: 85.9ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 00:03:55 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.8ms)
+Completed 200 OK in 24ms (Views: 16.4ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-28 00:03:57 +0200
+
+Signet::AuthorizationError - Authorization failed.  Server message:
+{
+  "error": "invalid_grant",
+  "error_description": "Malformed auth code."
+}:
+  app/controllers/api/rsvps_controller.rb:35:in `authorize'
+  app/controllers/api/rsvps_controller.rb:45:in `<top (required)>'
+
+Started GET "/" for ::1 at 2022-04-28 20:01:53 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 306ms (Views: 136.4ms | ActiveRecord: 165.4ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 20:01:55 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 38ms (Views: 19.4ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/" for ::1 at 2022-04-28 20:01:56 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 58ms (Views: 54.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 20:01:57 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (9.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (2.0ms)
+Completed 200 OK in 25ms (Views: 13.7ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-28 20:02:09 +0200
+
+Signet::AuthorizationError - Authorization failed.  Server message:
+{
+  "error": "invalid_grant",
+  "error_description": "Malformed auth code."
+}:
+  app/controllers/api/rsvps_controller.rb:34:in `authorize'
+  app/controllers/api/rsvps_controller.rb:44:in `<top (required)>'
+
+Started GET "/" for ::1 at 2022-04-28 20:24:07 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 138ms (Views: 124.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 20:24:08 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.7ms)
+Completed 200 OK in 25ms (Views: 19.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-28 20:24:19 +0200
+
+Signet::AuthorizationError - Authorization failed.  Server message:
+{
+  "error": "invalid_grant",
+  "error_description": "Malformed auth code."
+}:
+  app/controllers/api/rsvps_controller.rb:34:in `authorize'
+  app/controllers/api/rsvps_controller.rb:44:in `<top (required)>'
+
+Started GET "/" for ::1 at 2022-04-28 20:25:23 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 177ms (Views: 105.5ms | ActiveRecord: 67.9ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 20:25:24 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (39.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.9ms)
+Completed 200 OK in 57ms (Views: 15.7ms | ActiveRecord: 39.5ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-28 20:25:28 +0200
+Started GET "/" for ::1 at 2022-04-28 20:52:46 +0200
+Started POST "/api/rsvps" for ::1 at 2022-04-28 20:52:46 +0200
+Started GET "/" for ::1 at 2022-04-28 20:52:46 +0200
+
+Signet::AuthorizationError - Authorization failed.  Server message:
+{
+  "error": "invalid_grant",
+  "error_description": "Malformed auth code."
+}:
+  app/controllers/api/rsvps_controller.rb:35:in `authorize'
+  app/controllers/api/rsvps_controller.rb:45:in `<top (required)>'
+
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+Started GET "/" for ::1 at 2022-04-28 21:12:49 +0200
+
+Signet::AuthorizationError - Authorization failed.  Server message:
+{
+  "error": "invalid_grant",
+  "error_description": "Malformed auth code."
+}:
+  app/controllers/api/rsvps_controller.rb:35:in `authorize'
+  app/controllers/api/rsvps_controller.rb:45:in `<top (required)>'
+
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 1202844ms (Views: 1202787.4ms | ActiveRecord: 53.1ms)
+
+
+  [1m[36mUser Load (31.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 1202760ms (Views: 1202701.7ms | ActiveRecord: 49.7ms)
+
+
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 216ms (Views: 167.6ms | ActiveRecord: 41.9ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 21:12:50 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 26ms (Views: 13.6ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/" for ::1 at 2022-04-28 21:14:23 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 99ms (Views: 88.4ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 21:14:24 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 58ms (Views: 13.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-28 21:14:26 +0200
+
+ActionController::RoutingError - undefined local variable or method `client' for main:Object
+Did you mean?  client_id:
+
+Started GET "/" for ::1 at 2022-04-28 21:20:16 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 106ms (Views: 88.0ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 21:20:17 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 53ms (Views: 28.9ms | ActiveRecord: 9.9ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-28 21:20:33 +0200
+
+ActionController::RoutingError - undefined local variable or method `service' for main:Object:
+
+Started GET "/" for ::1 at 2022-04-28 21:21:15 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 243ms (Views: 114.6ms | ActiveRecord: 124.6ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 21:21:16 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (2.5ms)
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-28 21:21:18 +0200
+Started GET "/" for ::1 at 2022-04-28 21:26:56 +0200
+
+Signet::AuthorizationError - Authorization failed.  Server message:
+{
+  "error": "invalid_grant",
+  "error_description": "Malformed auth code."
+}:
+  app/controllers/api/rsvps_controller.rb:34:in `authorize'
+  app/controllers/api/rsvps_controller.rb:44:in `<top (required)>'
+
+Started GET "/" for ::1 at 2022-04-28 21:26:56 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 116ms (Views: 104.3ms | ActiveRecord: 8.5ms)
+
+
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 137ms (Views: 131.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 21:26:58 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (15.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (15.4ms)
+Completed 200 OK in 106ms (Views: 62.2ms | ActiveRecord: 21.4ms)
+
+
+Started GET "/" for ::1 at 2022-04-28 21:27:00 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 59ms (Views: 55.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 21:27:01 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.9ms)
+Completed 200 OK in 27ms (Views: 14.7ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-28 21:27:04 +0200
+
+SyntaxError - syntax error, unexpected tIDENTIFIER, expecting ')'
+  user_id = "default"
+  ^~~~~~~:
+  app/controllers/api/rsvps_controller.rb:30:in `'
+
+Started GET "/" for ::1 at 2022-04-28 21:28:13 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 101ms (Views: 84.1ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 21:28:13 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.7ms)
+Completed 200 OK in 26ms (Views: 13.1ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-28 21:28:16 +0200
+
+ActionController::RoutingError - undefined method `base_url' for #<Google::Auth::UserAuthorizer:0x00007fbbb44ba3f8>:
+
+Started GET "/" for ::1 at 2022-04-28 21:28:38 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 141ms (Views: 94.0ms | ActiveRecord: 44.0ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 21:28:39 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (17.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (2.4ms)
+Completed 200 OK in 38ms (Views: 19.4ms | ActiveRecord: 17.5ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-28 21:28:42 +0200
+
+ActionController::RoutingError - undefined method `callback_uri' for #<Google::Auth::UserAuthorizer:0x00007fbbb7143a00>:
+
+Started GET "/" for ::1 at 2022-04-28 21:38:30 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 107ms (Views: 90.9ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 21:38:32 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.0ms)
+Completed 200 OK in 35ms (Views: 12.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-28 21:38:34 +0200
+
+ActionController::RoutingError - undefined method `callback_uri' for #<Google::Auth::UserAuthorizer:0x00007fbbb4709000>:
+
+Started GET "/" for ::1 at 2022-04-28 21:38:57 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 92ms (Views: 77.6ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 21:38:57 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (19.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (1.9ms)
+Completed 200 OK in 49ms (Views: 25.8ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/" for ::1 at 2022-04-28 21:39:01 +0200
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "e77rs0HPUvE8iADarbbnEg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 84ms (Views: 80.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-04-28 21:39:02 +0200
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (3.1ms)
+Completed 200 OK in 21ms (Views: 13.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/rsvps" for ::1 at 2022-04-28 21:39:04 +0200
