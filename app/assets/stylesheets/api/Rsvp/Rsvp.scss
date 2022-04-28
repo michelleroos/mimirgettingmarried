@@ -138,8 +138,10 @@
         justify-content: center;
         align-items: center;
 
-        .rsvp-submit-btn {
-          margin-top: 10px;
+        a {
+          .rsvp-submit-btn {
+            margin-top: 10px;
+          }
         }
       }
     }

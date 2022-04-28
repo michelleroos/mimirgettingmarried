@@ -18,6 +18,7 @@ import Navbar from "./Navbar/Navbar";
 import RSVP from "./RSVP/Rsvp";
 import Schedule from "./Schedule/Schedule";
 import UploadForm from "./UploadForm/UploadForm";
+import WeddingParty from "./WeddingParty/WeddingParty";
 import Welcome from "./Welcome/Welcome";
 // import WelcomeContainer from "./Welcome/WelcomeContainer";
 
@@ -26,15 +27,15 @@ export default function App() {
   const [selectedImg, setSelectedImg] = useState(null);
 
   return (
-    <div className="app" >
-
+    <div className="app">
       <Navbar />
       <Route exact path="/" component={Welcome} />
       <ProtectedRoute path="/faq" component={Faq} />
       <ProtectedRoute path="/rsvp" component={RSVP} />
+      <ProtectedRoute path="/weddingparty" component={WeddingParty} />
       <ProtectedRoute path="/schedule" component={Schedule} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <Footer />
-    </div >
-  )
+    </div>
+  );
 }

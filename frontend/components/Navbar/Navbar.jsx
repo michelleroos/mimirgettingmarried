@@ -7,7 +7,7 @@ export default function Navbar() {
 
   const currentUserId = useSelector((state) => state.session.id);
   const dispatch = useDispatch();
-  const MenuItems = ['Rsvp', 'Schedule', 'Faq']
+  const MenuItems = ['RSVP', 'Schedule', 'Faq']
   const [sidebar, setSidebar] = useState(false);
 
   const logOutUser = () => {

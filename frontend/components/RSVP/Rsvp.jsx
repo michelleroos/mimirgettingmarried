@@ -173,12 +173,14 @@ export default function RSVP() {
         <h2>Dear family & friends - </h2>
         <h3>We're delighted to invite you to our wedding.</h3>
         <h3>When? July 23. Where? Prague.</h3>
-        <h3>Please RSVP by June 23rd.</h3>
+        <h3>Please RSVP by May 31.</h3>
         <div id="rsvp-btn-wrap">
-          <button className="rsvp-submit-btn" onClick={openInvitation}>
-            <p>RSVP</p>
-            <i className="far fa-envelope"></i>
-          </button>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSWoMdSv030Q1_KpsrO0IZ0Qt2aYLa1arJ4rTWQUwm6ulbuw/formResponse" target="_blank">
+            <button className="rsvp-submit-btn">
+              <p>RSVP</p>
+              <i className="far fa-envelope"></i>
+            </button>
+          </a>
         </div>
       </div>
     );
