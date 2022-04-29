@@ -18,7 +18,7 @@
     "watch": "webpack --watch --mode=development",
     "build": "webpack --mode=production"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:3000",
   "keywords": [],
   "author": "",
   "license": "ISC",
