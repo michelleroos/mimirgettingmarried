@@ -343,6 +343,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   google-apis-sheets_v4
+  googleauth
   guard-rspec
   jbuilder (~> 2.5)
   jquery-rails
