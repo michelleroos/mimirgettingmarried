@@ -1,4 +1,4 @@
-// // ES5 way of requiring
+// ES5 way of requiring
 // const express = require("express");
 // const app = express();
 // const { google } = require('googleapis');
@@ -9,7 +9,7 @@
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
 
-// // ruby gem
+// ruby gem
 // const auth = new google.auth.GoogleAuth({
 //   keyFile: "./config/credentials.json",
 //   scopes: 'https://www.googleapis.com/auth/spreadsheets',
