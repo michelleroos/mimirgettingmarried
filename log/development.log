@@ -64239,3 +64239,22 @@ Completed 404 Not Found in 4ms (ActiveRecord: 2.3ms)
 ActiveRecord::RecordNotFound - Couldn't find User with 'id'=null:
   app/controllers/api/users_controller.rb:16:in `show'
 
+Started GET "/" for ::1 at 2022-05-07 16:16:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 63ms (Views: 61.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/users/null" for ::1 at 2022-05-07 16:16:16 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"null"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+Completed 404 Not Found in 3ms (ActiveRecord: 1.5ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=null:
+  app/controllers/api/users_controller.rb:16:in `show'
+

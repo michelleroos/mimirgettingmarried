@@ -7,7 +7,8 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const PORT = process.env.PORT || 3001; // use live port or the declared one
+// const PORT = process.env.PORT || 3001; // use live port or the declared one
+const PORT = process.env.PORT || 3000; // use live port or the declared one
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
