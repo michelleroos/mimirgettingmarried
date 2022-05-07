@@ -10,13 +10,9 @@ export default function Welcome() {
     document.title = `A & M | #mimirgettingmarried`;
   });
 
-  const dispatch = useDispatch();
-  const currentUserId = useSelector((state) => state.session.id);
   const { docs } = useFirestore("am-photos");
-  const [open, setOpen] = useState(false);
   const [img, setImg] = useState(null);
   const [imgID, setImgID] = useState(null);
-  const [index, setIndex] = useState(0);
 
   const handleClick = (url, id) => {
     setImg(url);
