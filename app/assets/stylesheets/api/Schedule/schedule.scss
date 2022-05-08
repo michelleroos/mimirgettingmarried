@@ -79,7 +79,7 @@
         cursor: auto;
 
         background-color: white;
-        padding: 30px;
+        padding: 80px;
         overflow: scroll;
         display: flex;
         flex-direction: column;
@@ -152,6 +152,7 @@
         .schedule-modal {
           width: 70%;
           height: 80%;
+          padding: 30px;
 
           img {
             display: none;
