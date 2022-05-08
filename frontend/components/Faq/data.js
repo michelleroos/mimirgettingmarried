@@ -2,6 +2,10 @@ import React from "react";
 
 const data = [
   {
+    q: "What's the address?",
+    a: "Staré zámecké schody 6/251, 118 00 Praha 1-Hradčany, Czechia",
+  },
+  {
     q: "What should I wear?",
     a: "The most important thing for us is that you’re comfortable! But expect the vibe to be a festive/cocktail/semi-formal fusion. The wedding party will wear sage/eucalyptus dresses and tan suits.",
   },
