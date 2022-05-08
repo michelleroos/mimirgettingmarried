@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import faqData from './data';
+import React, { useEffect, useState } from "react";
+import faqData from "./data";
 
 export default function Faq() {
-
   useEffect(() => {
     document.title = `FAQ | #mimirgettingmarried`;
   });
 
   const [expand, setExpand] = useState({
     0: false,
-    1: false, 
-    2: false, 
+    1: false,
+    2: false,
     3: false,
     4: false,
     5: false,
@@ -73,10 +72,12 @@ export default function Faq() {
         <div className="faq-item">
           <div className="question" onClick={() => setAll(expanded)}>
             {expanded ? <h5>Collapse all</h5> : <h5>Expand all</h5>}
-            
-            {expanded ? 
-            <i className="fas fa-compress-alt"></i> :
-            <i className="fas fa-expand-alt"></i>}
+
+            {expanded ? (
+              <i className="fas fa-compress-alt"></i>
+            ) : (
+              <i className="fas fa-expand-alt"></i>
+            )}
           </div>
         </div>
 
@@ -84,23 +85,22 @@ export default function Faq() {
           return (
             <div className="faq-item" key={idx}>
               <div className="question" onClick={() => updateClicked(idx)}>
-                <h5>
-                  {data.q}
-                </h5>
+                <h5>{data.q}</h5>
                 <h4 className={expand[idx] ? "faq-hide" : "faq-plus"}>+</h4>
                 <h4 className={expand[idx] ? "faq-minus" : "faq-hide"}>-</h4>
               </div>
               <div className="answer">
-                <p className={expand[idx] ? "faq-answer" : "faq-hide"}>
-                  {data.a}
+                <p
+                  className={expand[idx] ? "faq-answer" : "faq-hide"}
+                  dangerouslySetInnerHTML={{__html: data.a}}
+                >
                 </p>
               </div>
             </div>
-          )
+          );
         })}
       </div>
     </div>
   );
   return Faq();
-};
-
+}

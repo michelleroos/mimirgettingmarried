@@ -19,11 +19,8 @@ const data = [
   },
   {
     q: "How do I get to the venue and around Prague?",
-    a: `The address is ${(
-      <a href="https://goo.gl/maps/NX8b6izLQu2a17vc7" target="_blank">
-        Staré zámecké schody 6/251, 118 00 Praha 1-Hradčany
-      </a>
-    )}. The venue is located in the city center so you can either walk, use the public transport or take a taxi. Please note there is an incline walk to get to the wedding if you choose to walk. If you are wearing heels or have reduced mobility, you might consider taking a taxi.`,
+    a: `The address is <a target="_blank" href="https://goo.gl/maps/NX8b6izLQu2a17vc7" target="_blank">
+        Staré zámecké schody 6/251, 118 00 Praha 1-Hradčany</a>. The venue is located in the city center so you can either walk, use the public transport or take a taxi. Please note there is an incline walk to get to the wedding if you choose to walk. If you are wearing heels or have reduced mobility, you might consider taking a taxi.`,
   },
   {
     q: "Is the venue accessible for people with restricted mobility?",
@@ -47,11 +44,7 @@ const data = [
   },
   {
     q: "Will there be any vegan/vegetarian/special diet options?",
-    a: `Yes, please let us know in your RSVP or by contacting ${(
-      <a href="https://wa.me/19178874963">Amir</a>
-    )} or ${(
-      <a href="https://wa.me/16509332293">Michelle</a>
-    )} if you need to be accommodated.`,
+    a: `Yes, please let us know in your RSVP or by contacting <a target="_blank" href="https://wa.me/19178874963">Amir</a> or <a target="_blank" href="https://wa.me/16509332293">Michelle</a> if you need to be accommodated.`,
   },
   {
     q: "Can I post on social media?",
@@ -69,10 +62,10 @@ const data = [
     q: "What should I do if I no longer can make it?",
     a: "Please just let us know asap so that we can plan accordingly.",
   },
-  {
-    q: "I have another question!",
-    a: "Just reach out to us on WhatsApp - Michelle’s number is + 6509332293 and Amir’s is + 19178874963.",
-  },
+  // {
+  //   q: "I have another question!",
+  //   a: "Just reach out to us on WhatsApp - Michelle’s number is + 6509332293 and Amir’s is + 19178874963.",
+  // },
 ];
 
 export default data;

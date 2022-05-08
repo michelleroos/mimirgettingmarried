@@ -171,7 +171,7 @@ export default function RSVP() {
     return (
       <div id="rsvp-note">
         <h2>Dear family & friends - </h2>
-        <h3>We're delighted to invite you to our wedding.</h3>
+        <h3>We're delighted to invite you to our wedding!</h3>
         <h3>When? July 23. Where? Prague.</h3>
         <h3>Please RSVP by May 31.</h3>
         <div id="rsvp-btn-wrap">
