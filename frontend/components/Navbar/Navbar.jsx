@@ -6,7 +6,7 @@ import UploadForm from "../UploadForm/UploadForm";
 export default function Navbar() {
   const currentUserId = useSelector((state) => state.session.id);
   const dispatch = useDispatch();
-  const MenuItems = ["RSVP", "Schedule", "Faq"];
+  const MenuItems = ["RSVP", "Details", "Faq"];
   const [sidebar, setSidebar] = useState(false);
 
   return (

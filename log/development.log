@@ -64205,3 +64205,41 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 79ms (Views: 74.4ms | ActiveRecord: 1.3ms)
 
 
+Started GET "/api/users/1" for ::1 at 2022-05-07 21:47:30 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (3.6ms)
+Completed 200 OK in 24ms (Views: 14.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2022-05-07 21:48:21 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aHJBi11p4QWdkAbK6iADgw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 979ms (Views: 969.0ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/" for ::1 at 2022-05-07 21:48:41 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aHJBi11p4QWdkAbK6iADgw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 843ms (Views: 840.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/1" for ::1 at 2022-05-07 21:48:57 -0400
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:16
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.5ms)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 2.2ms)
+
+

@@ -33,7 +33,7 @@ export default function App() {
       <Route path="/faq" component={Faq} />
       <Route path="/rsvp" component={RSVP} />
       <Route path="/weddingparty" component={WeddingParty} />
-      <Route path="/schedule" component={Schedule} />
+      <Route path="/details" component={Schedule} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <Footer />
     </div>

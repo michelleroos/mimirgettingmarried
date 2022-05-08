@@ -55,7 +55,7 @@ const data = [
   },
   {
     q: "When is the RSVP deadline?",
-    a: "We appreciate you letting us know asap so that we can plan accordingly, but latest by May 15.",
+    a: "We appreciate you letting us know asap so that we can plan accordingly, but latest by May 31.",
   },
   {
     q: "What should I do if I no longer can make it?",
