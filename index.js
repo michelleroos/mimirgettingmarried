@@ -7,6 +7,15 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get("/", (req, res, next) => {
+  res.status(200).json({
+    status: "success",
+    data: {
+      name: "mimirgettingmarried",
+      version: "0.1.0",
+    },
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
