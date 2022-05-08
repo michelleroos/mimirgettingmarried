@@ -64196,3 +64196,12 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 1028ms (Views: 1025.7ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for ::1 at 2022-05-07 21:36:04 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aHJBi11p4QWdkAbK6iADgw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+Completed 200 OK in 79ms (Views: 74.4ms | ActiveRecord: 1.3ms)
+
+
