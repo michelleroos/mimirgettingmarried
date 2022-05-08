@@ -2,10 +2,6 @@ import React from "react";
 
 const data = [
   {
-    q: "What's the address?",
-    a: "Staré zámecké schody 6/251, 118 00 Praha 1-Hradčany, Czechia",
-  },
-  {
     q: "What should I wear?",
     a: "The most important thing for us is that you’re comfortable! But expect the vibe to be a festive/cocktail/semi-formal fusion. The wedding party will wear sage/eucalyptus dresses and tan suits.",
   },
@@ -23,7 +19,11 @@ const data = [
   },
   {
     q: "How do I get to the venue and around Prague?",
-    a: "The venue is located in the city center so you can either walk, use the public transport or take a taxi. Please note there is an incline walk to get to the wedding if you choose to walk. If you are wearing heels or have reduced mobility, you might consider taking a taxi.",
+    a: `The address is ${(
+      <a href="https://goo.gl/maps/NX8b6izLQu2a17vc7" target="_blank">
+        Staré zámecké schody 6/251, 118 00 Praha 1-Hradčany
+      </a>
+    )}. The venue is located in the city center so you can either walk, use the public transport or take a taxi. Please note there is an incline walk to get to the wedding if you choose to walk. If you are wearing heels or have reduced mobility, you might consider taking a taxi.`,
   },
   {
     q: "Is the venue accessible for people with restricted mobility?",
@@ -47,7 +47,11 @@ const data = [
   },
   {
     q: "Will there be any vegan/vegetarian/special diet options?",
-    a: `Yes, please let us know in your RSVP or by contacting Amir or Michelle if you need to be accommodated.`,
+    a: `Yes, please let us know in your RSVP or by contacting ${(
+      <a href="https://wa.me/19178874963">Amir</a>
+    )} or ${(
+      <a href="https://wa.me/16509332293">Michelle</a>
+    )} if you need to be accommodated.`,
   },
   {
     q: "Can I post on social media?",
