@@ -4,6 +4,8 @@ import Friday from './Friday';
 import Mingle from './Mingle';
 import Reception from './Reception';
 import Sunday from './Sunday';
+import Closing from './Closing';
+import Music from './Music';
 
 export default function Schedule() {
 
@@ -26,6 +28,8 @@ export default function Schedule() {
   const [ceremony, setCeremony] = useState(false);
   const [reception, setReception] = useState(false);
   const [sunday, setSunday] = useState(false);
+  const [closing, setClosing] = useState(false);
+  const [music, setMusic] = useState(false);
 
   const Schedule = () => (
     <div id="schedule-container-outer">
@@ -34,6 +38,8 @@ export default function Schedule() {
         {mingle && <Mingle close={close} />}
         {ceremony && <Ceremony close={close} />}
         {reception && <Reception close={close} />}
+        {sunday && <Sunday close={close} />}
+        {sunday && <Sunday close={close} />}
         {sunday && <Sunday close={close} />}
 
         {/* <div className="day-schedule">
@@ -68,12 +74,12 @@ export default function Schedule() {
               <p>18:00</p>
               <button className="more-info">More info</button>
             </div>
-            <div className="schedule-details">
+            <div className="schedule-details" id="saturday-music">
               <i className="fas fa-guitar"></i>
               <h3>Music</h3>
               <p>20:00</p>
             </div>
-            <div className="schedule-details">
+            <div className="schedule-details" id="saturday-closing">
               <i className="fas fa-hourglass-end"></i>
               <h3>Party ends</h3>
               <p>00:00</p>
@@ -81,7 +87,7 @@ export default function Schedule() {
           </div>
         </div>
         
-        {/* <div className="day-schedule">
+        <div className="day-schedule">
           <h2>Sunday - 24 July</h2>
           <div className="detailed-schedule-container">
             <div className="schedule-details" id="sunday-modal" onClick={() => setSunday(true)}>
@@ -91,7 +97,7 @@ export default function Schedule() {
               <button className="more-info">More info</button>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );
