@@ -27,6 +27,7 @@ export default function Faq() {
     17: false,
     18: false,
     19: false,
+    20: false,
   });
 
   const updateClicked = (num) => {
@@ -59,6 +60,7 @@ export default function Faq() {
       17: !expandedStatus,
       18: !expandedStatus,
       19: !expandedStatus,
+      20: !expandedStatus,
     });
   };
 

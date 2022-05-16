@@ -50,6 +50,10 @@ const data = [
     a: `Yes, please let us know in your <a target="blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeSWoMdSv030Q1_KpsrO0IZ0Qt2aYLa1arJ4rTWQUwm6ulbuw/viewform">RSVP</a> or by contacting <a target="_blank" href="https://wa.me/19178874963">Amir at +1 917 887 4963</a> or <a target="_blank" href="https://wa.me/16509332293">Michelle at +1 650 933 2293</a> if you need to be accommodated.`,
   },
   {
+    q: "Is there a gift registry?",
+    a: `We couldn’t think of a better way to start our marriage than by using our wedding to do a little good. So while we don’t expect wedding gifts, should you nevertheless like to give us something, we would be very grateful if you donated, <a target="blank" href="https://www.gofundme.com/f/michelle-amirs-wedding-charitable-giving?utm_campaign=p_lico+share-sheet&utm_medium=copy_link&utm_source=customer">via this website</a>, to GiveDirectly – a fantastic charity that sends money directly to the world’s poorest households. Using resources available to us, we will try to match the total amount collected.`,
+  },
+  {
     q: "Can I post on social media?",
     a: `Yes, of course! We would love it if you could also add your photos to our <a target="_blank" href="https://photos.app.goo.gl/NW51qZ8HF3jVVEQ96">Google Photos album</a> or send them to us via Apple Photos/DropBox/whichever way you want.`,
   },

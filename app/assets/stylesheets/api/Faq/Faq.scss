@@ -2,12 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  // height: calc(100vh - 100px);
-  // margin: 300px auto;
   height: auto;
 
   #faq-container {
     width: 70%;
+    padding-bottom: 90px;
 
     #faq-header {
       display: flex;
@@ -55,14 +54,11 @@
         p {
           font-size: 18px;
           padding-right: 20px;
-          
-          &:last-child {
-            padding-bottom: 40px;
-          }
         }
 
         a {
           font-weight: 500;
+          text-decoration: underline;
         }
       }
     }
