@@ -3,7 +3,7 @@ import React from "react";
 const data = [
   {
     q: "What should I wear?",
-    a: "The most important thing for us is that you’re comfortable! But expect the vibe to be a festive/cocktail/semi-formal fusion. The wedding party will wear sage/eucalyptus dresses and tan suits.",
+    a: `The most important thing for us is that you’re comfortable! But expect the vibe to be a festive/cocktail/semi-formal fusion. The wedding party will wear sage/eucalyptus dresses and tan suits. The dress code for Sunday's party is <a target="_blank" href="https://www.google.com/search?q=studio+54+fashion&rlz=1C5CHFA_enUS927US929&sxsrf=ALiCzsZqxgt7IvcDyDJG0DONemzGVlCyjg:1658006821450&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjjwYLdrP74AhU-kIkEHdy8DXEQ_AUoAXoECAEQAw&biw=1600&bih=830&dpr=1.6" target="_blank">Studio 54</a>.`,
   },
   {
     q: "What will the weather be like?",
@@ -35,7 +35,7 @@ const data = [
   },
   {
     q: "What time should I arrive?",
-    a: "TBC shortly but around 3pm.",
+    a: "Please arrive at 3pm for welcome drinks. The ceremony will start at 4pm.",
   },
   {
     q: "Are kids welcome?",
@@ -60,6 +60,11 @@ const data = [
   {
     q: "Where do you recommend that I book my stay?",
     a: "We recommend that you stay in Prague 1, which is the city center. There are plenty of options on Airbnb and Hotels/Booking.",
+  },
+  {
+    q: "What is there to do in Prague?",
+    a: `Lots! Besides the <a target="_blank" href="https://www.thecrazytourist.com/top-25-things-to-do-in-prague/">obvious things</a> we also recommend you checking out these Instagram accounts: <a target="_blank" href="https://www.instagram.com/new_prague/">New Prague</a>, <a target="_blank" href="https://www.instagram.com/praguehipsterguide/">Prague Hipster Guide</a>, <a target="_blank" href="https://www.instagram.com/toppraguerestaurants/">Top Prague Restaurants</a> and <a target="_blank" href="https://www.instagram.com/kamvpraze/
+">Kamvpraze</a> `,
   },
   {
     q: "When is the RSVP deadline?",
