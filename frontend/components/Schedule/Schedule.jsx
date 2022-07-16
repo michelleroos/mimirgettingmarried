@@ -42,7 +42,7 @@ export default function Schedule() {
         {sunday && <Sunday close={close} />}
         {sunday && <Sunday close={close} />}
 
-        {/* <div className="day-schedule">
+        <div className="day-schedule">
           <h2>Friday - 22 July</h2>
           <div className="detailed-schedule-container">
             <div className="schedule-details" id="friday-modal" onClick={() => setFriday(true)}>
@@ -51,7 +51,7 @@ export default function Schedule() {
               <button className="more-info">More info</button>
             </div>
           </div>
-        </div> */}
+        </div>
 
         <div className="day-schedule">
           <h2>Saturday - 23 July</h2>
