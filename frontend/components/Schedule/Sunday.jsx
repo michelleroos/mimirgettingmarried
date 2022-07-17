@@ -11,9 +11,10 @@ export default function Sunday({ close }) {
           <a href="https://balconybar.cz/" target="_blank">
             The Balcony Bar
           </a>
-          . There will be some food available to order at the bar but you might
-          want to eat before.
+          . Please arrive no later than 8pm. There will be some food available
+          to order at the bar but you might want to eat before.
         </h3>
+        <h3>Optional dress code: Studio 54 :)</h3>
         <h3>
           Click{" "}
           <a

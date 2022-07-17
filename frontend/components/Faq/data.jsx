@@ -14,8 +14,10 @@ const data = [
     a: `Villa Richter is a classicist summerhouse from 1836 that is a part of the St Wenceslas Vineyard complex at Prague Castle. The complex offers a unique and undisturbed view of the panoramas of Old town, Lesser Town and the Villa Belvedere. The address is <a target="_blank" href="https://goo.gl/maps/NX8b6izLQu2a17vc7" target="_blank">Staré zámecké schody 6/251, 118 00 Praha 1-Hradčany</a>.`,
   },
   {
-    q: "How do I get to the venue and around Prague?",
-    a: `The venue is located in the city center so you can either walk, use the public transport or take a taxi. Please note there is an incline walk to get to the wedding if you choose to walk. If you are wearing heels or have reduced mobility, you might consider taking a taxi.`,
+    q: "How do I get to the venue?",
+    a: `The venue is located close to the city center so you can either walk, use the public transport or take a taxi. 
+    
+    Taxi: tell them to stop by the <a target="_blank" href="https://www.google.com/maps/place/Old+Castle+Stairs/@50.092117,14.4054935,17z/data=!3m1!4b1!4m5!3m4!1s0x470b94e0608a878f:0x582a6234d68b495!8m2!3d50.092117!4d14.4076822" target="_blank">Old Castle Steps (Stare Zamecke Schody)</a>. There will be a hostess waiting.`,
   },
   {
     q: "Will the ceremony/mingle/reception be in the same place?",
@@ -55,7 +57,7 @@ const data = [
   },
   {
     q: "Can I post on social media?",
-    a: `Yes, of course! We would love it if you could also add your photos to our <a target="_blank" href="https://photos.app.goo.gl/NW51qZ8HF3jVVEQ96">Google Photos album</a> or send them to us via Apple Photos/DropBox/whichever way you want.`,
+    a: `Yes, of course! Our hashtag is #amichelle. We would love it if you could also add your photos to our <a target="_blank" href="https://photos.app.goo.gl/NW51qZ8HF3jVVEQ96">Google Photos album</a> or send them to us via Apple Photos/DropBox/whichever way you want.`,
   },
   {
     q: "Where do you recommend that I book my stay?",
