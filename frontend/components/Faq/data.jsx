@@ -17,7 +17,7 @@ const data = [
   },
   {
     q: "Is there a gift registry?",
-    a: `We couldn’t think of a better way to start our marriage than by using our wedding to do a little good. So while we don’t expect wedding gifts, should you nevertheless like to give us something, we would be very grateful if you donated, <a target="blank" href="https://www.gofundme.com/f/michelle-amirs-wedding-charitable-giving?utm_campaign=p_lico+share-sheet&utm_medium=copy_link&utm_source=customer">via this website</a>, to GiveDirectly – a fantastic charity that sends money directly to the world’s poorest households. Using resources available to us, we will try to match the total amount collected.`,
+    a: `We couldn’t think of a better way to start our marriage than by using our wedding to do a little good. So while we don’t expect wedding gifts, should you nevertheless like to give us something, we would be very grateful if you donated, <a target="blank" href="https://www.gofundme.com/f/michelle-amirs-wedding-charitable-giving?utm_campaign=p_lico+share-sheet&utm_medium=copy_link&utm_source=customer">via this website</a>, to <a target="blank" href="https://www.cancerfonden.se/om-oss/about">The Swedish Cancer Society</a>. The charity funds the best research, spreads knowledge and influences decision-makers with the ultimate aim of defeating cancer. Using resources available to us, we will try to match the total amount collected.`,
   },
   {
     q: "What should I wear?",
